@@ -1,0 +1,12 @@
+{
+	"P_TABLE": {
+		"P_TABLE_ITEM": [{
+				"ROUTE_CUTOFF_ROWID": "abc",
+				"SERVICE_PROVIDER": "JLOG",
+				"ROUTE": "R01",
+				"CUTOFF_TIME": "8",
+				"ACTION": ""
+			}
+		]
+	}
+}

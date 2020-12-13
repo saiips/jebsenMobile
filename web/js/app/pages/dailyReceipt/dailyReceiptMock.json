@@ -1,0 +1,17 @@
+{
+    "OutputGetVanOrderSummary": [{
+            "OrderDate": "2016-12-27T00:00:00.000+00:00",
+            "TotalSalesAmount": 246,
+            "TotalCashAmount": 999999999,
+            "TotalChequeAmount": 999999999,
+            "TotalOthersAmount": 999999999
+        },
+        {
+            "OrderDate": "2016-12-28T00:00:00.000+00:00",
+            "TotalSalesAmount": 246,
+            "TotalCashAmount": 999999999,
+            "TotalChequeAmount": 999999999,
+            "TotalOthersAmount": 999999999
+        }                
+    ]
+}

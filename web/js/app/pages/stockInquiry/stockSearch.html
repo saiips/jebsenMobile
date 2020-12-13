@@ -1,0 +1,85 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_stockInquiry">
+    <nav-back-button params="click: function() { $root.router.go('springboard') }"></nav-back-button>
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+
+<main id="stockInquiry"  data-bind="template: {afterRender: onPageReady}">
+    <div class="container">
+        <div class="oj-flex title oj-sm-flex-items-initial oj-sm-justify-content-space-between">
+            <div class="oj-flex-item" data-bind="text:lng_search"></div>
+            <div class="oj-flex-item">
+                <button id= "clearRecentbutton"
+                data-bind="click: clearRecentItemCodes, 
+                           ojComponent: { component: 'ojButton', label: lng_clearRecent }">
+            </div>
+        </div>
+        
+        <div class="criteria">
+            <!--input data-bind="ojComponent: {component: 'ojInputSearch', value: itemCode, options:tags}" placeholder="Input Item Code...."/-->
+            <input id="itemCodes" data-bind="ojComponent: {
+                                component: 'ojInputSearch', 
+                                options: itemCodeSuggestions,
+                                value: itemCode,
+                                minLength: 3,
+                                optionTemplate: 'itemCodeOptionTemplate',
+                                optionsKeys: {
+                                    label: 'groupName',
+                                    children: 'items',
+                                    childKeys: {
+                                        label: 'ITEM_CODE_DESCRIPTION',
+                                        value: 'INVENTORY_ITEM_ID'
+                                    }
+                                },
+                                optionChange: onSearchTextChange,
+                                placeholder: lng_placeholderInputItemCode
+                            }" />
+            <button data-bind="click: onClearSearchText, css: (itemCode())? 'icon-search-clear' : 'icon-search-search'" type="reset"></button>
+            <!--input id="lots" data-bind="ojComponent: {component: 'ojInputSearch', value: lot, disabled: disableLot}" placeholder="Lot...."/-->
+            <!--input id="lots" data-bind="ojComponent: {
+                                component: 'ojInputSearch', 
+                                options: lotSuggestions,
+                                value: lot,
+                                disabled: disableLot,
+                                
+                                
+                                optionsKeys: {
+                                    label: 'groupName',
+                                    children: 'items',
+                                    childKeys: {
+                                        label: 'LOT_NUMBER',
+                                        value: 'LOT_NUMBER'
+                                    }
+                                } 
+                            }" placeholder="Lot...."/-->
+        </div>
+        
+        <div class="btnContainer"><a class="search" data-bind="click: buttonSearchClick,text:lng_search"></a></div>
+
+    </div>
+  <!-- Option Template -->
+  <script type="text/html" id="itemCodeOptionTemplate">
+    <!-- ko if: !$optionContext.leaf -->
+      <div class="section" data-bind="text: groupName"></div>
+    <!-- /ko -->
+    <!-- ko if: $optionContext.leaf -->
+      <!-- ko if: !($optionContext.parent.groupId) -->
+        <div data-bind="text: label"></div>
+      <!-- /ko -->
+      <!-- ko if: $optionContext.parent.groupId -->
+        <div>
+          <span class="oj-listbox-highlighter-section">
+            <span data-bind="text: ITEM_CODE_DESCRIPTION"></span>
+          </span>
+        </div>
+      <!-- /ko -->
+    <!-- /ko -->
+   </script>
+
+</main>

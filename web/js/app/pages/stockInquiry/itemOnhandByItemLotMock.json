@@ -1,0 +1,15 @@
+{
+   "P_ONHAND_TBL": {"P_ONHAND_TBL_ITEM":    {
+      "ORG_ID": "4838",
+      "ORGANIZATION_NAME": "G000G JEBSEN BEVERAGE WINE DIV. ONLINE",
+      "ITEM_ID": "437557",
+      "ITEM_CODE": "V022|ENC203",
+      "DESCRIPTION": "PLUMPJACK ESTATE CABERNET SAUVIGNON  OAKVILLE (75CL)",
+      "SUBINVENTORY": "JL-WAREHSE",
+      "LOT": "2011",
+      "UOM": "BOT",
+      "ONHAND_QTY": "4",
+      "RESRV_QTY": "0",
+      "AVLB_QTY": "4"
+   }}
+}

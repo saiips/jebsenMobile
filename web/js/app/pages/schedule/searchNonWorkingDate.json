@@ -1,0 +1,12 @@
+{
+    "P_TABLE": {
+        "P_TABLE_ITEM": [{
+                "NON_WORKING_DT_ROWID": "abc",
+                "NON_WORKING_DATE": "2017-06-07T16:00:00+08:00",
+                "SERVICE_PROVIDER": "JLOG",
+                "ROUTE": "R01",
+                "ACTION": ""
+            }
+        ]
+    }
+}

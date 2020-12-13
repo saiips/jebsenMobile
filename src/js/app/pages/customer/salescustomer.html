@@ -1,0 +1,26 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: $data.headerTitle">
+    <nav-back-button params="click: function() { $root.router.go('springboard') }"></nav-back-button>
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+
+<main id="customerList">
+    <div role="main" class="list-content">
+        <div class="container">
+        <table>
+            <thead>
+                <tr><th><font size="4" data-bind="text:lng_organizationName"></font></th>
+                       <th><font size="4" data-bind="text:lng_partyNumber"></font></th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: allCustomers">
+                <tr>
+                    <td align="left" data-bind="text: OrganizationName, style: { fontSize: '25px'}"></td>
+                    <td align="center" data-bind="text: PartyNumber,  style: { fontSize: '25px'}"></td>
+                </tr>
+            </tbody>
+        </table>    
+        </div>
+    </div>
+
+</main>

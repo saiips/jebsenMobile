@@ -1,0 +1,64 @@
+    <div id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper" data-bind="template: {afterRender: onPageReady}">
+        <div class="oj-offcanvas-inner-wrapper">     
+            <!-- header -->
+            <header-bar role="banner" params="headerLabel: $data.headerTitle">
+                <nav-back-button params="click: function() { $root.router.go('customer/customerList') }"></nav-back-button>
+                <nav-buttons side="right2"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+                <nav-buttons side="right3"><input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/></nav-buttons>
+            </header-bar>
+            
+            <main id="customerList">
+            <div role="main" class="list-content">
+                <!-- search canvas -->
+                <div id="searchCanvas" class="oj-offcanvas-top" data-bind="searchCanvas">
+                    <div class="searchForm">
+                        <input type="text" id="searchProduct" autocomplete="off"
+                                data-bind="ojComponent: {
+                                  component: 'ojInputText',
+                                  placeholder: lng_searchPlaceHolder,
+                                  optionChange: onSearchTextChange
+                                }">
+                        <button data-bind="click: onClearSearchText, css: (searchText())? 'icon-search-clear' : 'icon-search-search'" type="reset"></button>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <ul id="listViewContainer" aria-label="outlet list"
+                       data-bind="ojComponent: {component: 'ojListView', 
+                               data: outlets, 
+                               item: {template: selectTemplate, focusable: itemOnly, selectable: itemOnly}, 
+                               drillMode: 'none', 
+                               selectionMode: 'single', 
+                               optionChange: optionChange, 
+                               scrollPolicy: 'loadMoreOnScroll', 
+                               scrollPolicyOptions: {fetchSize: 10}}">
+                    </ul>
+                </div>
+            </div>
+            </main>
+        </div>
+    </div>
+
+
+<script type="text/html" id="group_template">
+    <li data-bind="attr: {id: id}">
+        <div style="padding-left: 5%"><strong data-bind="text: initial"></strong></div>
+    </li>
+</script>
+
+<script type="text/html" id="item_template">
+  <li data-bind="attr: {id: id}" class="row">
+    <div class="box oj-flex" style="flex-wrap: nowrap">
+      <div class="oj-flex-item demo-content">
+        <div class="name">
+          <span data-bind="text: data.OUTLET_NAME"></span>
+        </div>
+        <div class="address">
+            <div class="icon"><img src="img/app/icon_address_blue.png" alt="" /></div>
+            <div class="details"><span data-bind="text: data.SHIP_TO_ADDRESS"></span></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</script>
+

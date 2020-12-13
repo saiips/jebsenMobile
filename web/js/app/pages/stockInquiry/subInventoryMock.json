@@ -1,0 +1,102 @@
+{
+  "P_SUBINV_TBL": {
+    "P_SUBINV_TBL_ITEM": [
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-HB3137N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-KX8365N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-LINDEY"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-LINDE2Y"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-MANLEEN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-OBCN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-OFFICEN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-ONHOLDN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-PF7022N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-REPACKN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-RM7607N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-STAGINGN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-TG5301N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-TUENMUNN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-TV2014N"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "DD-WSHOPN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "JL-STAGINGN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "JL-WAREHSEN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "MO-SEAPOWRN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "MS-WAREHSEN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "PS-STAGINGN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "PS-WAREHSEN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "PW-STAGINGN"
+      },
+      {
+        "ORG_ID": "2898",
+        "SUBINV_CODE": "PW-WAREHSEN"
+      }
+    ]
+  }
+}

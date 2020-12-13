@@ -1,0 +1,36 @@
+{
+    "id" : "ord-107",
+    "cust_name": "Dairy Farm",
+    "order_no": "30053107",
+    "purchase_order":"8000044",
+    "order_date":"2016/11/01 10:05",
+    "delivery_cost":500,
+    "remarks":"Please input remarks",
+    "shipping_address":"7/F EAST ASIA TERMINAL CENTRE,A BERTH, KWAI CHUNG CONTAINER TERMINAL,KWAI CHUNG,N T,NT-KWAI CHUNG",
+    "billing_address": "5/F DEVON HOUSE,TAIKOO PLACE 979 KING'S RD,QUARRY BAY,,HK-QUARRY BAY",    
+	"status" : "Booked",
+    "item_detail":[
+            {
+                "id": "1",
+                "prod_code":"T046|MAR008",
+                "prod_desc":"S. Pellegrino 750ML X 12 Bots",
+                "shipping_district":"KWAI CHUNG",
+                "delivery_status":"Pending",
+                "lot":"2009",
+                "sku":"BOT",
+                "quantity":48,
+                "price":46.9
+            },
+            {
+                "id": "2",
+                "prod_code":"T046|MAR010",
+                "prod_desc":"S. Pellegrino 750ML X 12 Bots",
+                "shipping_district":"KWAI CHUNG",
+                "delivery_status":"Pending",
+                "lot":"2007",
+                "sku":"BOT",
+                "quantity":24,
+                "price":104.58
+            }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "P_SHIPPING_METHOD": {
+        "P_SHIPPING_METHOD_ITEM": [{
+                "LOOKUP_TYPE": "abc",
+                "LOOKUP_VALUE": "abc"
+            }]
+    }
+}

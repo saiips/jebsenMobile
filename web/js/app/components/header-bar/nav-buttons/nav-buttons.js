@@ -1,0 +1,1 @@
+define(["ojs/ojcore","knockout","jquery","text!./nav-buttons.html"],function(t,e,n,o){function i(t){var e=this;e.dispose=function(){}}return{viewModel:i,template:o}});

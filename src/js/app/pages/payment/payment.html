@@ -1,0 +1,148 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: $data.headerTitle">
+    <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+    <div class="syncDate">
+        <span data-bind="text: $parent.subTitle"></span>
+    </div>       
+    <nav-buttons side="right2">
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+    </nav-buttons>      
+    <nav-buttons side="right3">
+        <input type="image" src="img/app/icon_printer.png" data-bind="click: function() { $parents[1].printReceipt() }"/>
+    </nav-buttons>    
+</header-bar>
+<main id="payment" class="">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <div><span data-bind="text: lng_overview"></span></div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="tag green"><span data-bind="text:$data.status"></span></div>
+                    <div class="title"><span data-bind="text:$data.cust_name"></span></div>
+                    <table>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_orderNo"></span></td>
+                            <td><span data-bind="text:$data.order_no"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_purchase_order_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_purchaseOrder"></span></td>
+                            <td><span data-bind="text:$data.purchase_order"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_orderDate"></span></td>
+                            <td><span data-bind="text: moment($data.order_date()).format('DD-MMM-YYYY').toUpperCase()"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_items_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_totalItems"></span></td>
+                            <td><span data-bind="text:$data.totalItems()"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_cost_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_total"></span></td>
+                            <td><span data-bind="currency:$data.total(), symbol:'$'"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <!-- ko if: showRealCustomer -->
+            <li class="heading">
+                <span data-bind="text: lng_realCustomer"></span>
+            </li>    
+            <li>
+                <div class="box">
+                    <input id="text-input" readOnly="true" type="text" data-bind="ojComponent: {component: 'ojInputText', value: real_customer}" placeholder=""/>
+                </div>
+            </li>          
+            <!-- /ko -->
+            <li class="heading">
+                <div><span data-bind="text: lng_remarks"></span></div>
+            </li>
+            <li>
+                <div class="box">
+                    <textarea id="remarks" row="5" readOnly="true" type="text" data-bind="ojComponent: {component: 'ojTextArea', value: $data.remarks}" placeholder=""></textarea>
+                </div>
+            </li>
+            <li class="heading">
+                <div><span data-bind="text: lng_itemDetail"></span></div>
+            </li>
+            <li class="row" data-bind="foreach:cart">
+                <div class="box">
+                    <div class="header">
+                        <div class="code"><span data-bind="text:$data.product().prod_code" /></div>
+                        <div class="amount">HKD<span data-bind="currency:$data.product().price, symbol:'$'" /></div>
+                    </div>
+                    <div class="itemDetail">
+                        <div><span data-bind="text:$data.product().prod_desc" /></div>
+                        <div><span data-bind="text:$data.product().shipping_district" /></div>
+                        <div><span data-bind="text: $parent.lng_deliveryStatus"></span><span data-bind="text:$data.product().delivery_status"></span></div>
+                    </div>
+                </div>
+                <div class="editContainer">
+                    <div class="lot">
+                        <table>
+                            <tr>
+                                <td valign="middle" style="width: 30%"><span data-bind="text: $parent.lng_lot"></td>
+                                <td valign="middle" style="width: 70%">
+                                    <span data-bind="text:$data.product().lot"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="qty">
+                        <table>
+                            <tr>
+                                <td valign="middle" style="width: 30%"><span data-bind="text: $parent.lng_qty"></span></td>
+                                <td valign="middle" style="width: 70%"><span data-bind="text:$data.quantity"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="itemsDetailSummary">
+            <table>
+                <tr>
+                    <td><span data-bind="text: lng_deliveryCost"></span></td>
+                    <td align="right">HKD<span data-bind="currency:$data.delivery_cost, symbol:'$'"></span></td>
+                </tr>
+                <tr>
+                    <td><span data-bind="text: lng_total"></span></td>
+                    <td align="right">HKD<span data-bind="currency:$data.total(), symbol:'$'"></span></td>
+                </tr>
+            </table>
+        </div>
+        <ul>
+            <li class="heading">
+                <div><span data-bind="text: lng_orderSummary"></span></div>
+            </li>
+            <li>
+                <div class="addressBox">
+                    <table class="summary">
+                        <tr>
+                            <td width="10%" valign="top"><div class="icon"><img src="img/app/icon_shipping_ad_grey.png" alt=""></div></td>
+                            <td width="40%" valign="top"><span data-bind="text: lng_shippingAddress"></span></td>
+                            <td width="50%" valign="top"><span data-bind="text:$data.shipping_address"></span></td>
+                        </tr>
+                        <tr>
+                            <td width="10%" valign="top"><div class="icon"><img src="img/app/icon_billing_ad_grey.png" alt=""></div></td>
+                            <td width="40%" valign="top"><span data-bind="text: lng_billingAddress"></span></td>
+                            <td width="50%" valign="top"><span data-bind="text:$data.billing_address"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="btnContainer">
+            <a class="leftButton" data-bind="click: completeOrder"><span data-bind="text: lng_completeOrder"></span></a>
+            <a class="rightButton" data-bind="click: cancelOrder"><span data-bind="text: lng_cancelOrder"></span></a>
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,7 @@
+{
+	"OutputCreateVanOrder": {
+		"ReturnStatus": "S",
+		"ReturnMessage": "Order has been booked.",
+                                    "HEADER_ID" : "123213"
+	}
+}

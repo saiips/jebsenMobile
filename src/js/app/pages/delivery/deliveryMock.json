@@ -1,0 +1,26 @@
+{
+        "P_SHIPMENT_TBL_ITEM": [{
+                        "CAR_PLATE_NUMBER": "VAN-TV2014",
+                        "DELIVERY_ID": "8608524",
+                        "DELIVERY_ADDRESS": "CHINA PLAN ENTERPRISES COMPANY\nUNIT 13, 1/F\nGOLDFIELD INDUSTRIAL CENTRE\n1 SHUI WO ROAD,",
+                        "DELIVERY_DATE": "2016-09-07T00:00:00.000+08:00",
+                        "PAYMENT_TERM": "COD",
+                        "OUTLET_NUMBER": "VIP",
+                        "DELIVERY_NUMBER": "8608524",
+                        "ORDER_NUMBER": "10214481",
+                        "LOADED_DATE": "2016-09-07T00:00:00.000+08:00",
+                        "CONFIRMED_DATE": "4712-12-31T00:00:00.000+08:00"
+                }, {
+                        "CAR_PLATE_NUMBER": "VAN-TV2014",
+                        "DELIVERY_ID": "8908798",
+                        "DELIVERY_ADDRESS": "UNIT 310-311 BLK A\nHUTCHISON LOGISTICS CTR\nCONTAINER PORT RD SOUTH\nKWAI CHUNG NT,",
+                        "DELIVERY_DATE": "2016-10-12T00:00:00.000+08:00",
+                        "PAYMENT_TERM": "NET90",
+                        "OUTLET_NUMBER": "PARKNSHOP (HK) LIMITED-ABI",
+                        "DELIVERY_NUMBER": "8908798",
+                        "ORDER_NUMBER": "2899-10222775",
+                        "LOADED_DATE": "2016-09-07T14:00:00.000+08:00",
+                        "CONFIRMED_DATE": "2016-09-07T15:00:00.000+08:00"
+                }
+        ]
+}

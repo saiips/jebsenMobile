@@ -1,0 +1,160 @@
+{
+    "outputGetVisitation": [
+        {
+            "LOCATION": "測試地址",
+            "STATUS": "COMPLETE",
+            "DESCRIPTION": "Test Hello world....Remarks 1\n08-DEC-2017 10:00 Completed",
+            "END_DATE": "2017-02-01T01:00:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "Peter Test Visit 01",
+            "OUTLET_NAME": "TEST HELLO WORLD",
+            "START_DATE": "2017-02-01T12:00:00+08:00",
+            "ACTIVITY_ID": "300000001438724",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "測試地址",
+            "STATUS": "COMPLETE",
+            "DESCRIPTION": "Description 02",
+            "END_DATE": "2017-02-02T01:00:00+08:00",
+            "PURPOSE": "SAMPLE_2",
+            "SUBJECT": "Peter Visitation 02",
+            "OUTLET_NAME": "TEST HELLO WORLD",
+            "START_DATE": "2017-02-02T12:00:00+08:00",
+            "ACTIVITY_ID": "300000001438726",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "測試地址",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Test Description 02",
+            "END_DATE": "2017-02-03T04:30:00+08:00",
+            "PURPOSE": "SAMPLE_3",
+            "SUBJECT": "Peter Visitation 03",
+            "OUTLET_NAME": "TEST HELLO WORLD",
+            "START_DATE": "2017-02-03T03:45:00+08:00",
+            "ACTIVITY_ID": "300000001438855",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "測試Test 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001459647",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "測試Test 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463130",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "ZZZZZTest 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463156",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "測試Test 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001454038",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "測試Test 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463132",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "DDDDDTest 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463164",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "YYYYTest 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463166",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "DDDDDTest 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001463168",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "15-29, 8/F,15-29, 8/F,15-29, 8/F,15-29, 8/F,NT-FO TAN SHA TIN312198,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 1",
+            "END_DATE": "2017-02-04T04:15:00+08:00",
+            "PURPOSE": "SAMPLE_1",
+            "SUBJECT": "Test 01 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T03:00:00+08:00",
+            "ACTIVITY_ID": "300000001438989",
+            "VISIT_PERSON": "Free Text"
+        },
+        {
+            "LOCATION": "PLEASE PROVIDE,PLEASE PROVIDE,PLEASE PROVIDE,PLEASE PROVIDE,312197,311224",
+            "STATUS": "NOT_STARTED",
+            "DESCRIPTION": "Remarks 02",
+            "END_DATE": "2017-02-04T02:15:00+08:00",
+            "PURPOSE": "SAMPLE_2",
+            "SUBJECT": "Test 02 A proposal about Christmas Event",
+            "OUTLET_NAME": "CHINA RESOURCES VANGUARD (HONG KONG) CO LTD",
+            "START_DATE": "2017-02-04T01:00:00+08:00",
+            "ACTIVITY_ID": "300000001438998",
+            "VISIT_PERSON": "Free Text"
+        }
+    ]
+}

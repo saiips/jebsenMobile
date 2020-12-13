@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="back">
+      <!-- ko template: { nodes: navBackButton } --><!-- /ko -->
+      <!-- ko template: { nodes: navLeftButtons } --><!-- /ko -->
+    </div>
+    <div class="title">
+      <!-- ko if: headerLabel || $root.router.currentState().label -->
+      <span data-bind="text: (headerLabel) ? headerLabel : $root.router.currentState().label" />
+      <!-- /ko -->
+      <!-- ko template: { nodes: templateNodes } --><!-- /ko -->
+    </div>
+    <!-- ko ifnot: $parent.isOrderDeskAdmin -->
+    <div class="rightIcon1">    
+        <!-- ko template: { nodes: navRight1Buttons } --><!-- /ko -->
+    </div>
+    <div class="rightIcon2">
+        <!-- ko template: { nodes: navRight2Buttons } --><!-- /ko -->
+    </div>
+    <div class="rightIcon3">
+        <!-- ko template: { nodes: navRight3Buttons } --><!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <!-- ko if: $parent.isOrderDeskAdmin -->
+    <div class="admin_rightIcon1">    
+        <!-- ko template: { nodes: navRight1Buttons } --><!-- /ko -->
+    </div>
+    <div class="admin_rightIcon2">
+        <!-- ko template: { nodes: navRight2Buttons } --><!-- /ko -->
+    </div>
+    <div class="admin_rightIcon3">
+        <!-- ko template: { nodes: navRight3Buttons } --><!-- /ko -->
+    </div>
+    <div class="admin_rightIcon4">
+        <!-- ko template: { nodes: navRight4Buttons } --><!-- /ko -->
+    </div>
+    <!-- /ko -->
+</div>

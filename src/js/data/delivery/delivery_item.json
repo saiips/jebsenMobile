@@ -1,0 +1,34 @@
+{
+    "deliveryItems": [
+        {
+            "id": 1,
+            "prod_code":"BG12SP1203",
+            "prod_desc":"S. Pellegrino 750ML X 12 Bots",
+            "shipping_district":"Tsuen Wan",
+            "delivery_status":"Pending",
+            "lot":"2009",
+            "sku":"BOT",
+            "quantity":8
+        },
+        {
+            "id": 2,
+            "prod_code":"BG12SP1204",
+            "prod_desc":"Acqua Panna 750ML X 12 Bots",
+            "shipping_district":"Tsuen Wan",
+            "delivery_status":"Pending",
+            "lot":"----",
+            "sku":"BOT",
+            "quantity":5
+        },
+        {
+            "id": 3,
+            "prod_code":"BG12SP1203",
+            "prod_desc":"S. Pellegrino 750ML X 12 Bots",
+            "shipping_district":"Tsuen Wan",
+            "delivery_status":"Pending",
+            "lot":"----",
+            "sku":"UOM Box",
+            "quantity":9
+        }
+    ]
+}

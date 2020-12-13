@@ -1,0 +1,16 @@
+{
+  "count": 2,
+  "id": "0000|BG12ST0301",
+  "result": [
+    {
+      "id": "cus-101",
+      "name": "Athena 22",
+      "qty": 2
+    },
+    {
+      "id": "ord-102",
+      "name": "Deno Bar",
+      "qty": 3
+    }
+  ]
+}

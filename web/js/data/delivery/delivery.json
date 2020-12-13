@@ -1,0 +1,44 @@
+{
+    "deliveries": [
+        {
+            "id": 1,
+            "delivery_no": "DP2536976",
+            "date": "2016/11/22",
+            "arrival_date": "2016/11/23 10:05am",
+            "customer_name":"Susan 22",
+            "address": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+            "quotation_number":"#26555555",
+            "arrival_number":"DY 1298"
+        },
+        {
+            "id": 2,
+            "delivery_no": "DP2536975",
+            "date": "2016/11/22",
+            "arrival_date": "2016/11/23 11:35am",
+            "customer_name":"Deno Bar",
+            "address": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+            "quotation_number":"#25689666",
+            "arrival_number":"DY 1298"
+        },
+        {
+            "id": 3,
+            "delivery_no": "DP2536974",
+            "date": "2016/11/22",
+            "arrival_date": "2016/11/23 10:05am",
+            "customer_name":"Tinson West",
+            "address": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+            "quotation_number":"#25358785",
+            "arrival_number":"DY 1298"
+        },
+        {
+            "id": 4,
+            "delivery_no": "DP2536973",
+            "date": "2016/11/22",
+            "arrival_date": "2016/11/23 11:35am",
+            "customer_name":"Cason Table Restaurant",
+            "address": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+            "quotation_number":"#25334325",
+            "arrival_number":"DY 1298"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "cust_name": "Athena 22",
+    "order_no": "30053945",
+    "purchase_order":"8000044",
+    "order_date":"2016/11/10 10:05",
+    "delivery_cost":500,
+    "remarks":"Please input remarks",
+    "shipping_address":"G/F, 22 Minden Ave, TST, Kowloon",
+    "billing_address": "G/F, 22 Minden Ave, TST, Kowloon",    
+    "item_detail":[
+            {
+                "id": "1",
+                "prod_code":"BG12SP1203",
+                "prod_desc":"S. Pellegrino 750ML X 12 Bots",
+                "shipping_district":"Tsuen Wan",
+                "delivery_status":"Pending",
+                "lot":"2009",
+                "sku":"BOT",
+                "quantity":8,
+                "price":250.00
+            },
+            {
+                "id": "2",
+                "prod_code":"BG12SP1202",
+                "prod_desc":"A. Pellegrino 500ML X 8 Bots",
+                "shipping_district":"Tsuen Wan",
+                "delivery_status":"Pending",
+                "lot":"2007",
+                "sku":"BOT",
+                "quantity":5,
+                "price":150.00
+            }
+    ]
+}

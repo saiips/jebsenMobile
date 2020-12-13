@@ -1,0 +1,128 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+ <!-- header -->
+<header-bar role="banner" params="headerLabel: lng_stockInquiryResult">
+    <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+
+ <main id="stockInquiry">
+    <div class="container">
+        
+        <div class="title">
+          <span data-bind="text: lng_overview"></span>
+        </div>
+        <ul>
+            <li class="row_content">
+                <div class="oj-flex">
+                  <div class="oj-flex-item oj-flex-direction-column oj-hybrid-padding box" style="flex-wrap: nowrap">
+
+                    <div class="oj-flex row"> 
+                        <strong class="blue" data-bind="text: currStock.ITEM_CODE"></strong>
+                    </div>
+
+                    <div class="oj-flex row"> 
+                        <div class="oj-sm-5">
+                            <span data-bind="text: lng_description"></span>
+                        </div>
+                        <div class="oj-sm-7">
+                          <span data-bind="text: currStock.DESCRIPTION"></span>
+                        </div>
+                   </div>
+
+                    <div class="oj-flex row"> 
+                        <div class="oj-sm-5">
+                          <span data-bind="text: lng_subInventory"></span>
+                        </div>
+                        <div class="oj-sm-7">
+                          <span data-bind="text: currStock.SUBINVENTORY"></span>
+                        </div>
+                    </div>
+
+                    <div class="oj-flex row"> 
+                      <div class="oj-sm-5">
+                        <span data-bind="text: lng_lot"></span>
+                      </div>
+                      <div class="oj-sm-7">
+                        <span data-bind="text: currStock.LOT"></span>
+                      </div>
+                   </div>
+
+                  </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="title">
+          <span data-bind="text: lng_reservationStatus"></span>
+        </div>
+        <ul>
+            <li class="row_content">
+                <div class="oj-flex">
+                  <div class="oj-flex-item oj-flex-direction-column oj-hybrid-padding" style="flex-wrap: nowrap">
+                    <div class="oj-flex row"> 
+                      <div class="oj-sm-4 blue" align="center">
+                        <div> 
+                          <span class="big" data-bind="text: currStock.ONHAND_QTY"></span>
+                        </div>
+                        <div>
+                          <span data-bind="text: lng_onhand"></span>
+                        </div> 
+                      </div>
+                      <div class="oj-sm-4 red" align="center">
+                        <div> 
+                          <span class="big" data-bind="text: currStock.RESRV_QTY"></span>
+                        </div>
+                        <div>
+                          <span data-bind="text: lng_reservation"></span>
+                        </div> 
+                      </div>
+                      <div class="oj-sm-4 green" align="center">
+                        <div> 
+                          <span class="big" data-bind="text: currStock.AVLB_QTY"></span>
+                        </div>
+                        <div>
+                          <span data-bind="text: lng_available"></span>
+                        </div> 
+                      </div>
+                    </div>          
+                  </div>
+                </div>
+            </li>
+        </ul>
+        
+        <div data-bind="visible: reservationEnabled">
+            <ul id="stockDetailview" aria-label="stock list"
+               data-bind="ojComponent: {component: 'ojListView', 
+                           data: reservations, 
+                           item: {template: 'item_template', selectionMode: 'single', focusable: false, selectable: true}, 
+                           drillMode: 'none'}">
+            </ul>
+        </div>
+        
+        <script type="text/html" id="item_template">
+          <li class="row_noarrow" data-bind="attr: {id: ITEM_ID}">
+            <div class="oj-flex">
+              <div class="oj-flex-item" style="flex-wrap: nowrap">
+                <div class="oj-flex row"> 
+                  <div class="oj-sm-10">
+                    <span data-bind="text: CUSTOMER_NAME"></span>
+                  </div>
+                  <div class="oj-sm-2">
+                    <span data-bind="text: RESERVATION_QUANTITY"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </script>
+
+
+    </div>
+ </main>
+  
+
+    

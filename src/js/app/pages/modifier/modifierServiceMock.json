@@ -1,0 +1,54 @@
+{
+    "O_MODIFIER_TBL": {
+        "O_MODIFIER_TBL_ITEM": [
+            {
+                "MODIFIER_NUMBER": "111111",
+                "FROM_STAGING": "N",                        
+                "MODIFIER_TYPE": "1",
+                "MODIFIER_ITEM_ID": "1792246",  
+                "MODIFIER_VALUE_FROM": "1",    
+                "GET_ITEM_ID": "1792246",  
+                "GET_ITEM_NUMBER": null,  
+                "GET_QUANTITY": "1",
+                "GET_PRICE": "0",
+                "GET_PROMOTION_NATURE": "AP",
+                "GET_PERCENT": null,
+                "MODIFIER_START_DATE": "2016-02-23",
+                "MODIFIER_END_DATE": "2016-02-24",
+                "MODIFIER_SHIP_TO": "N"
+            },
+            {
+                "MODIFIER_NUMBER": "111111",
+                "FROM_STAGING": "Y",                        
+                "MODIFIER_TYPE": "1",
+                "MODIFIER_ITEM_ID": "1792246",  
+                "MODIFIER_VALUE_FROM": "2",    
+                "GET_ITEM_ID": "1792246",  
+                "GET_ITEM_NUMBER": null,  
+                "GET_QUANTITY": "1",
+                "GET_PRICE": "0",
+                "GET_PROMOTION_NATURE": "AP",
+                "GET_PERCENT": null,
+                "MODIFIER_START_DATE": "2016-02-23",
+                "MODIFIER_END_DATE": "2016-02-24",
+                "MODIFIER_SHIP_TO": "N"
+            },
+            {
+                "MODIFIER_NUMBER": "333333",
+                "FROM_STAGING": "N",                        
+                "MODIFIER_TYPE": "1",
+                "MODIFIER_ITEM_ID": "1792246",  
+                "MODIFIER_VALUE_FROM": "1",    
+                "GET_ITEM_ID": "1792246",  
+                "GET_ITEM_NUMBER": null,  
+                "GET_QUANTITY": "1",
+                "GET_PRICE": "0",
+                "GET_PROMOTION_NATURE": "AP",
+                "GET_PERCENT": null,
+                "MODIFIER_START_DATE": "2016-02-23",
+                "MODIFIER_END_DATE": "2016-02-24",
+                "MODIFIER_SHIP_TO": "N"
+            }
+        ]
+    }
+}

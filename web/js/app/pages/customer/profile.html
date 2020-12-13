@@ -1,0 +1,399 @@
+<!-- header_template for order desk admin -->
+<script type="text/html" id="admin_header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: $data.headerTitle">
+        <nav-back-button params="click: function() { $root.router.go('customer/customerList') }"></nav-back-button>
+        <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+        <nav-buttons side="right4"><input type="image" src="img/app/btn_header_syn.png" data-bind="click: function() { $parents[1].refresh() }"/></nav-buttons>        
+    </header-bar>
+</script>   
+
+<!-- header_template for non-order desk admin -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: $data.headerTitle">
+        <nav-back-button params="click: function() { $root.router.go('customer/customerList') }"></nav-back-button>
+        <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+    </header-bar>
+</script>  
+
+<!-- display header -->
+<span data-bind="template: {name: $data.isOrderDeskAdmin() ? 'admin_header_template' : 'header_template'}"></span>
+
+<main id="profile">
+    <!-- template for rendering navigation bar items -->
+    <script type="text/html" id="navTemplate">
+        <li><a href="#">
+                <span data-bind="css: $data['iconClass']"></span>
+                <!-- ko text: $data['name'] --> <!--/ko-->
+            </a>
+        </li>
+    </script>
+
+    <!-- Navigation Bar -->
+    <div id="navigationBar" role="navigation" class="oj-hybrid-applayout-navbar">
+        <div class="oj-navigationlist-stack-icon-label"
+             data-bind="ojComponent:{component: 'ojNavigationList', navigationLevel: 'page',
+              optionChange: navChangeHandler, selection: $data.navStateId,
+              edge: 'top', item: {template: 'navTemplate'}, data: navDataSource}">
+        </div>
+    </div>
+    
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <div data-bind="text: lng_overview"></div>
+            </li>
+            <li>
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td width="5%"><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                            <td width="35%" data-bind="text: lng_customerNo"></td>
+                            <td width="60%"><span data-bind="text: customerNo"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_shipping_ad_blue.png" alt="" /></div></td>
+                            <td data-bind="text: lng_shippingAddress"></td>
+                            <td><span data-bind="text: shipAddress"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_billing_ad_blue.png" alt="" /></div></td>
+                            <td data-bind="text: lng_billingAddress"></td>
+                            <td><span data-bind="text: billAddress"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li class="heading2">
+                <div data-bind="text: lng_overdueAging"></div>
+                <table>
+                    <tr>
+                        <td><span data-bind="text: lng_totalOutstanding"/></td>
+                        <td><span data-bind="currency: agingTotalAmount, symbol:'$'"/></td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <div class="box">
+                    <div id="tabs" style="font-size: 1em;" data-bind="ojComponent:{component: 'ojTabs'}">
+                        <!-- tab bar -->
+                        <ul>
+                            <li><span data-bind="text: lng_0days" /></li>
+                            <li><span data-bind="text: lng_0_30days" /></li>
+                            <li><span data-bind="text: lng_31_60days" /></li>
+                            <li><span data-bind="text: lng_over60days" /></li>
+                        </ul>
+                        
+                        <div id="tabs-1">
+                            <div id="gauge-1" class="gauge"
+                              data-bind="ojComponent: {
+                                           component: 'ojStatusMeterGauge',
+                                           min: 0,
+                                           max: agingTotalAmount,
+                                           value: $data.agingAmount1,
+                                           innerRadius: .95,
+                                           step: 1,
+                                           orientation: 'circular',
+                                           plotArea: {rendered: 'on'},
+                                           metricLabel: {rendered:'off'},
+                                           center: {template: 'template-1'},
+                                           readOnly: true
+                                         }"
+                              style="margin-left:auto; margin-right:auto; width:200px; height:200px;">
+                            </div>
+                          </div>
+                        <div id="tabs-2">
+                            <div id="gauge-2" class="gauge"
+                              data-bind="ojComponent: {
+                                           component: 'ojStatusMeterGauge',
+                                           min: 0,
+                                           max: agingTotalAmount,
+                                           value: agingAmount2,
+                                           innerRadius:.95,
+                                           step: 1,
+                                           orientation: 'circular',
+                                           plotArea: {rendered: 'on'},
+                                           metricLabel: {rendered:'off'},
+                                           center: {template: 'template-2'},
+                                           readOnly: true
+                                         }">
+                            </div>
+                        </div>
+                        <div id="tabs-3">
+                            <div id="gauge-3" class="gauge"
+                              data-bind="ojComponent: {
+                                           component: 'ojStatusMeterGauge',
+                                           min: 0,
+                                           max: agingTotalAmount,
+                                           value: agingAmount3,
+                                           innerRadius:.95,
+                                           step: 1,
+                                           orientation: 'circular',
+                                           plotArea: {rendered: 'on'},
+                                           metricLabel: {rendered:'off'},
+                                           center: {template: 'template-3'},
+                                           readOnly: true
+                                         }">
+                            </div>
+                        </div>
+                        <div id="tabs-4">
+                            <div id="gauge-4" class="gauge"
+                              data-bind="ojComponent: {
+                                           component: 'ojStatusMeterGauge',
+                                           min: 0,
+                                           max: agingTotalAmount,
+                                           value: agingAmount4,
+                                           innerRadius:.95,
+                                           step: 1,
+                                           orientation: 'circular',
+                                           plotArea: {rendered: 'on'},
+                                           metricLabel: {rendered:'off'},
+                                           center: {template: 'template-4'},
+                                           readOnly: true
+                                         }">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="heading">
+                <div data-bind="text: lng_salesPerformance"></div>
+            </li>
+            <li>
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td style="color: #002d72" width="10%" data-bind="text: lng_target"></td>
+                            <td colspan="3" align="right" width="90%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(salesTarget())"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: ''"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: lng_lastYear"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: lng_YTD"></span></td>
+                        </tr>                         
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: lng_volume"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(sumLastYtdVolume())"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(sumThisYtdVolume())"></span></td>
+                        </tr> 
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: lng_net"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(netLastYtdVolume())"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(netThisYtdVolume())"></span></td>
+                        </tr>   
+                    </table>
+                </div>
+            </li>
+            <li class="heading">
+                <div data-bind="text: lng_lastYearAndYTDPerformance"></div>
+            </li>
+        </ul>
+        <table class="itemList"
+            data-bind="ojComponent: {
+                        component: 'ojTable',
+                        data: productPerformance,
+                        columnsDefault: {sortable: 'none'},
+                        columns: [
+                            {headerTemplate: 'itemTemplate'},
+                            {headerTemplate: 'itemTemplate2'}],
+                        rowTemplate: 'rowTemplate',
+                        rootAttributes: {'style': 'width:100%;overflow-x:hidden'}
+            }">
+        </table>
+    </div>
+</main>
+
+<script type="text/html" id="template-1">
+   <div data-bind="style: {
+                     position: 'absolute',
+                     width: innerBounds.width + 'px',
+                     height: innerBounds.width + 'px',
+                     top: innerBounds.y + 'px',
+                     left: innerBounds.x + 'px',
+                     textAlign:'center',
+                     pointerEvents: 'none'
+                   }">
+     <!--<div data-bind="style: {
+                       backgroundImage: 'url(\'css/images/icon_profile_overdue_aging.png\')',
+                       marginLeft: 'auto',
+                       marginRight: 'auto',
+                       backgroundSize: 'cover',
+                       borderRadius: '20%',
+                       width: '50px',
+                       height: '50px'
+                     }"/>-->
+     <div data-bind="style: {
+                       backgroundImage: 'url(\'img/app/icon_profile_overdue_aging.png\')',
+                       marginLeft: 'auto',
+                       marginRight: 'auto',
+                       backgroundSize: 'cover',
+                       width: '30px',
+                       height: '30px'
+                     }"/>
+     <div style='margin-top:15px;'>
+         <div style='font-size:16px;'>HKD$</div>
+         <div style='margin-top:5px;'>
+            <b><span style='font-size:24px' data-bind="text: $parent.decimalNumberConverter.format($parent.agingAmount1())"/></b>
+         </div>
+         <div style='margin-top:5px;font-size:14px;color:black'><span data-bind="text: $parent.agingPeriod1" /></div>
+     </div>
+  </div>
+</script>
+
+<script type="text/html" id="template-2">
+   <div data-bind="style: {
+                     position: 'absolute',
+                     width: innerBounds.width + 'px',
+                     height: innerBounds.width + 'px',
+                     top: innerBounds.y + 'px',
+                     left: innerBounds.x + 'px',
+                     textAlign:'center',
+                     pointerEvents: 'none'
+                   }">
+     <div data-bind="style: {
+                       backgroundImage: 'url(\'img/app/icon_profile_overdue_aging.png\')',
+                       marginLeft: 'auto',
+                       marginRight: 'auto',
+                       backgroundSize: 'cover',
+                       width: '30px',
+                       height: '30px'
+                     }"/>
+     <div style='margin-top:15px;'>
+         <div style='font-size:16px;'>HKD$</div>
+         <div style='margin-top:5px;'>
+            <b><span style='font-size:24px' data-bind="text: $parent.decimalNumberConverter.format($parent.agingAmount2())"/></b>
+         </div>
+         <div style='margin-top:5px;font-size:14px;color:black'><span data-bind="text: $parent.agingPeriod2" /></div>
+     </div>
+  </div>
+</script>
+
+<script type="text/html" id="template-3">
+   <div data-bind="style: {
+                     position: 'absolute',
+                     width: innerBounds.width + 'px',
+                     height: innerBounds.width+ 'px',
+                     top: innerBounds.y + 'px',
+                     left: innerBounds.x + 'px',
+                     textAlign:'center',
+                     pointerEvents: 'none'
+                   }">
+     <div data-bind="style: {
+                       backgroundImage: 'url(\'img/app/icon_profile_overdue_aging.png\')',
+                       marginLeft: 'auto',
+                       marginRight: 'auto',
+                       backgroundSize: 'cover',
+                       width: '30px',
+                       height: '30px'
+                     }"/>
+     <div style='margin-top:15px;'>
+         <div style='font-size:16px;'>HKD$</div>
+         <div style='margin-top:5px;'>
+            <b><span style='font-size:24px' data-bind="text: $parent.decimalNumberConverter.format($parent.agingAmount3())"/></b>
+         </div>
+         <div style='margin-top:5px;font-size:14px;color:black'><span data-bind="text: $parent.agingPeriod3" /></div>
+     </div>
+  </div>
+</script>
+
+<script type="text/html" id="template-4">
+   <div data-bind="style: {
+                     position: 'absolute',
+                     width: innerBounds.width + 'px',
+                     height: innerBounds.width+ 'px',
+                     top: innerBounds.y + 'px',
+                     left: innerBounds.x + 'px',
+                     textAlign:'center',
+                     pointerEvents: 'none'
+                   }">
+     <div data-bind="style: {
+                       backgroundImage: 'url(\'img/app/icon_profile_overdue_aging.png\')',
+                       marginLeft: 'auto',
+                       marginRight: 'auto',
+                       backgroundSize: 'cover',
+                       width: '30px',
+                       height: '30px'
+                     }"/>
+     <div style='margin-top:15px;'>
+         <div style='font-size:16px;'>HKD$</div>
+         <div style='margin-top:5px;'>
+            <b><span style='font-size:24px' data-bind="text: $parent.decimalNumberConverter.format($parent.agingAmount4())"/></b>
+         </div>
+         <div style='margin-top:5px;font-size:14px;color:black'><span data-bind="text: $parent.agingPeriod4" /></div>
+     </div>
+  </div>
+</script>
+
+<script type="text/html" id="itemTemplate">
+  <th style="padding-left: 5%">
+    <span data-bind="text: $parent.lng_item" ></span>
+  </th>
+</script>
+<script type="text/html" id="itemTemplate2">
+</script>
+
+<script type="text/html" id="lastYearTemplate">
+  <th>
+    <span data-bind="text: $parent.lng_lastYear"></span>
+  </th>
+</script>
+
+<script type="text/html" id="ytdTemplate">
+  <th>
+    <span data-bind="text: $parent.lng_YTD"></span>
+  </th>
+</script>
+
+<script type="text/html" id="uomTemplate">
+  <th>
+    <span data-bind="text: $parent.lng_uom"></span>
+  </th>
+</script>
+
+<!--
+<script type="text/html" id="rowTemplate">
+    <tr class="rowData">
+        <td style="padding-left: 5%">
+            <span data-bind="text: PRODUCT_DESCRIPTION"/>
+        </td>
+        <td>
+            <span data-bind="text: LAST_YTD_QTY"/>
+        </td>
+        <td>
+            <span data-bind="text: THIS_YTD_QTY"/>
+        </td>
+        <td>
+            <span data-bind="text: UOM"/>
+        </td>
+    </tr>
+</script>
+-->
+<script type="text/html" id="rowTemplate">
+    <tr class="rowData">
+        <td style="padding-left: 5%">
+            <table class="dataTable">
+                <tr>
+                    <td colspan="5" style="padding-bottom: 0.2rem;"><span data-bind="text: PRODUCT_DESCRIPTION" class="desc content"/></td>
+                </tr>
+                 <tr>
+                    <td width="20%">
+                        <span data-bind="text: $parent.lng_lastYear" class="green"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: LAST_YTD_QTY" class="green content"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: $parent.lng_YTD" class="red"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: THIS_YTD_QTY" class="red content"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: UOM" class="blue content"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</script>

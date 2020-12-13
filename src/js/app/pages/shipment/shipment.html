@@ -1,0 +1,75 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_shipment">
+    <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+</header-bar>
+
+<main id="changeShipment">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <div data-bind="text:lng_itemsDetail"></div>
+            </li>
+            <li class="row" data-bind="foreach:cartItem">
+                <div class="box">
+                    <div class="itemDetail">
+                        <div data-bind="text:$data.product().prod_code"></div>
+                        <div data-bind="text:$data.product().prod_desc"></div>
+                        <div>Delivery Status: <span data-bind="text:$data.product().delivery_status"/></div>
+                        <div>Total Ordered Quantity: <span data-bind="text: $parent.totalQty"/></div>
+                    </div>
+                </div>
+            </li>
+            <li class="heading">
+                <div data-bind="text:lng_shipment"></div>
+                <div class="rightIcon"><a data-bind="click: addShipment, visible: allowAdd"><img src="img/app/btn_add_new.png"></a></div>
+            </li>
+            <li>
+                <div class="box">
+                    <table class="summary">
+                        <tbody>
+                            <tr>
+                                <td width="20%" valign="center" data-bind="text:lng_shipmentDate"></td>
+                                <td width="30%" valign="center" data-bind="text:lng_quantity"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="scroller">
+            <ul>
+                <li class="row" data-bind="foreach:allShipment">
+                        <div class="editContainer">  
+                            <div class="date">
+                                <div  style="width: 25%;padding: 0 0 0 0; border:none">
+                                    <input data-bind="ojComponent: {component: 'ojInputDate', 
+                                    min: $parent.minShipmentDate,
+                                    value: $data.shipmentDate, 
+                                    converter: $parent.dateConverter}">
+                                </div>
+                            </div>
+                            <div class="quantity">
+                                <div style="width: 25%;padding: 0 0 0 0; border:none">
+                                    <input data-bind="ojComponent: {
+                                component: 'ojInputNumber', 
+                                max: $parent.totalQty,
+                                min:1, 
+                                step:1, 
+                                value:$data.quantity}"/>
+                                </div>
+                            </div>
+                            <div class="remove">
+                                    <a data-bind="click: $parent.removeShipment, visible: $parent.allowRemove"><img src="img/app/btn_delete_blue.png"></a>
+                            </div>
+                        </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btnContainer">
+            <a class="done" data-bind="click: done,text:lng_done"></a>
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,302 @@
+<!-- header_template -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: lng_title">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <nav-buttons side="right2">
+            <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        </nav-buttons>
+        <nav-buttons side="right3">
+            <input type="image" src="img/icons/toastBg/edit.svg" data-bind="click: function() { $parents[1].save()}"/>
+        </nav-buttons>        
+    </header-bar>
+</script>  
+
+<div id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper">
+    <div class="oj-offcanvas-inner-wrapper">
+        <!-- display header -->
+        <span data-bind="template: {name: 'header_template'}"></span>
+
+        <main id="reviewLoading">
+            <div role="main" class="list-content">
+                <!-- input license and barcode --> 
+                <div class="inputBarcode">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <table>
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_orderNo"></td>
+                                        <td width="35%">
+                                            <input id="text-orderNo" type="text" data-bind="ojComponent: {component: 'ojInputText', rootAttributes: {style:'max-width:35vh'}, value: orderNo}" autocomplete="false"/>                                
+                                        </td>  
+                                        <td width="15%"><span data-bind="text: lng_customerNo"></td>
+                                        <td width="35%">
+                                            <input id="text-customerNo" type="text" data-bind="ojComponent: {component: 'ojInputText', rootAttributes: {style:'max-width:35vh'}, value: customerNo}" autocomplete="false"/>                                
+                                        </td>                                         
+                                    </tr>     
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_customerName"></td>
+                                        <td width="35%">
+                                            <input id="text-customerName" type="text" data-bind="ojComponent: {component: 'ojInputText', rootAttributes: {style:'max-width:35vh'}, value: customerName}" autocomplete="false"/>                                
+                                        </td>  
+                                        <td width="15%"><span data-bind="text: lng_shipAddress1"></td>
+                                        <td width="35%">
+                                            <input id="text-shipAddress1" type="text" data-bind="ojComponent: {component: 'ojInputText', rootAttributes: {style:'max-width:35vh'}, value: shipAddress}" autocomplete="false"/>                                
+                                        </td>                                         
+                                    </tr>                                      
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_fromDate"></td>
+                                        <td width="35%">                                
+                                            <input id="text-fromDate" data-bind="ojComponent: {component: 'ojInputDate', rootAttributes: {style:'max-width:35vh'},
+                                            value: fromDate, 
+                                            converter: dateConverter}">
+                                        </td>  
+                                        <td width="15%"><span data-bind="text: lng_toDate"></td>
+                                        <td width="35%">
+                                            <input id="text-toDate" data-bind="ojComponent: {component: 'ojInputDate', rootAttributes: {style:'max-width:35vh'},
+                                            min: fromDate,
+                                            max: maxDate,
+                                            value: toDate, 
+                                            converter: dateConverter}">                                        
+                                        </td>                                          
+                                    </tr> 
+                                </table>                             
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="box oj-dialog-footer">
+                                <button id="button-search" data-bind="ojComponent: {component: 'ojButton', label: lng_search}, click: search"> </button>
+                                <button id="button-reset" data-bind="ojComponent: {component: 'ojButton', label: lng_reset}, click: reset"> </button>
+                                <button id="button-export" data-bind="ojComponent: {component: 'ojButton', label: lng_export}, click: report"> </button>
+                            </div>                             
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </main>
+        
+        <!-- Dialog Box : Detail Page -->
+        <div style="display:none" id="scrollingDialog" title="Detail" 
+             data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide',  modality: 'modeless',
+                                    rootAttributes: { style: 'width: 860px; height: 600px;'}
+                                    }">
+            <div class="oj-dialog-body" id="form-container">
+                <div class="oj-form oj-md-labels-inline oj-md-labels-nowrap oj-form-no-dividers oj-lg-form-across">  
+                    <h3 class="oj-header-border"><span data-bind="text: lng_documentInfo"/></h3>
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="documentNo"><B><span data-bind="text: lng_documentNo"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="documentNo" data-bind="text: DOCUMENT_NO"/></div>   
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="documentDate"><B><span data-bind="text: lng_documentDate"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="documentDate" data-bind="text: DOCUMENT_DATE"/></div>                        
+                    </div>
+                    <h3 class="oj-header-border"><span data-bind="text: lng_customerInfo"/></h3>
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="customerNo"><B><span data-bind="text: lng_customerNo"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="customerNo" data-bind="text: CUSTOMER_NO"/></div>	 
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="customerName"><B><span data-bind="text: lng_customerName"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="customerName" data-bind="text: CUSTOMER_NAME"/></div>	
+                    </div>     
+                    
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="shipAddress1"><B><span data-bind="text: lng_shipAddress1"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="shipAddress1" data-bind="text: SHIP_TO_ADDRESS_LINE_1"/></div>	 
+                        <div class="oj-sm-flex-1"></div>
+                        <div class="oj-sm-flex-1"></div>	
+                    </div>                      
+                    
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="shipAddress2"><B><span data-bind="text: lng_shipAddress2"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="shipAddress2" data-bind="text: SHIP_TO_ADDRESS_LINE_2"/></div>	 
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="shipAddress3"><B><span data-bind="text: lng_shipAddress3"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="shipAddress3" data-bind="text: SHIP_TO_ADDRESS_LINE_3"/></div>	
+                    </div>
+                    <h3 class="oj-header-border"><span data-bind="text: lng_orderItemInfo"/></h3>
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="salesOrderNo"><B><span data-bind="text: lng_orderNo"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="salesOrderNo" data-bind="text: SALES_ORDER_NO"/></div>                        
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="currency"><B><span data-bind="text: lng_currency"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="currency" data-bind="text: CURRENCY"/></div>
+                    </div>	
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="lineNo"><B><span data-bind="text: lng_lineNo"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="lineNo" data-bind="text: LINE_NO"/></div>                          
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="productCode"><B><span data-bind="text: lng_product"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="productCode" data-bind="text: PRODUCT_NO"/></div>                        
+                    </div>
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="deliveryQty"><B><span data-bind="text: lng_deliveryQuantity"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="deliveryQty" data-bind="text: DELIVERY_QUANTITY"/></div>	  
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="receiveQty"><B><span data-bind="text: lng_receiveQuantity"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="receiveQty" data-bind="text: RECEIVE_QUANTITY"/></div>		  
+                    </div>	
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="unitPrice"><B><span data-bind="text: lng_unitPrice"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="unitPrice" data-bind="text: UNIT_PRICE"/></div>
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="totalAmount"><B><span data-bind="text: lng_totalAmount"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="totalAmount" data-bind="text: TOTAL_AMOUNT"/></div>	  
+                    </div>	
+                    <h3 class="oj-header-border"><span data-bind="text: lng_depositItemInfo"/></h3>
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="depositProductCode"><B><span data-bind="text: lng_product"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="depositProductCode" data-bind="text: DEPOSIT_PRODUCT_NO"/></div>
+                        <div class="oj-sm-flex-1"></div>
+                        <div class="oj-sm-flex-1"></div>                        
+                    </div>	
+                    <div class="oj-flex">
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="depositUnitPrice"><B><span data-bind="text: lng_unitPrice"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="depositUnitPrice" data-bind="text: DEPOSIT_UNIT_PRICE"/></div>
+                        <div style="background-color: lightblue" class="oj-sm-flex-1"><label for="depositTotalAmount"><B><span data-bind="text: lng_totalAmount"/></B></label></div>
+                        <div class="oj-sm-flex-1"><span id="depositTotalAmount" data-bind="text: DEPOSIT_TOTAL_AMOUNT"/></div>	  
+                    </div>		
+                </div>
+            </div>
+        </div>
+        
+        <div id="tableContainer" class="oj-flex-item">
+            <table id="documentTable" summary="Document List" aria-label="Documents Table"
+                   data-bind="ojComponent: {component: 'ojTable',
+                    data: datasource,
+                    editMode: 'rowEdit',
+                    columns: [{headerText: '#',
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'rowCount'},
+                              {headerText: lng_documentType,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'DOCUMENT_TYPE'},     
+                              {headerText: lng_orderNo,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'SALES_ORDER_NO'},
+                              {headerText: lng_paymentTerm,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'PAYMENT_TERM'},
+                              {headerText: lng_customerNo,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'CUSTOMER_NO'},                          
+                              {headerText: lng_customerName,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'CUSTOMER_NAME'},
+                              {headerText: lng_shipAddress1,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'SHIP_TO_ADDRESS_LINE_1'},                             
+                              {headerText: lng_productDescription,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'PRODUCT_DESCRIPTION'},    
+                              {headerText: lng_uom,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'UOM'},   
+                              {headerText: lng_actualQuantity,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'actualQty'},                           
+                              {headerText: lng_outWarehouse,
+                               headerClassName: 'oj-helper-text-align-center',
+                               className: 'oj-helper-text-align-center oj-read-only',
+                               sortProperty: 'OUT_WAREHOUSE'},
+                              {headerText: lng_quantity,
+                               headerClassName: 'oj-helper-text-align-center',
+                               className: 'oj-helper-text-align-center oj-read-only',
+                               sortProperty: 'QUANTITY_SHIPPED'},
+                              {headerRenderer: process_flag_hdr_func, 
+                               className: 'oj-helper-text-align-middle', 
+                               field: 'PROCESS_FLAG'},
+                              {headerText: lng_lindeRemark,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'LINDE_REMARK'},                           
+                              {headerText: lng_lot,
+                               headerClassName: 'oj-helper-text-align-center',
+                               className: 'oj-helper-text-align-center oj-read-only',
+                               sortProperty: 'LOT_NUMBER'},
+                              {headerText: lng_expiryDate,
+                               headerClassName: 'oj-helper-text-align-center',
+                               className: 'oj-helper-text-align-center oj-read-only',
+                               sortProperty: 'EXPIRY_DATE'},
+                              {headerText: lng_actualDeliveryDate,
+                               headerClassName: 'oj-helper-text-align-center',
+                               className: 'oj-helper-text-align-center oj-read-only',
+                               sortProperty: 'ACTUAL_DELIVERY_DATE'}
+                       ],
+                    rootAttributes: {'style':'width:100%; height:65vh; overflow-hidden; font-size:10px'},
+                    rowTemplate: getRowTemplate}">
+            </table>
+        </div>
+        
+        <div class="oj-flex">
+            <div class="oj-flex-item"><label for="sumOriginalDelivery"><strong data-bind="text: lng_sumOriginalDelivery" style="color: black"></strong></label></div>
+            <div class="oj-flex-item"><span id="sumOriginalDelivery" data-bind="text: $data.sumOriginalDelivery" style="color: black"></span></div>
+            <div class="oj-flex-item"><label for="sumOutWarehouse"><strong data-bind="text: lng_sumOutWarehouse" style="color: black"></strong></label></div>
+            <div class="oj-flex-item"><span id="sumOutWarehouse" data-bind="text: $data.sumOutWarehouse" style="color: black"></span></div>	
+            <div class="oj-flex-item"><label for="sumPickUp"><strong data-bind="text: lng_sumPickUp" style="color: black"></strong></label></div>
+            <div class="oj-flex-item"><span id="sumPickUp" data-bind="text: $data.sumPickup" style="color: black"></span></div>	
+            <div class="oj-flex-item"><label for="sumDelivery"><strong data-bind="text: lng_sumDelivery" style="color: black"></strong></label></div>
+            <div class="oj-flex-item"><span id="sumDelivery" data-bind="text: $data.sumDelivery" style="color: black"></span></div>	
+        </div>
+
+    </div>
+</div>
+
+<script type="text/html" id="editRowTemplate">
+    <tr>
+        <td><a data-bind="click: function(data, event) { $parent.openDetail($data, data, event)}"><span data-bind="text: rowCount"></span></a></td>
+        <td data-bind="text: documentType"></td>
+        <td data-bind="text: SALES_ORDER_NO"></td>
+        <td data-bind="text: PAYMENT_TERM"></td>        
+        <td data-bind="text: CUSTOMER_NO"></td>
+        <td data-bind="text: CUSTOMER_NAME"></td>
+        <td data-bind="text: SHIP_TO_ADDRESS_LINE_1"></td>   
+        <td data-bind="text: PRODUCT_DESCRIPTION"></td>
+        <td data-bind="text: UOM"></td>
+        <td data-bind="text: actualQty"></td>
+        <td>
+            <input type="number" data-bind="value: $data.OUT_WAREHOUSE, attr: {step: 1}, rootAttributes: {'style':'font-size:10px'}" style="width: 100%"/>
+        </td>          
+        <!-- ko if: $data.isDeliveryNote -->
+        <td>
+            <input type="number" data-bind="value: $data.QUANTITY_SHIPPED, attr: {min: 0, max: MAX_QTY, step: 1}, rootAttributes: {'style':'font-size:10px'}" style="width: 100%"/>		
+        </td> 
+        <!-- /ko -->
+        <!-- ko if: $data.isPickupNote -->
+        <td>
+            <input type="number" data-bind="value: $data.QUANTITY_RECEIVED, attr: {max: 0, step: 1}, rootAttributes: {'style':'font-size:10px'}" style="width: 100%"/>	
+        </td>   
+        <!-- /ko -->
+        <td>
+            <input type="checkbox" data-bind="checked: $data.PROCESS_FLAG"/>
+        </td>
+        <td>
+            <input type="text" id="lindeRemark" data-bind="value: $data.LINDE_REMARK, rootAttributes: {'style':'font-size:10px'}"/>
+        </td>        
+        <!-- ko if: $data.isLotReadOnly -->
+        <td data-bind="text: $data.LOT_NUMBER"></td>
+        <!-- /ko -->
+        <!-- ko ifnot: $data.isLotReadOnly -->
+        <td>
+            <input type="text" id="lot" data-bind="value: $data.LOT_NUMBER, rootAttributes: {'style':'font-size:10px'}"/>
+        </td>
+        <!-- /ko --> 
+        <!-- ko if: $data.isExpReadOnly -->
+        <td data-bind="text: $data.expiry"></td>
+        <!-- /ko -->
+        <!-- ko ifnot: $data.isExpReadOnly -->
+        <td>
+            <input id="expiryDate" type="date" data-bind="datePicker: $data.EXPIRY_DATE, rootAttributes: {'style':'font-size:10px'}">
+        </td>
+        <!-- /ko -->        
+        <td>
+            <input id="actualDeliveryDate" type="date" data-bind="datePicker: $data.ACTUAL_DELIVERY_DATE, rootAttributes: {'style':'font-size:10px'}">
+        </td>        
+    </tr>
+</script>

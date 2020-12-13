@@ -1,0 +1,139 @@
+
+<!-- header -->
+<header-bar role="banner" params="headerLabel: $data.headerTitle">
+    <nav-back-button params="label: ' ', click: function() { $parent.goBack() }"></nav-back-button>
+    <div class="syncDate">
+        <span data-bind="text: $parent.lng_quotationDetail"></span>
+    </div>    
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+
+<main id="quotationDetail" class="">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <span data-bind="text: lng_overview"></span>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="tag green"><span data-bind="text:$data.status"></span></div>
+                    <div class="title"><span data-bind="text:$data.cust_name"></span></div>
+                    <table>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_quotationNo"></span></td>
+                            <td><span data-bind="text:$data.quotation_no"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_quotationDate"></span></td>
+                            <td><span data-bind="text:moment($data.quotation_date()).format('DD-MMM-YYYY').toUpperCase()"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_items_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_totalItems"></span></td>
+                            <td><span data-bind="text:$data.totalItems"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_attention"></span></td>
+                            <td><span data-bind="text:$data.attention"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_salesTerms"></span></td>
+                            <td><select id="select" class="selectBox" data-bind="ojComponent: {component: 'ojSelect', disabled: true, rootAttributes: {style:'max-width:30vh'}, value:$data.salesTerms, options:$data.availableSalesTerms}" ></select></td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_cost_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_total"></span></td>
+                            <td><span data-bind="currency:$data.total, symbol:'$'"></span></td>
+                        </tr>
+                        -->
+                    </table>
+                </div>
+            </li>
+            <!-- ko if: showRealCustomer -->
+            <li class="heading">
+                <span data-bind="text: lng_realCustomer"></span>
+            </li>    
+            <li>
+                <div class="box">
+                    <input id="text-input" readOnly="true"  type="text" data-bind="ojComponent: {component: 'ojInputText', value: real_customer}" placeholder="Customer Name"/>
+                </div>
+            </li>
+            <!-- /ko -->
+            <li class="heading">
+                <span data-bind="text: lng_remarks"></span>
+            </li>
+            <li>
+                <div class="box">
+                    <textarea id="remarks" row="5" readOnly="true" type="text" data-bind="ojComponent: {component: 'ojTextArea', value: $data.remarks}"></textarea>
+                </div>
+            </li>
+            <li class="heading">
+                <span data-bind="text: lng_itemsDetail"></span>
+            </li>
+            <li class="row" data-bind="foreach:quotationItems">
+                <div class="box">
+                    <div class="header">
+                        <div class="code">
+                            <span data-bind="text:$data.ORDERED_ITEM" />
+                            <a data-bind="click: $parent.modifier, visible: $data.MODIFIER_EXISTS">
+                                <img src="img/app/icon_beverages_wine_off.png" style="width:15px; height:15px;"/>
+                            </a>                            
+                        </div>
+                        <div class="amount">HKD<span data-bind="currency:$data.UNIT_SELLING_PRICE, symbol:'$'" /></div>
+                    </div>
+                    <div class="itemDetail">
+                        <div><span data-bind="text:$data.PRODUCT_DESCRIPTION" /></div>
+                    </div>
+                    <div class="itemDetail">
+                        <div><span data-bind="text:$data.REMARK" /></div>
+                    </div>                    
+                </div>
+                <div class="editContainer">
+                    <div class="lot">
+                        <table>
+                            <tr>
+                                <td valign="middle"><span data-bind="text: $parent.lng_lot"></span></td>
+                                <td valign="middle">
+                                    <!--TODO missing field, should be shown if backend ready -->
+                                    <!--span data-bind="text:$data.product().lot"></span-->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="qty">
+                        <table>
+                            <tr>
+                                <td valign="middle" style="width: 50%"><span data-bind="text: $parent.lng_qty"></span></td>
+                                <!--td valign="middle"><img src="img/app/btn_minus_blue.png" alt=""></td-->
+                                <td valign="middle" style="width: 50%"><span data-bind="text: $data.ORDERED_QUANTITY"></span></td>
+                                <!--td valign="middle"><img src="img/app//btn_add_blue.png" alt=""></td-->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--        
+        <div class="itemsDetailSummary">
+            <table>
+                <tr>
+                    <td><span data-bind="text: lng_total"></span></td>
+                    <td align="right">HKD<span data-bind="currency:$data.total, symbol:'$'"></span></td>
+                </tr>
+            </table>
+        </div>
+        -->
+        
+        <div class="btnContainer">
+            <a class="leftButton" data-bind="click: copyQuotation"><span data-bind="text: lng_copyQuotation"></span></a>
+            <a class="rightButton" data-bind="click: expressCopy"><span data-bind="text: lng_expressCopy"></span></a>
+        </div>
+      
+    </div>
+</main>
+

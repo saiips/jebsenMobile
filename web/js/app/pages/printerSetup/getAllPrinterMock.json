@@ -1,0 +1,39 @@
+{
+	"items": [{
+			"model": "XXXXJ164801336",
+			"mac": "AC:3F:A4:5D:93:D5",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801346",
+			"mac": "AC:3F:A4:5D:6A:5D",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801386",
+			"mac": "AC:3F:A4:5D:6C:37",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801426",
+			"mac": "AC:3F:A4:5D:9B:4C",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801431",
+			"mac": "AC:3F:A4:5D:6C:33",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801438",
+			"mac": "AC:3F:A4:5D:9B:C9",
+			"environment": "prd",
+			"active": "Y"
+		}, {
+			"model": "XXXXJ164801748",
+			"mac": "AC:3F:A4:5D:96:CE",
+			"environment": "prd",
+			"active": "Y"
+		}
+	]
+}

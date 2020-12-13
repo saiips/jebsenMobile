@@ -1,0 +1,140 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: $data.headerTitle">
+    <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+    <div class="syncDate">
+        <span data-bind="text: $parent.lng_checkOut"></span>
+    </div>           
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>    
+</header-bar>
+
+<main id="quickQuotation">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <span data-bind="text: lng_overview"></span>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="title"><span data-bind="text:$data.cust_name"></span></div>
+                    <table>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_orderDate"></span></td>
+                            <td><span data-bind="text:moment($data.order_date()).format('DD-MMM-YYYY').toUpperCase()"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_items_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_totalItems"></td>
+                            <td><span data-bind="text:$data.totalItems()"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_attention"></td>
+                            <td><input id="text-input" type="text" data-bind="ojComponent: {component: 'ojInputText', value: attention}" placeholder="Attention"/></td>
+                        </tr>                        
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_salesTerms"></td>
+                            <td><select id="select" class="selectBox" data-bind="ojComponent: {component: 'ojSelect',rootAttributes: {style:'max-width:30vh'}, value:$data.salesTerms, options:$data.availableSalesTerms}" ></select></td>
+                        </tr>                        
+                        <!--
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_total_cost_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_total"></td>
+                            <td><span data-bind="currency:$data.total(), symbol:'$'"></span></td>
+                        </tr>
+                        -->
+                    </table>
+                </div>
+            </li>
+            <li class="heading">
+                <div><span data-bind="text: lng_overridePriceQuotation"></span></div>
+            </li>        
+            <li>
+                <div class="overrideShipmentDate">
+                    <table>
+                        <tr>
+                            <td><span data-bind="text: lng_startDate"></td>
+                            <td>                                
+                                <input data-bind="ojComponent: {component: 'ojInputDate', rootAttributes: {style:'max-width:60vh'},
+                                    min: minStartDate,                                            
+                                    value: startDate, 
+                                    converter: dateConverter}">
+                            </td>
+                        </tr>    
+                        <tr>
+                            <td><span data-bind="text: lng_endDate"></td>
+                            <td>                                
+                                <input data-bind="ojComponent: {component: 'ojInputDate', rootAttributes: {style:'max-width:60vh'},
+                                    min: minEndDate,                                            
+                                    value: endDate, 
+                                    converter: dateConverter}">
+                            </td>
+                        </tr>                             
+                    </table>
+                </div>
+            </li>            
+            <!-- ko if: showRealCustomer -->
+            <li class="heading">
+                <span data-bind="text: lng_realCustomer"></span>
+            </li>    
+            <li>
+                <div class="box">
+                    <input id="text-input" type="text" data-bind="ojComponent: {component: 'ojInputText', value: real_customer}" placeholder="Customer Name"/>
+                </div>
+            </li>
+            <!-- /ko -->
+            <li class="heading">
+                <span data-bind="text: lng_remarks"></span>
+            </li>
+            <li>
+                <div class="box">
+                    <textarea id="remarks" rows="5" type="text" data-bind="ojComponent: {component: 'ojTextArea', value: $data.remarks}" placeholder="Add your remark here..."></textarea>
+                </div>
+            </li>
+            <li class="heading">
+                <span data-bind="text: lng_itemDetail"></span>
+            </li>
+            <li class="row" data-bind="foreach:cart">
+                <div class="box">
+                    <div class="header">
+                        <div class="code">
+                            <span data-bind="text:$data.product().prod_code" />
+                            <a data-bind="click: $parent.modifier, visible: $parent.isModifierEnabled">
+                                <img src="img/app/icon_beverages_wine_off.png" style="width:15px; height:15px;"/>
+                            </a>
+                        </div>
+                        <div class="amount">
+                            <table>
+                                <tr>
+                                    <td><span data-bind="text:$data.product().currency_code" /> $ </td>
+                                    <td class="inputAmount"><input type="text" data-bind="ojComponent: {component: 'ojInputText', converter: $parent.converter, value: $data.product().price, rootAttributes: {style:'max-width:8em'}}"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="itemDetail">
+                        <table>
+                            <tr>
+                                <td colspan="2"> 
+                                    <div><span data-bind="text:$data.product().prod_desc" /></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div><textarea id="remark" rows="2" type="text" data-bind="ojComponent: {component: 'ojTextArea', value: $data.product().remark}" placeholder="Add your remark here..."></textarea></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="editContainer"></div>
+            </li>
+        </ul>
+        
+        <div class="btnContainer">
+            <a class="placeOrder" data-bind="click: placeOrder"><span data-bind="text: lng_placeQuotation"></span></a>
+        </div>
+       
+    </div>
+</main>

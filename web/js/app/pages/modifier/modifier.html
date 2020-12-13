@@ -1,0 +1,433 @@
+<!-- header_template for non-order desk admin -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: $data.headerTitle">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <div class="syncDate">
+            <span data-bind="text: $parent.lng_modifier"></span>
+        </div>   
+        <nav-buttons side="right3">
+            <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        </nav-buttons>    
+    </header-bar>
+</script>  
+
+
+<!-- display header -->
+<span data-bind="template: {name: 'header_template'}"></span>
+
+<main id="modifier">
+    <div class="container">
+        
+        <!-- ko if:ready -->
+        <span data-bind="template: {name: 'history_template'}"></span>
+        
+        <!-- promotion item -->
+        <span data-bind="template: {name: 'promotion_item_template'}"></span>
+
+        <!-- special discount -->
+        <span data-bind="template: {name: 'special_discount_template'}"></span>
+
+        <!-- special amount -->
+        <span data-bind="template: {name: 'special_amount_template'}"></span>
+        <!-- /ko -->
+        
+        <!-- ko ifnot: isEnquiryMode -->
+        <div class="btnContainer">
+            <a class="confirm" data-bind="click: confirm"><span data-bind="text: lng_confirmBtn"></span></a>
+            <a class="cancel" data-bind="click: cancel"><span data-bind="text: lng_cancelBtn"></span></a>
+        </div>        
+        <!-- /ko -->
+        <!-- ko if: isEnquiryMode -->
+        <div class="btnContainer">
+            <a class="close" data-bind="click: cancel"><span data-bind="text: lng_cancelBtn"></span></a>
+        </div>        
+        <!-- /ko -->        
+    </div>
+</main>
+
+<script type="text/html" id="history_template">
+        <div style="display:none;font-size:12px" id="scrollingDialog" 
+             data-bind="attr: {title: lng_history}, ojComponent:{component: 'ojDialog', initialVisibility: 'hide',  modality: 'modeless',
+                                    rootAttributes: { style: 'width: 320px; height: 350px;'}
+                                    }">
+            <div class="oj-dialog-body" id="form-container">
+                <div class="oj-form oj-md-labels-inline oj-md-labels-nowrap oj-form-no-dividers oj-lg-form-across">  
+                    <span data-bind="template: {name: $data.dialogTemplateName()}"></span>  
+                </div>
+            </div>
+        </div>
+</script>
+
+
+<script type="text/html" id="dialog_promotion_item_template">
+    <ul>
+        <li class="heading">
+            <h3 class="oj-header-border" style="font-size:12px"><span data-bind="text: lng_promotionItem"/></h3>
+        </li>
+    </ul>    
+    <div class="enquiry">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table>
+                        <tbody data-bind='foreach: dialogItem'>
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_buyQty"></span></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $data.MODIFIER_VALUE_FROM"></span></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <td valign="middle" style="width:20%"><input id="promotionItemShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:8px'}"/></td>
+                            </tr> 
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_from"></span></td>
+                                <td valign="middle" style="width:30%"><input id="promotionItemStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:10%;min-width: 5vh;"><span data-bind="text: $parent.lng_to"></span></td>
+                                <td valign="middle" style="width:30%"><input id="promotionItemEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr> 
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_getItem"></span></td>
+                                <td valign="middle" style="width:90%">
+                                    <div class="criteria">
+                                    <input data-bind="ojComponent: {
+                                                        component: 'ojInputSearch', 
+                                                        options: $parent.itemCodeSuggestions,
+                                                        disabled: true,  
+                                                        value: $data.GET_ITEM_ID,
+                                                        minLength: 3,
+                                                        optionTemplate: 'itemCodeOptionTemplate',
+                                                        optionsKeys: {
+                                                            label: 'groupName',
+                                                            children: 'items',
+                                                            childKeys: {
+                                                                label: 'ITEM_CODE_DESCRIPTION',
+                                                                value: 'INVENTORY_ITEM_ID'
+                                                            }
+                                                        },
+                                                        placeholder: $parent.lng_placeholder,
+                                                        rootAttributes: {'id': 'itemCode-' + $data.id(), 'style':'font-size:8px;width:35vh;max-width:90%;padding-left:0.5vh;'}
+                                                    }, style: 'font-size:8px'" />  
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_promotionNature"></span></td>
+                                <td valign="middle" style="width:90%">
+                                    <select id="promotionItemPromotionNature" class="selectBox" data-bind="ojComponent: {component: 'ojSelect', disabled: true, rootAttributes: {'style':'font-size:8px;max-width:85%;padding-left:0.5vh;'}, value:$data.GET_PROMOTION_NATURE, options:$parent.availablePromotionNature}" ></select>
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_getQty"></span></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $data.GET_QUANTITY"></span></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_unitPrice"></span></td>
+                                <td valign="middle" style="width:60%"><span data-bind="text: $data.GET_PRICE"></span></td>
+                            </tr>  
+                        </tbody>   
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>   
+</script>
+
+
+<script type="text/html" id="dialog_special_discount_template">
+    <ul>
+        <li class="heading">
+            <h3 class="oj-header-border" style="font-size:12px"><span data-bind="text: lng_specialDiscount"/></h3>
+        </li>
+    </ul>
+    <div class="enquiry">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table width="100%">
+                         <tbody data-bind='foreach: dialogItem'>
+                            <tr>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_discountUnit"></span></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $data.GET_PERCENT"></span></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <td valign="middle" style="width:20%"><input id="specialDiscountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:8px'}"/></td>
+                            </tr> 
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_from"></span></td>
+                                <td valign="middle" style="width:30%"><input id="specialDiscountStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_to"></span></td>
+                                <td valign="middle" style="width:30%"><input id="specialDiscountEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr> 
+                         </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<script type="text/html" id="dialog_special_amount_template">
+    <ul>
+        <li class="heading">
+            <h3 class="oj-header-border" style="font-size:12px"><span data-bind="text: lng_specialAmount"/></h3>
+        </li>
+    </ul>
+    <div class="enquiry">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table width="100%">
+                        <tbody data-bind='foreach: dialogItem'>
+                            <tr>
+                                <td valign="middle" style="width:10%"><span data-bind="text: $parent.lng_amountUnit"></span></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $data.GET_PRICE"></span></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <td valign="middle" style="width:20%"><input id="specialAmountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:8px'}"/></td>
+                            </tr> 
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_from"></span></td>
+                                <td valign="middle" style="width:30%"><input id="specialAmountStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:20%;min-width: 5vh;"><span data-bind="text: $parent.lng_to"></span></td>
+                                <td valign="middle" style="width:30%"><input id="specialAmountEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: true, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>     
+</script>
+
+
+<script type="text/html" id="promotion_item_template">
+    <ul>
+        <li class="heading">
+            <span data-bind="text: lng_promotionItem"></span>
+            <!-- ko ifnot: isEnquiryMode -->
+            <div class="rightIcon"><a data-bind="click: addPromotionItem, visible: allowAdd"><img src="img/app/btn_add_new.png"></a></div>
+            <!-- /ko -->
+        </li>
+    </ul>    
+    <div class="promotionItemScroller">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table>
+                        <tbody data-bind='foreach: promotionItemLoaded'>
+                            <tr>
+                                <td valign="middle" style="width:10%;min-width: 5vh;"><span data-bind="text: $parent.lng_buyQty"></span></td>
+                                <td valign="middle" style="width:20%"><input id="promotionItemBuyQty"data-bind="ojComponent: { component: 'ojInputNumber', disabled: $parent.isEnquiryMode, min: 0, value: $data.MODIFIER_VALUE_FROM, rootAttributes: {'style':'font-size:1em;min-width:4.5em;'}}" style="min-width:4.5em"/></td>
+                                <td valign="middle" style="width:15%;min-width: 3em;"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <!-- ko if: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="promotionItemShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="promotionItemShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: $data.ENABLE_SHIP_TO, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->
+                                <td align="center" valign="middle" style="width:40%">
+                                    <!-- ko if: $data.SHOW_LINK_BTN -->
+                                    <a data-bind="click: function(data, event) { $parent.openDetail($data, data, event)}"><img src="img/app/icon_beverages_wine_off.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->
+                                    <!-- ko if: $data.SHOW_REMOVE_BTN -->
+                                    <a data-bind='click: $parent.removePromotionItemLine'><img src="img/app/btn_delete_blue.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->
+                                </td>                                
+                            </tr> 
+                            <tr>
+                                <td colspan="2" valign="middle" style="width:30%"><input id="promotionItemStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                                <td colspan="3" valign="middle" style="width:30%"><input id="promotionItemEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, min: $data.MODIFIER_START_DATE, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+<!--                                <td style="width:40%"></td>-->
+                            </tr> 
+                            <tr>
+                                <td colspan="1" valign="middle" style="width:10%;min-width: 5vh;"><span data-bind="text: $parent.lng_getItem"></span></td>
+                                <td colspan="4" valign="middle" style="width:100%">
+                                    <div class="criteria">
+                                    <input data-bind="ojComponent: {
+                                                        component: 'ojInputSearch', 
+                                                        disabled: $parent.isEnquiryMode,                                                                
+                                                        options: $parent.itemCodeSuggestions,
+                                                        value: $data.GET_ITEM_ID,
+                                                        minLength: 3,
+                                                        optionTemplate: 'itemCodeOptionTemplate',
+                                                        optionsKeys: {
+                                                            label: 'groupName',
+                                                            children: 'items',
+                                                            childKeys: {
+                                                                label: 'ITEM_CODE_DESCRIPTION',
+                                                                value: 'INVENTORY_ITEM_ID'
+                                                            }
+                                                        },
+                                                        optionChange: $parent.onSearchTextChange,
+                                                        placeholder: $parent.lng_placeholder,
+                                                        rootAttributes: {'id': 'itemCode-' + $data.id(), 'style':'font-size:8px;max-width:90%;padding-left:0.5vh;'}
+                                                    }" />  
+                                    
+                                        <!-- ko ifnot: $parent.isEnquiryMode -->
+                                        <button data-bind="event : { click: function(data, event) {$parent.onClearSearchText($data, data, event)} }, css: 'icon-search-clear'"></button>
+                                        <!-- /ko -->
+                                    </div>                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan="1" valign="middle" style="width:10%;min-width: 5vh;"><span data-bind="text: $parent.lng_promotionNature"></span></td>
+                                <td colspan="4" valign="middle" style="width:90%">
+                                    <select id="promotionItemPromotionNature" class="selectBox" data-bind="ojComponent: {component: 'ojSelect', disabled: $parent.isEnquiryMode, rootAttributes: {'style':'font-size:1em;max-width:85%;padding-left:1em;'}, value:$data.GET_PROMOTION_NATURE, options:$parent.availablePromotionNature}" ></select>
+                                 </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" style="width:10%;min-width: 5vh;"><span data-bind="text: $parent.lng_getQty"></span></td>
+                                <td valign="middle" style="width:20%"><input id="promotionItemGetQty" data-bind="ojComponent: { component: 'ojInputNumber', disabled: $parent.isEnquiryMode, min: 0, value: $data.GET_QUANTITY, rootAttributes: {'style':'font-size:1em;min-width:4.5em;'}}" style="min-width:4.5em"/></td>
+                                <td valign="middle" style="width:15%"><span data-bind="text: $parent.lng_unitPrice"></span></td>
+                                <td colspan="2" valign="middle" style="width:60%"><input id="promotionItemUnitPrice" data-bind="ojComponent: { component: 'ojInputNumber', disabled: $parent.isEnquiryMode, min: 0, value: $data.GET_PRICE, rootAttributes: {'style':'font-size:1em'}}"/></td>
+                            </tr>  
+                            <!--
+                            <tr>
+                                <td colspan="5">
+                                <hr style="border: 0.5px dashed black;" />
+                                </td>
+                            </tr>
+                            -->
+                            <tr>
+                                <td colspan="5">
+                                    <h3 class="oj-header-border" style="font-size:12px"></h3>
+                                </td>
+                            </tr>
+                        </tbody>   
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>   
+</script>
+
+<script type="text/html" id="itemCodeOptionTemplate">
+    <!-- ko if: !$optionContext.leaf -->
+    <div class="section" data-bind="text: groupName"></div>
+    <!-- /ko -->
+    <!-- ko if: $optionContext.leaf -->
+    <!-- ko if: !($optionContext.parent.groupId) -->
+    <div data-bind="text: label"></div>
+    <!-- /ko -->
+    <!-- ko if: $optionContext.parent.groupId -->
+    <div>
+        <span class="oj-listbox-highlighter-section">
+            <span data-bind="text: ITEM_CODE_DESCRIPTION"></span>
+        </span>
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+</script>
+
+<script type="text/html" id="special_discount_template">
+    <ul>
+        <li class="heading">
+            <span data-bind="text: lng_specialDiscount"></span>
+            <!-- ko ifnot: isEnquiryMode -->
+            <div class="rightIcon"><a data-bind="click: addSpecialDiscount, visible: allowAdd"><img src="img/app/btn_add_new.png"></a></div>
+            <!-- /ko -->
+        </li>
+    </ul>
+    <div class="scroller">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table width="100%">
+                         <tbody data-bind='foreach: specialDiscountLoaded'>
+                            <tr>
+                                <td valign="middle" style="width:10%"><span data-bind="text: $parent.lng_discountUnit"></span></td>
+                                <td valign="middle" style="width:20%"><input id="specialDiscount" data-bind="ojComponent: { component: 'ojInputNumber', disabled: $parent.isEnquiryMode, min: 0, value: $data.GET_PERCENT, rootAttributes: {'style':'font-size:1em;min-width:4.5em;'}}" style="min-width:4.5em"/></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <!-- ko if: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="specialDiscountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="specialDiscountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: $data.ENABLE_SHIP_TO, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->
+                                <td align="center" valign="middle" style="width:40%">
+                                    <!-- ko if: $data.SHOW_LINK_BTN -->
+                                    <a data-bind="click: function(data, event) { $parent.openDetail($data, data, event)}"><img src="img/app/icon_beverages_wine_off.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->
+                                    <!-- ko if: $data.SHOW_REMOVE_BTN -->
+                                    <a data-bind='click: $parent.removeSpecialDiscountLine'><img src="img/app/btn_delete_blue.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->                                    
+                                </td>                                
+                            </tr> 
+                            <tr>
+                                <td colspan="2" valign="middle" style="width:30%"><input id="specialDiscountStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                                <td colspan="3" valign="middle" style="width:30%"><input id="specialDiscountEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, min: $data.MODIFIER_START_DATE, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr> 
+                            <tr>
+                                <td colspan="5">
+                                    <h3 class="oj-header-border" style="font-size:12px"></h3>
+                                </td>
+                            </tr>                            
+                         </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>        
+</script> 
+
+<script type="text/html" id="special_amount_template">
+    <ul>
+        <li class="heading">
+            <span data-bind="text: lng_specialAmount"></span>
+            <!-- ko ifnot: isEnquiryMode -->
+            <div class="rightIcon"><a data-bind="click: addSpecialAmount, visible: allowAdd"><img src="img/app/btn_add_new.png"></a></div>
+            <!-- /ko -->
+        </li>
+    </ul>
+    <div class="scroller">
+        <ul>
+            <li>
+                <div class="editContainer"> 
+                    <table width="100%">
+                        <tbody data-bind='foreach: specialAmountLoaded'>
+                            <tr>
+                                <td valign="middle" style="width:10%"><span data-bind="text: $parent.lng_amountUnit"></span></td>
+                                <td valign="middle" style="width:20%"><input id="specialAmount" data-bind="ojComponent: { component: 'ojInputNumber', disabled: $parent.isEnquiryMode, min: 0, value: $data.GET_PRICE, rootAttributes: {'style':'font-size:1em;min-width:4.5em;'}}" style="min-width:4.5em"/></td>
+                                <td valign="middle" style="width:20%"><span data-bind="text: $parent.lng_shipTo"></span></td>
+                                <!-- ko if: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="specialAmountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: false, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->
+                                <!-- ko ifnot: $parent.isEnquiryMode -->
+                                <td valign="middle" style="width:20%"><input id="specialAmountShipTo" type="checkbox" data-bind="checked: $data.MODIFIER_SHIP_TO, enable: $data.ENABLE_SHIP_TO, rootAttributes: {'style':'font-size:1em'}"/></td>
+                                <!-- /ko -->                                
+                                <td align="center" valign="middle" style="width:40%">
+                                    <!-- ko if: $data.SHOW_LINK_BTN -->
+                                    <a data-bind="click: function(data, event) { $parent.openDetail($data, data, event)}"><img src="img/app/icon_beverages_wine_off.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->
+                                    <!-- ko if: $data.SHOW_REMOVE_BTN -->
+                                    <a data-bind='click: $parent.removeSpecialAmountLine'><img src="img/app/btn_delete_blue.png" style="width:15px; height:15px;"></a>
+                                    <!-- /ko -->                                          
+                                </td>                                
+                            </tr> 
+                            <tr>
+                                <td colspan="2" valign="middle" style="width:30%"><input id="specialAmountStart" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, value: $data.MODIFIER_START_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                                <td colspan="3" valign="middle" style="width:30%"><input id="specialAmountEnd" data-bind="ojComponent: {component: 'ojInputDate', disabled: $parent.isEnquiryMode, min: $data.MODIFIER_START_DATE, value: $data.MODIFIER_END_DATE, converter: $parent.dateConverter, rootAttributes: {'style':'font-size:8px'}}"/></td>
+                            </tr> 
+                            <tr>
+                                <td colspan="5">
+                                    <h3 class="oj-header-border" style="font-size:12px"></h3>
+                                </td>
+                            </tr>                              
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>     
+</script>
+
+

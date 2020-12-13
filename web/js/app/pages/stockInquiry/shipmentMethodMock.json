@@ -1,0 +1,46 @@
+{
+  "P_SHIPPING_METHOD_TBL": {
+    "P_SHIPPING_METHOD_TBL_ITEM": [
+      {
+        "SHIPPING_METHOD": "000001_DEFAULT_A_LTL",
+        "MEANING": "Air"
+      },
+      {
+        "SHIPPING_METHOD": "000001_DEFAULT_R_LTL",
+        "MEANING": "Ground"
+      },
+      {
+        "SHIPPING_METHOD": "000001_DEFAULT_O_LTL",
+        "MEANING": "Sea"
+      },
+      {
+        "SHIPPING_METHOD": "000001_DEFAULT_T_LTL",
+        "MEANING": "TRUCK"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-HB3137",
+        "MEANING": "VAN-HB3137"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-KX8365",
+        "MEANING": "VAN-KX8365"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-PF7022",
+        "MEANING": "VAN-PF7022"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-RM7607",
+        "MEANING": "VAN-RM7607"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-TG5301",
+        "MEANING": "VAN-TG5301"
+      },
+      {
+        "SHIPPING_METHOD": "000001_VANS_T_STD-TV2014",
+        "MEANING": "VAN-TV2014"
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_synchronization">
+    <nav-back-button params="click: function() { $root.router.go('springboard') }" style="float: left"></nav-back-button>
+    <nav-buttons side="right1">
+         <!-- ko ifnot: $parents[1].isVanSales -->
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        <!-- /ko -->
+    </nav-buttons>
+    <nav-buttons side="right2">
+        <!-- ko ifnot: $parents[1].isVanSales -->
+        <input type="image" src="img/app/btn_header_remove.png" data-bind="click: function() { $parents[1].clearData() }"/>
+        <!-- /ko -->
+        <!-- ko if: $parents[1].isVanSales -->
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        <!-- /ko -->
+    </nav-buttons>                
+    <nav-buttons side="right3">
+        <!-- ko ifnot: $parents[1].isVanSales -->
+        <input type="image" src="img/app/btn_header_syn.png" data-bind="click: function() { $parents[1].dataSync()}"/>
+        <!-- /ko -->
+        <!-- ko if: $parents[1].isVanSales -->
+        <input type="image" src="img/app/btn_header_remove.png" data-bind="click: function() { $parents[1].clearData() }"/>
+        <!-- /ko -->
+    </nav-buttons>    
+</header-bar>
+
+
+<main id="dataSync" class="page-background">
+    <div role="main" class="list-content">
+
+        <!-- ko if: ready -->
+        <div class="container">
+            <!-- list view content -->
+            <ul id="listview" aria-label="Offline Item list" data-bind="ojComponent: {component: 'ojListView',
+                            data: orders, 
+                            item: {template: 'item_template'}, 
+                            scrollTop: scrollPos,
+                            selectionMode: 'single',
+                            optionChange: optionChange,                             
+                            rootAttributes: {id: 'listviewContainer', style: 'width:100%;height:85vh;overflow-x:hidden;margin-top:0.7rem;'},
+                            scrollPolicy: 'loadMoreOnScroll',
+                            scrollPolicyOptions: {fetchSize: 10}}">
+            </ul>            
+        </div>
+        <!-- /ko -->
+        
+    </div>
+</main>
+
+<script type="text/html" id="item_template">
+  <li class="row">
+    <div class="box oj-flex" style="flex-wrap: nowrap">
+        <div class="oj-flex-item demo-content">
+            <div class="tag green">
+                <!-- ko ifnot: data.delivery == 'Y' -->
+                <span data-bind="text: data.order.HEADER_FLOW_STATUS_CODE"></span>
+                <!-- /ko -->
+                 <!-- ko if: data.delivery == 'Y' -->
+                <span data-bind="text: 'SAVED'"></span>
+                <!-- /ko -->                 
+            </div>
+            <div class="orderNo">
+                <!-- ko if: data.delivery == 'Y' -->
+                <span data-bind="text: 'Delivery No. ' + data.order.DELIVERY_NUMBER"></span>
+                <!-- /ko -->
+                 <!-- ko ifnot: data.delivery == 'Y' -->
+                 <span data-bind="text: 'Order ' + data.order.ORDER_NUMBER"></span>
+                 <!-- /ko -->
+            </div>
+            <div class="information">
+                <BR>
+                <!-- ko ifnot: data.delivery == 'Y' -->
+                <div><span data-bind="text: data.order.OUTLET_NAME" /></div>
+                <BR>
+                <div class="fieldName">Order Date</div>
+                <div class="fieldValue"><span data-bind="text: moment(data.order.ORDERED_DATE).format('DD-MMM-YYYY').toUpperCase()" /></div>
+                <div class="fieldName">Total Amount</div>
+                <div class="fieldValue"><span data-bind="text: data.order.TRANSACTIONAL_CURR_CODE + '$' +data.order.ORDER_TOT_AMT" /></div>
+                <!-- /ko -->
+                
+                <!-- ko if: data.delivery == 'Y' -->
+                <div><span data-bind="text: data.order.OUTLET_NAME" /></div>
+                <BR>
+                <div class="fieldName">Delivery Date</div>
+                <div class="fieldValue"><span data-bind="text: data.order.DELIVERY_DATE" /></div>          
+                <div class="fieldName">Order No.</div>
+                <div class="fieldValue"><span data-bind="text: data.order.ORDER_NUMBER" /></div>                    
+                <div class="fieldName">License No.</div>
+                <div class="fieldValue"><span data-bind="text: data.order.CAR_PLATE_NUMBER" /></div>                           
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+  </li>
+</script>

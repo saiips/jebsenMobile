@@ -1,0 +1,76 @@
+{
+    "dailyReceipts": [
+        {
+            "id": "1",
+            "date": "2016/11/31",
+            "chequeAmount": "500,000",
+            "cashAmount": "200,000"
+        },
+        {
+            "id": "2",
+            "date": "2016/11/30",
+            "chequeAmount": "250,000",
+            "cashAmount": "255,000"
+        },
+        {
+            "id": "3",
+            "date": "2016/11/29",
+            "chequeAmount": "400,800",
+            "cashAmount": "300,000"
+        },
+        {
+            "id": "4",
+            "date": "2016/11/28",
+            "chequeAmount": "550,000",
+            "cashAmount": "159,000"
+        },
+        {
+            "id": "5",
+            "date": "2016/11/27",
+            "chequeAmount": "780,000",
+            "cashAmount": "300,000"
+        },
+        {
+            "id": "6",
+            "date": "2016/11/26",
+            "chequeAmount": "505,000",
+            "cashAmount": "159,000"
+        },
+        {
+            "id": "6",
+            "date": "2016/11/25",
+            "chequeAmount": "890,000",
+            "cashAmount": "980,000"
+        },
+        {
+            "id": "7",
+            "date": "2016/11/24",
+            "chequeAmount": "1,500,000",
+            "cashAmount": "805,000"
+        },
+        {
+            "id": "8",
+            "date": "2016/11/23",
+            "chequeAmount": "8,200,000",
+            "cashAmount": "1,505,000"
+        },
+        {
+            "id": "9",
+            "date": "2016/11/22",
+            "chequeAmount": "800,000",
+            "cashAmount": "855,000"
+        },
+        {
+            "id": "10",
+            "date": "2016/11/21",
+            "chequeAmount": "650,000",
+            "cashAmount": "2,545,000"
+        },
+        {
+            "id": "11",
+            "date": "2016/11/20",
+            "chequeAmount": "7,100,000",
+            "cashAmount": "1,421,000"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "P_ROUTE_BY_SERVICE_PROVIDER": {
+        "P_ROUTE_BY_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "abc",
+                "LOOKUP_VALUE": "R01"
+            }]
+    }
+}

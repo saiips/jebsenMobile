@@ -1,0 +1,41 @@
+{
+  "count": 4,
+  "result": [
+    {
+      "id": "0000|BG12SP1203",
+      "description": "Pauillac, 75CL",
+      "subInventory": "Tsuen Wan",
+      "lot": "2004",
+      "onHand": 200,
+      "reservation": 120,
+      "available": 80
+    },
+    {
+      "id": "0000|BG12SP1204",
+      "description": "Pauillac, Bordeaux, 75CL",
+      "subInventory": "Tsuen Wan",
+      "lot": "2004",
+      "onHand": 100,
+      "reservation": 5,
+      "available": 95
+    },
+    {
+      "id": "0000|BG12SP0101",
+      "description": "Pauillac, Bordeaux, 75CL",
+      "subInventory": "Tsuen Wan",
+      "lot": "2004",
+      "onHand": 300,
+      "reservation": 150,
+      "available": 150
+    },
+    {
+      "id": "0000|BG12ST0301",
+      "description": "Pauillac, 75CL",
+      "subInventory": "Tsuen Wan",
+      "lot": "2004",
+      "onHand": 100,
+      "reservation": 5,
+      "available": 95
+    }
+  ]
+}

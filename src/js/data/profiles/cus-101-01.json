@@ -1,0 +1,57 @@
+{
+  "id": "cus-101-01",
+  "overdueAging": {
+    "totalAmount": 100000,
+    "agingDetails": [
+      {
+        "period": "0 DAY",
+        "amount": 0
+      },
+      {
+        "period": "1-30 DAYS",
+        "amount": 75000
+      },
+      {
+        "period": "31-60 DAYS",
+        "amount": 25000
+      },
+      {
+        "period": "OVER 60 DAYS",
+        "amount": 0
+      }
+    ]
+  },
+  "salesTarget": 350000,
+  "productPerformance": [
+    {
+      "itemCode": "0000|BG12SP1203",
+      "lastYear": 100000,
+      "ytd": 100000
+    },
+    {
+      "itemCode": "0000|BG12SP1204",
+      "lastYear": 200000,
+      "ytd": 250000
+    },
+    {
+      "itemCode": "0000|BG12SP1205",
+      "lastYear": 320000,
+      "ytd": 130000
+    },
+    {
+      "itemCode": "0000|BG12SP1206",
+      "lastYear": 520000,
+      "ytd": 600000
+    },
+    {
+      "itemCode": "0000|BG12SP1207",
+      "lastYear": 320000,
+      "ytd": 130000
+    },
+    {
+      "itemCode": "0000|BG12SP1208",
+      "lastYear": 5000,
+      "ytd": 10000
+    }
+  ]
+}

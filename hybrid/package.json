@@ -1,0 +1,17 @@
+{
+  "name": "org.oraclejet.jebsenmobile",
+  "version": "1.0.0",
+  "displayName": "JebsenMobile",
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "cordova-ios": "~4.3.0",
+    "cordova-android": "~6.0.0",
+    "cordova-browser": "~4.1.0"
+  }
+}

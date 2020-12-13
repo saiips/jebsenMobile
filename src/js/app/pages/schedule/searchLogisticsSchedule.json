@@ -1,0 +1,27 @@
+{
+    "P_TABLE": {
+        "P_TABLE_ITEM": [{
+                "LOGISTIC_SCH_ROWID": "AAm0wXACcAAA8k0AAA",
+                "SERVICE_PROVIDER": "JLOG",
+                "ROUTE": "R01",
+                "SCHEDULE_DOW": "MON",
+                "STOP_NUM": "1",
+                "SHIP_METHOD": "VAN-TV2014",
+                "DISTRICT": "HK-ADMIRALTY",
+                "SUBINV_CODE": "JL-WAREHSE",
+                "ACTION": ""
+            },
+            {
+                "LOGISTIC_SCH_ROWID": "AAm0wXACcAAA8k0AAB",
+                "SERVICE_PROVIDER": "JLOG",
+                "ROUTE": "R02",
+                "SCHEDULE_DOW": "TUE",
+                "STOP_NUM": "1",
+                "SHIP_METHOD": "VAN-TV2014",
+                "DISTRICT": "HK-ADMIRALTY",
+                "SUBINV_CODE": "JL-WAREHSE",
+                "ACTION": ""
+            }                        
+        ]
+    }
+}

@@ -1,0 +1,135 @@
+<!-- dummy_template -->
+<script type="text/html" id="dummy_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: lng_title">
+    </header-bar>
+</script>   
+
+<!-- header_template -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: lng_title">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <nav-buttons side="right1">
+            <!-- ko if: $parents[1].enableScan -->
+            <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+            <!-- /ko -->
+        </nav-buttons>
+        <nav-buttons side="right2">
+            <!-- ko if: $parents[1].enableScan -->
+            <input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/>
+            <!-- /ko -->
+            <!-- ko ifnot: $parents[1].enableScan -->
+            <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+            <!-- /ko -->
+        </nav-buttons>
+        <nav-buttons side="right3">
+            <!-- ko if: $parents[1].enableScan -->
+            <input type="image" src="img/app/btn_header_barcode_scan.png" data-bind="click: function() { $parents[1].scanBarcode()}"/>
+            <!-- /ko -->
+            <!-- ko ifnot: $parents[1].enableScan -->
+            <input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/>
+            <!-- /ko -->                
+        </nav-buttons>             
+    </header-bar>
+</script>  
+
+<div id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper">
+    <div class="oj-offcanvas-inner-wrapper">
+        <!-- display header -->
+        <span data-bind="template: {name: $data.isDummyRole() ? 'dummy_template' : 'header_template'}"></span>
+
+    
+        <main id="loading">
+            <div role="main" class="list-content">
+                <!-- search canvas -->
+                <div id="searchCanvas" class="oj-offcanvas-top" data-bind="searchCanvas">
+                    <div class="searchForm">
+                        <input type="text" id="searchProduct" autocomplete="off"
+                               data-bind="ojComponent: {
+                              component: 'ojInputText',
+                              placeholder: lng_searchPlaceHolder,
+                              optionChange: onSearchTextChange
+                            }">
+                        <button data-bind="click: onClearSearchText, css: (searchText())? 'icon-search-clear' : 'icon-search-search'" type="reset"></button>
+                    </div>
+                </div>
+                
+                <!-- input license and barcode --> 
+                <div class="inputBarcode" data-bind="visible: (isJLogAdmin || isLindeAdmin)">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <table>
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_license"></td>
+                                        <td>
+                                            <input id="text-licenseNo" data-bind="ojComponent: {component: 'ojCombobox',  
+                                                                       options: availableVans,
+                                                                       optionChange: valueChangeHandler,
+                                                                       rootAttributes: {style:'max-width:35vh'}, value: licenseNo}"/>
+                                        </td>                         
+                                    </tr> 
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_barcode"></td>
+                                        <td><input id="text-barCode" type="text" data-bind="ojComponent: {component: 'ojInputText', rootAttributes: {style:'max-width:35vh'}, value: barcode}, hasfocus: isFocused, executeOnEnter: load" autocomplete="false"/></td>                         
+                                    </tr>                                
+                                </table>                             
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- listview -->
+                <div id="listviewWrapper" class="container">
+                    <ul id="listView" data-bind="ojComponent: {component: 'ojListView',
+                        data: worklistData, 
+                        item: {template: 'loadedList_template'},
+                        scrollTop: scrollPos, 
+                        drillMode: 'none', 
+                        selectionMode: 'single',
+                        optionChange: optionChange,
+                        scrollPolicy: 'loadMoreOnScroll',
+                        scrollPolicyOptions: {fetchSize: 10, maxCount: 999999},
+                        rootAttributes: {id: 'listviewContainer', style: 'width:100%;height:75vh;overflow-x:hidden'}}">
+                    </ul>
+                </div>
+            </div>
+        </main>
+        
+
+    </div>
+</div>
+
+
+<!-- this is the content that is loaded by the ojListView component above -->
+<script id="loadedList_template" type="text/html">
+    <li data-bind="attr: {id: DELIVERY_NUMBER}" class="row">
+        <div class="box oj-flex-item demo-content">
+            <div class="title">
+                <span data-bind="text: $data.DELIVERY_NUMBER" />
+            </div>
+            <table>
+                <tr>
+                    <td width="10%"><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                    <td width="90%" colspan="3"><span data-bind="text: $data.OUTLET_NUMBER"></td>
+                </tr>
+                <tr>
+                    <td valign="top" width="10%"><div class="icon"><img src="img/app/icon_address_blue.png" alt="" /></div></td>
+                    <td colspan="3" width="90%" colspan="3"><span data-bind="text: $data.DELIVERY_ADDRESS"></td>
+                </tr>
+                <tr>
+                    <td width="10%"><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                    <td width="90%" colspan="3"><span data-bind="text: ($data.DELIVERY_DATE != '') ? moment($data.DELIVERY_DATE).format('DD-MMM-YYYY').toUpperCase() : ''"></td>
+                </tr>
+                <tr>
+                    <td width="10%"><div class="icon"><img src="img/app/icon_billing_ad_blue.png" alt="" /></div></td>
+                    <td width="40%"><span data-bind="text: $data.ORDER_NUMBER"></td>
+                    <td width="10%"><div class="icon"><img src="img/app/icon_shipping_ad_blue.png" alt="" /></div></td>
+                    <td width="40%"><span data-bind="text: $data.CAR_PLATE_NUMBER"></td>
+                </tr>
+            </table>
+        </div>
+    </li>
+</script>                
+<!-- list view -->

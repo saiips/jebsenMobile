@@ -1,0 +1,63 @@
+{
+	"OutputValidateSalesOrder": {
+		"HeaderRecord": {
+			"HEADER_ID": 12894737,
+			"ORDER_NUMBER": 10289836,
+			"ORDER_TYPE_ID": 4561,
+			"SOLD_TO_ORG_ID": 11778433,
+			"SHIP_TO_ORG_ID": 459295,
+			"INVOICE_TO_ORG_ID": 459270,
+			"ORDER_SOURCE_ID": 0,
+			"PRICE_LIST_ID": 264405,
+			"PRICING_DATE": "2016-12-21T22:01:09.000+08:00",
+			"FLOW_STATUS_CODE": "ENTERED",
+			"CUST_PO_NUMBER": null,
+			"SOLD_FROM_ORG_ID": 2899,
+			"SHIP_FROM_ORG_ID": 2922,
+			"SALESREP_ID": 100276337,
+			"TRANSACTIONAL_CURR_CODE": "HKD",
+			"PAYMENT_TERM_ID": 1013,
+			"REMARKS": "-1",
+			"FREIGHT_CHARGE": 0
+		},
+		"LineRecords": {
+			"O_LINE_TBL_OUT_ITEM": [{
+					"HEADER_ID": 12894737,
+					"LINE_ID": 17209519,
+					"LINE_NUMBER": 1,
+					"INVENTORY_ITEM_ID": 378847,
+					"SUBINVENTORY": "JL-WAREHSE",
+					"PRODUCT": "0000|CYC002",
+					"PRODUCT_DESCRIPTION": "28\"(W) X 34\"(H) PORTABLE TASTING BOOTH",
+					"ORDERED_QUANTITY": 1,
+					"UNIT_SELLING_PRICE": 999999,
+					"UOM": "PCE",
+					"SHIPPING_METHOD": null,
+					"SCHEDULE_SHIP_DATE": "-1",
+					"ORIGINAL_LINE": "Y",
+					"DRAFT_BEER_FLAG": "N",
+					"LOT_NUMBER_TBL": null
+				}, {
+					"HEADER_ID": 12894737,
+					"LINE_ID": 17209520,
+					"LINE_NUMBER": 2,
+					"INVENTORY_ITEM_ID": 4512254,
+					"SUBINVENTORY": "JL-WAREHSE",
+					"PRODUCT": "0000|AD045",
+					"PRODUCT_DESCRIPTION": "2015 calendar for Sky Connection promotion",
+					"ORDERED_QUANTITY": 1,
+					"UNIT_SELLING_PRICE": 999999,
+					"UOM": "PCE",
+					"SHIPPING_METHOD": null,
+					"SCHEDULE_SHIP_DATE": "22-DEC-2016",
+					"ORIGINAL_LINE": "Y",
+					"DRAFT_BEER_FLAG": "N",
+					"LOT_NUMBER_TBL": null
+				}
+			]
+		},
+		"ReturnStatus": "S",
+		"RecordCounts": 2,
+		"ReturnMessage": "Quantity on hand fails to satisfy reservation"
+	}
+}

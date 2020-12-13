@@ -1,0 +1,41 @@
+{
+  "count": 7,
+  "id": "0000|BG12SP1203",
+  "result": [
+    {
+      "id": "cus-101",
+      "name": "Athena 22",
+      "qty": 10
+    },
+    {
+      "id": "ord-102",
+      "name": "Deno Bar",
+      "qty": 5
+    },
+    {
+      "id": "cus-103",
+      "name": "Tinson West",
+      "qty": 2
+    },
+    {
+      "id": "cus-104",
+      "name": "Cason Table Restaurant",
+      "qty": 8
+    },
+    {
+      "id": "cus-105",
+      "name": "Condeno Bar",
+      "qty": 20
+    },
+    {
+      "id": "cus-106",
+      "name": "Red Quarters",
+      "qty": 25
+    },
+    {
+      "id": "cus-107",
+      "name": "Dairy Farm",
+      "qty": 25
+    }
+  ]
+}

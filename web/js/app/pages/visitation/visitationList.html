@@ -1,0 +1,151 @@
+<div  id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper" data-bind="template: {afterRender: onPageReady}">
+    <div class="oj-offcanvas-inner-wrapper">    
+        <!-- header -->
+        <header-bar role="banner" params="headerLabel: lng_visitation">
+            <nav-back-button params="click: function() { $root.router.go('springboard') }" style="float: left"></nav-back-button>
+            <!-- ko if: $parent.showLastSyncDate -->
+            <div class="syncDate">
+                <span data-bind="text: $parent.lng_lastSyncDate"></span>
+                <span data-bind="text: $parent.syncDatetime"></span>
+            </div>
+            <!-- /ko -->
+            <nav-buttons side="right1">
+                <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+            </nav-buttons>            
+            <nav-buttons side="right2"><input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/></nav-buttons>                
+            <nav-buttons side="right3"><input type="image" src="img/app/btn_header_add.png" data-bind="click: function() { $parents[1].addVisitation()}"/></nav-buttons>
+        </header-bar>
+
+        <main id="visitationList">
+        <div role="main" class="list-content">
+            <!-- search canvas -->
+            <div id="searchCanvas" class="oj-offcanvas-top" data-bind="searchCanvas">
+                <div class="searchForm">
+                    <input type="text" id="searchProduct" autocomplete="off"
+                            data-bind="ojComponent: {
+                              component: 'ojInputText',
+                              placeholder: lng_searchPlaceHolder,
+                              optionChange: onSearchTextChange
+                            }">
+                    <button data-bind="click: onClearSearchText, css: (searchText())? 'icon-search-clear' : 'icon-search-search'" type="reset"></button>
+                </div>
+            </div>
+            
+            <div id="listviewWrapper" class="container">
+                <ul id="listview" aria-label="visitation list"
+                    data-bind="ojComponent: {component: 'ojListView', 
+                            data: visitations, 
+                            item: {template: selectTemplate, focusable: itemOnly, selectable: itemOnly}, 
+                            drillMode: 'none', 
+                            scrollTop: scrollPos, 
+                            selectionMode: 'single', 
+                            optionChange: optionChange, 
+                            scrollPolicy: 'loadMoreOnScroll', 
+                            scrollPolicyOptions: {fetchSize: 10,  maxCount: 99999},
+                            rootAttributes: {id: 'listviewContainer', style: 'width:100%;height:85vh;overflow-x:hidden'}
+                       }">
+                </ul>
+            </div>            
+            
+        </div>
+        </main>
+    </div>
+</div>
+
+<script type="text/html" id="group_template">
+    <li data-bind="attr: {id: id}">
+        <div style="padding-left: 5%; padding-top: 3%"><strong data-bind="text: moment(startDate).format('DD-MMM-YYYY').toUpperCase()"></strong><div>
+    </li>
+</script>
+
+<script type="text/html" id="item_template">
+    <li style="padding:0" data-bind="attr: {id: id}, click: function(data, event) { $parent.clickOptionChange($data, data, event)}" class="row item-marker">
+        <div class="box oj-flex" style="flex-wrap: nowrap">
+            <div class="oj-flex-item demo-content">
+                <div class="tag green">
+                    <span data-bind="text: data.STATUS_DESC"></span>
+                </div>
+                <div class="oj-flex">
+                    <strong class="oj-flex-item" style="max-width: 18em;" data-bind="text: data.OUTLET_NAME"></strong>
+                </div>                
+                <!--
+                <div class="oj-flex">
+                    <strong class="oj-flex-item" data-bind="text: data.OUTLET_NAME"></strong>
+                    <span class="oj-sm-flex-initial oj-flex-item oj-text-sm oj-text-secondary-color" data-bind="text: data.STATUS_DESC"></span>
+                </div>
+                -->
+                <div class="name">
+                    <strong class="oj-text-sm oj-text-primary-color" data-bind="text: data.SUBJECT"></strong>
+                </div>
+                
+                <div class="address">
+                    <div class="icon"><img src="img/app/icon_customer_blue.png" alt="Visit Person" /></div>
+                    <div class="details"><span data-bind="text: data.VISIT_PERSON" /></div>
+                </div>                     
+
+                <div class="address">
+                    <div class="icon"><img src="img/icons/common/navigate.svg" alt="Purpose" /></div>
+                    <div class="details"><span data-bind="text: data.PURPOSE" /></div>
+                </div>              
+                
+                <div class="address">
+                    <div class="icon"><img src="img/icons/common/date.svg" alt="Date" /></div>
+                    <div class="details"><span data-bind="text: moment(data.START_DATE).format('DD-MMM-YYYY HH:mm').toUpperCase()"></span></div>         
+                </div>
+
+                <!--
+                <div class="address">
+                    <div class="icon"><img src="img/icons/toastBg/calendar.svg" alt="" /></div>
+                    <div class="details"><span data-bind="text: data.END_DATE"></span></div>                        
+                </div>
+                -->
+                
+                <div class="oj-flex">
+                    <span>&nbsp;</span>
+                </div>                
+
+
+                <div class="address">
+                    <div class="icon"><img src="img/icons/common/location.svg" alt="Location" /></div>
+                    <div class="details"><span data-bind="text: data.LOCATION"></span></div>
+                </div>    
+                
+                <!-- 
+                <div tabIndex="-1" data-bind="attr: {id: 'second_toolbar_'+id}" class="oj-offcanvas-end" style="width:225px">
+                    <div data-bind="click: $parent.handleCancel, clickBubble: false" class="oj-swipetoreveal-flag">
+                        <div class="oj-flex-bar" style="height:100%">
+                            <div class="oj-flex-bar-center-absolute">
+                                <div class="oj-flex oj-sm-flex-direction-column">
+                                    <div title=".demo-library-icon-24" role="img" class="oj-flex-item demo-library-icon-24 demo-icon-font-24"></div>
+                                    <div style="padding-top: 10px" class="oj-flex-item">Cancel</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-bind="click: $parent.handleFollow, clickBubble: false" class="oj-swipetoreveal-more">
+                        <div class="oj-flex-bar" style="height:100%">
+                            <div class="oj-flex-bar-center-absolute">
+                                <div class="oj-flex oj-sm-flex-direction-column">
+                                    <div title=".demo-library-icon-24" role="img" class="oj-flex-item demo-library-icon-24 demo-icon-font-24"></div>
+                                    <div style="padding-top: 10px" class="oj-flex-item">Follow-up</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div data-bind="click: $parent.handleComplete, clickBubble: false" class="oj-swipetoreveal-alert oj-swipetoreveal-default">
+                        <div class="oj-flex-bar" style="height:100%">
+                            <div class="oj-flex-bar-center-absolute">
+                                <div class="oj-flex oj-sm-flex-direction-column">
+                                    <div title=".demo-library-icon-24" role="img" class="oj-flex-item demo-library-icon-24 demo-icon-font-24"></div>
+                                    <div style="padding-top: 10px" class="oj-flex-item">Complete</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+            </div>
+        </div>
+    </li>
+</script>

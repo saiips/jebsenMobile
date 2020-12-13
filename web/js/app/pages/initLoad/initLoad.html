@@ -1,0 +1,20 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_initialLoading">
+</header-bar>
+
+
+<main id="initLoad" class="page-background">
+    <div class="container">
+        <div class="logo" align="center" style="padding-top: 10%">
+            <img src="img/app/login_logo.png" alt="logo" height="249" width="196" />
+        </div>
+        <div role="main" class="list-content">
+            <!-- ko if: ready -->
+            <h1 style="padding-left: 5%"><span data-bind="text: lng_loadingModule" style="color: #ffffff;"></span></h1>
+            <div data-bind="progressBar: { value : percentage }" style="width:70%;font-size: 13px;height: 30px;text-align: center;"></div>
+            <!-- /ko -->
+        </div>
+    </div>
+</main>
+
+

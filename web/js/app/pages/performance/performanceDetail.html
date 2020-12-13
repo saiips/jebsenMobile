@@ -1,0 +1,140 @@
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_performance">
+    <nav-back-button params="click: function() { $root.router.go('springboard') }"></nav-back-button>
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+
+<main id="performance">
+    
+    <div class="container">
+        <ul>
+            <!--<li class="heading">
+                <div>
+                    <span data-bind="text: lng_salesPerformance + ' : ' "></span>
+                    <input id="inputnumber-id" data-bind="ojComponent: {
+                        component: 'ojInputNumber', 
+                        readOnly: true, 
+                        value: salesTarget}"/>
+                </div>
+            </li>-->
+            <li class="heading">
+                <div data-bind="text: lng_salesPerformance"></div>
+            </li>
+            <li>
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td style="color: #002d72" width="10%" data-bind="text: lng_target"></td>
+                            <td colspan="3" align="right" width="90%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(salesTarget())"></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: ''"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: lng_lastYear"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: lng_ytd"></span></td>
+                        </tr>                         
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: lng_volume"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(sumLastYtdVolume())"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(sumThisYtdVolume())"></span></td>
+                        </tr> 
+                        <tr>
+                            <td colspan="2" style="color: #002d72" width="10%" data-bind="text: lng_net"></td>
+                            <td align="center" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(netLastYtdVolume())"></span></td>
+                            <td align="right" width="30%"><span style="font-size:14px" data-bind="text: decimalNumberConverter.format(netThisYtdVolume())"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li class="heading">
+                <div><span data-bind="text: lng_performanceSummary"></span></div>
+            </li>
+        </ul>
+        <table class="itemList"
+            data-bind="ojComponent: {
+                        component: 'ojTable',
+                        data: productPerformance,
+                        columnsDefault: {sortable: 'none'},
+                        columns: [
+                            {headerTemplate: 'itemTemplate'},
+                            {headerTemplate: 'itemTemplate2'}],
+                        rowTemplate: 'rowTemplate',
+                        rootAttributes: {'style': 'width: 100%'}
+            }">
+        </table>
+    </div>
+</main>
+<script type="text/html" id="itemTemplate">
+  <th style="padding-left: 5%">
+    <span data-bind="text: $parent.lng_item"></span>
+  </th>
+</script>
+<script type="text/html" id="itemTemplate2">
+</script>
+<!--
+<script type="text/html" id="lastYearTemplate">
+  <th>
+    <span data-bind="text: 'Last Year'"></span>
+  </th>
+</script>
+
+<script type="text/html" id="ytdTemplate">
+  <th>
+    <span data-bind="text: 'YTD'"></span>
+  </th>
+</script>
+
+<script type="text/html" id="uomTemplate">
+  <th>
+    <span data-bind="text: 'UOM'"></span>
+  </th>
+</script>
+
+<script type="text/html" id="rowTemplate">
+    <tr class="rowData">
+        <td style="padding-left: 5%">
+            <span data-bind="text: PRODUCT_DESCRIPTION"/>
+        </td>
+        <td>
+            <span data-bind="text: LAST_YTD_QTY"/>
+        </td>
+        <td>
+            <span data-bind="text: THIS_YTD_QTY"/>
+        </td>
+        <td>
+            <span data-bind="text: UOM"/>
+        </td>
+    </tr>
+</script>
+-->
+<script type="text/html" id="rowTemplate">
+    <tr class="rowData">
+        <td style="padding-left: 5%">
+            <table class="dataTable">
+                <tr>
+                    <td colspan="5" style="padding-bottom: 0.2rem;"><span data-bind="text: PRODUCT_DESCRIPTION" class="desc content"/></td>
+                </tr>
+                 <tr>
+                    <td width="20%">
+                        <span data-bind="text: $parent.lng_lastYear" class="green"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: LAST_YTD_QTY" class="green content"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: $parent.lng_ytd" class="red"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: THIS_YTD_QTY" class="red content"/>
+                    </td>
+                    <td width="20%">
+                        <span data-bind="text: UOM" class="blue content"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</script>

@@ -1,0 +1,154 @@
+<script type="text/html" id="admin_header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: $data.headerTitle">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <!-- ko if: $parent.showLastSyncDate -->
+        <div class="syncDate">
+            <span data-bind="text: $parent.lng_lastSyncDate"></span>
+            <span data-bind="text: $parent.syncDatetime"></span>
+        </div>
+        <!-- /ko -->            
+        <nav-buttons side="right1"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+        <nav-buttons side="right2"><input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/></nav-buttons>
+        <nav-buttons side="right3">
+            <a data-bind="click: function() {$parents[1].checkOut()}">
+                <div class="shoppingCartIcon">
+                    <span data-bind="text: $parents[1].totalCnt()"></span>
+                </div>
+            </a>                
+        </nav-buttons> 
+        <nav-buttons side="right4">
+            <input type="image" src="img/app/btn_header_syn.png" data-bind="click: function() { $parents[1].refresh()}"/>
+        </nav-buttons>        
+    </header-bar>
+</script>   
+
+<!-- header_template for non-order desk admin -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: $data.headerTitle">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <!-- ko if: $parent.showLastSyncDate -->
+        <div class="syncDate">
+            <span data-bind="text: $parent.lng_lastSyncDate"></span>
+            <span data-bind="text: $parent.syncDatetime"></span>
+        </div>
+        <!-- /ko -->            
+        <nav-buttons side="right1"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+        <nav-buttons side="right2"><input type="image" src="img/app/btn_header_search.png" data-bind="click: function() { $parents[1].toggleSearchCanvas()}"/></nav-buttons>
+        <nav-buttons side="right3">
+            <a data-bind="click: function() {$parents[1].checkOut()}">
+                <div class="shoppingCartIcon">
+                    <span data-bind="text: $parents[1].totalCnt()"></span>
+                </div>
+            </a>                
+        </nav-buttons>    
+    </header-bar>
+</script> 
+
+<div id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper" data-bind="template: {afterRender: onPageReady}">
+    <div class="oj-offcanvas-inner-wrapper">
+        <!-- display header -->
+        <span data-bind="template: {name: $data.isOrderDeskAdmin() ? 'admin_header_template' : 'header_template'}"></span>
+
+        <main id="newOrder">
+            <!-- template for rendering navigation bar items -->
+            <script type="text/html" id="navTemplate">
+                <li><a href="#">
+                        <span data-bind="css: $data['iconClass']"></span>
+                        <!-- ko text: $data['name'] --> <!--/ko-->
+                    </a></li>
+            </script>            
+            
+            <div role="main" class="list-content">
+                <!-- search canvas -->
+                <div id="searchCanvas" class="oj-offcanvas-top" data-bind="searchCanvas">
+                    <div class="searchForm">
+                        <input type="text" id="searchProduct" autocomplete="off"
+                               data-bind="ojComponent: {
+                              component: 'ojInputText',
+                              placeholder: lng_searchPlaceHolder,
+                              optionChange: onSearchTextChange
+                            }">
+                        <button data-bind="click: onClearSearchText, css: (searchText())? 'icon-search-clear' : 'icon-search-search'" type="reset"></button>
+                    </div>
+                </div>
+
+                <!-- Navigation Bar -->
+                <div role="navigation" class="oj-hybrid-applayout-navbar">
+                    <div class="oj-navigationlist-stack-icon-label"
+                         data-bind="ojComponent:{component: 'ojNavigationList', navigationLevel: 'page',
+                          optionChange: newOrderNavChangeHandler, selection: $data.newOrderNavStateId,
+                          edge: 'top', item: {template: 'navTemplate'}, data: newOrderNavDataSource}">
+                    </div>
+                </div>
+                    
+
+                <div class="container">
+                    <!-- ko if: ready -->
+                    <ul>
+                        <li class="">
+                            <div style="padding: 10px 0 10px 5%; float: left"><span data-bind="text: lng_principal" /></div>
+                            <div style="padding: 5px 0 5px 30%">
+                                <select id="select" style="background : none !important; outline-color : #9d9d9d;"
+                                        data-bind="ojComponent: {component: 'ojSelect', options: options,
+                                                             value: selectItem,
+                                                             optionChange : searchPrincipal,
+                                                             rootAttributes: {style:'max-width:90%'}}">
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- /ko -->
+                    <!-- list view content -->
+                    <ul id="listview" aria-label="product list" data-bind="ojComponent: {component: 'ojListView',
+                        data: products, 
+                        item: {template: 'principlelist_template'}, 
+                        scrollTop: scrollPos,
+                        selectionMode: 'single',
+                        rootAttributes: {id: 'listviewContainer', style: 'width:100%;height:78vh;overflow:auto'},
+                        scrollPolicy: 'loadMoreOnScroll',
+                        scrollPolicyOptions: {fetchSize: 10}}">
+                    </ul>
+                </div>
+
+
+            </div>
+         </main>
+    </div>
+</div>
+
+    <!-- this is the content that is loaded by the ojListView component above -->
+    <script id="principlelist_template" type="text/html">
+        <li class="row">
+            <div class="box oj-flex" style="flex-wrap: nowrap">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="header">
+                                <div class="code"><span data-bind="text: $data.product().prod_brand"/></div>
+                                <div class="amount">
+                                    <span data-bind="text: $data.product().currency_code" />
+                                    <span data-bind="currency:$data.product().price, symbol:'$'" />
+                                </div>
+                            </div>                        
+                            <div class="itemDetail">
+                                <div class="code"><span data-bind="text: $data.product().prod_code"/></div>
+                                <div class="prod_desc"><span data-bind="text:$data.product().prod_desc"/></div>
+                            </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btnContainer">
+                                <a  href="" class="addtoCart" data-bind="click: $parent.addToCart"><span data-bind="text: $parent.lng_addToCart"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>    
+            </div>
+        </li>
+    </script>                
+    <!-- list view -->  
+    

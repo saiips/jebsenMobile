@@ -1,0 +1,394 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+.oj-dialog-body select{
+    background: none;
+}
+
+.oj-hybrid-applayout-navbar{
+    background-color: rgb(0, 55, 125);
+}
+
+.oj-navigationlist-page-level.oj-navigationlist-horizontal.oj-navigationlist-icon-only .oj-navigationlist-item.oj-selected, 
+.oj-navigationlist-page-level.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item.oj-selected{
+    border-color:white
+}
+
+
+.oj-navigationlist-page-level.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item:not(.oj-disabled) a.oj-navigationlist-item-content .oj-navigationlist-item-label{
+    color: rgb(70, 133, 191);
+}
+
+.oj-navigationlist-page-level.oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item.oj-selected a.oj-navigationlist-item-content .oj-navigationlist-item-label{
+    color: white;
+}
+
+.oj-listview-item{
+    padding: 0px;
+}
+
+.oj-listview-group-item{
+   padding: 0.5rem 0 0.5rem 0;
+}
+
+.oj-button.oj-default.oj-button-full-chrome, 
+.oj-button.oj-focus-only.oj-button-full-chrome, 
+.oj-button.oj-disabled.oj-button-full-chrome
+{
+    background-color: #002d72;
+}
+
+.oj-button.oj-hover.oj-button-full-chrome
+{
+    background-color: rgb(70, 133, 191);
+}
+
+.oj-inputtext:not(.oj-disabled):not(.oj-read-only) .oj-inputtext-input:focus, 
+.oj-textarea:not(.oj-disabled):not(.oj-read-only) .oj-textarea-input:focus{
+    border-color: #002d72;
+}
+.oj-listview-empty-text {
+    padding: 0.5rem;
+    background-color: #ffffff;
+    padding-top: 20px;
+}
+/**************************************************************** 
+Check Out
+****************************************************************/
+#quickCheckOut .oj-select-open-icon:before{
+    visibility: hidden;
+}
+#quickCheckOut .oj-select{
+    /*min-width: 0px;*/
+}
+#quickCheckOut .oj-form-control{
+    margin-bottom: 3px;
+    vertical-align: -webkit-baseline-middle;
+}
+#quickCheckOut  .itemsDetailSummary .oj-inputtext-input{
+    width: 10rem;
+    color: white;
+    text-align: right;
+}    
+#quickCheckOut .container .box .purchase_order .oj-inputtext-input{
+    width: 10rem;
+    text-align: left;
+}
+#quickCheckOut .container ul li .box .header .amount table{
+    width: 100%;
+    padding-top: 0px;
+    border-collapse: separate;
+}
+#quickCheckOut .container ul li .box .header .amount .inputAmount .oj-inputtext-input{
+    text-align: right;
+}
+/**************************************************************** 
+Check Out (Quotation)
+****************************************************************/
+#quickQuotation .oj-select-open-icon:before{
+    visibility: hidden;
+}
+#quickQuotation .oj-select{
+    min-width: 0px;
+}
+#quickQuotation .oj-form-control{
+    margin-bottom: 0px;
+    vertical-align: -webkit-baseline-middle;
+}
+#quickQuotation  .itemsDetailSummary .oj-inputtext-input{
+    width: 10rem;
+    color: white;
+    text-align: right;
+}    
+#quickQuotation .container .box .purchase_order .oj-inputtext-input{
+    width: 10rem;
+    text-align: left;
+}
+#quickQuotation .container ul li .box .header .amount table{
+    width: 100%;
+    padding-top: 0px;
+    border-collapse: separate;
+}
+#quickQuotation .container ul li .box .header .amount .inputAmount .oj-inputtext-input{
+    text-align: right;
+}
+td.oj-datepicker-today{
+    border: 1px solid #002d72;
+}
+.oj-datepicker-calendar td a.oj-selected{
+    background: #002d72;
+}
+
+/**************************************************************** 
+oj-tabs
+****************************************************************/
+.oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab{
+    border-width: 0 0 1px 0;
+}
+.oj-tabs-tab.oj-selected{
+    border-color: #002d72;
+}
+.oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab-content, 
+.oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab-content{
+    border-width: 0 0 0 0;
+}
+.oj-tabs-title{
+    color: #002d72;
+}
+.oj-tabs-panel{
+    border: none;
+    color: #044f91;
+}
+.oj-tabs-anchor{
+    padding: 3px 1px 3px 1px
+}
+
+html:not([dir="rtl"]) #profile .oj-table-column-header-cell{
+    padding-left: 0px;
+}
+
+#profile .oj-table-data-cell{
+    padding-left: 0px;
+}
+
+/**************************************************************** 
+New Order
+****************************************************************/
+#newOrder div.oj-flex-item.demo-content{
+    width: 100%;
+    padding:0;
+    margin:0;
+}
+#newOrder .oj-listview-item{
+    padding:0;
+}
+#newOrder .oj-flex{
+    padding:0;
+}
+#newOrder .container ul li .box{
+    padding:0;
+    width: 100%;
+}
+#newOrder .oj-inputnumber .oj-buttonset{
+    border-style: none;
+}
+#newOrder .oj-inputnumber-input {
+    color: white;
+    text-align: center;
+    min-width: 3em;
+    padding-top: 0px;
+    background-color: #002d72;
+    border-style: none;
+    border-bottom-style: solid;
+    padding: 0;
+}
+#newOrder .oj-inputnumber-button.oj-button{
+    width: 50px;
+    color:#002d72;
+    border-color: #002d72;
+}
+#newOrder .oj-inputnumber-wrapper{
+    border-color: white;
+    border-style: none;
+    height: 3.50rem;
+    width: 70%;
+}
+#newOrder .oj-button.oj-default.oj-button-full-chrome, 
+#newOrder .oj-button.oj-focus-only.oj-button-full-chrome, 
+#newOrder .oj-button.oj-disabled.oj-button-full-chrome,
+#newOrder .oj-button.oj-hover.oj-button-full-chrome{
+    background-color: #002d72;
+    border-style: none;
+    box-shadow: none;
+}
+#newOrder .oj-button.oj-hover.oj-button-full-chrome
+{
+    background-color: rgb(70, 133, 191);
+}
+#newOrder .oj-inputsearch{
+    width: 90%
+}
+/*#newOrder .oj-inputsearch:not(.oj-disabled):not(.oj-read-only).oj-focus .oj-inputsearch-choice{
+    border-color: #002d72;
+    border-width: 0 0 1px 0;
+}*/
+#newOrder .oj-button{
+    vertical-align: initial;
+}
+
+/**************************************************************** 
+New Quotation
+****************************************************************/
+#newQuotation div.oj-flex-item.demo-content{
+    width: 100%;
+    padding:0;
+    margin:0;
+}
+#newQuotation .oj-listview-item{
+    padding:0;
+}
+#newQuotation .oj-flex{
+    padding:0;
+}
+#newQuotation .container ul li .box{
+    padding:0;
+    width: 100%;
+}
+#newQuotation .oj-inputnumber .oj-buttonset{
+    border-style: none;
+}
+#newQuotation .oj-inputnumber-input {
+    color: white;
+    text-align: center;
+    min-width: 3em;
+    padding-top: 0px;
+    background-color: #002d72;
+    border-style: none;
+    border-bottom-style: solid;
+    padding: 0;
+}
+#newQuotation .oj-inputnumber-button.oj-button{
+    width: 50px;
+    color:#002d72;
+    border-color: #002d72;
+}
+#newQuotation .oj-inputnumber-wrapper{
+    border-color: white;
+    border-style: none;
+    height: 3.50rem;
+    width: 70%;
+}
+#newQuotation .oj-button.oj-default.oj-button-full-chrome, 
+#newQuotation .oj-button.oj-focus-only.oj-button-full-chrome, 
+#newQuotation .oj-button.oj-disabled.oj-button-full-chrome,
+#newQuotation .oj-button.oj-hover.oj-button-full-chrome{
+    background-color: #002d72;
+    border-style: none;
+    box-shadow: none;
+}
+#newQuotation .oj-button.oj-hover.oj-button-full-chrome
+{
+    background-color: rgb(70, 133, 191);
+}
+#newQuotation .oj-inputsearch{
+    width: 90%
+}
+/*#newQuotation .oj-inputsearch:not(.oj-disabled):not(.oj-read-only).oj-focus .oj-inputsearch-choice{
+    border-color: #002d72;
+    border-width: 0 0 1px 0;
+}*/
+#newQuotation .oj-button{
+    vertical-align: initial;
+}
+
+/**************************************************************** 
+Change Shipment
+****************************************************************/
+#changeShipment .oj-inputnumber-input {
+    border-style: none;
+}
+#changeShipment .oj-inputnumber .oj-buttonset {
+    border-style: none;
+}
+#changeShipment .oj-inputnumber .oj-inputnumber-button.oj-button {
+    margin-bottom: 30%;
+}
+
+/**************************************************************** 
+Delivery Detail
+****************************************************************/
+#deliveryDetail .oj-inputnumber .oj-buttonset{
+    border-style: none;
+}
+#deliveryDetail .oj-inputnumber-input {
+    text-align: center;
+    padding-top: 0px;
+    background-color: transparent;
+    border-style: none;
+    padding: 0;
+    width: 0px;
+    min-width: 2em;
+}
+#deliveryDetail .oj-inputnumber-button.oj-button{
+    color:#002d72;
+    border-color: transparent;
+}
+#deliveryDetail .oj-inputnumber-wrapper{
+    border-color: white;
+    border-style: none;
+    height: 3.00rem;
+    width: 40%;
+}
+
+#deliveryDetail .oj-button.oj-default.oj-button-full-chrome .oj-button-icon, 
+#deliveryDetail .oj-button.oj-focus-only.oj-button-full-chrome .oj-button-icon{
+    color: #002d72;
+}
+
+#deliveryDetail .oj-button.oj-default.oj-button-full-chrome, 
+#deliveryDetail .oj-button.oj-focus-only.oj-button-full-chrome{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+html #deliveryDetail .oj-form-control{
+    margin-bottom: 0px;
+}
+
+/**************************************************************** 
+Shipment
+****************************************************************/
+#changeShipment .oj-button.oj-default.oj-button-full-chrome, 
+#changeShipment .oj-button.oj-focus-only.oj-button-full-chrome, 
+#changeShipment .oj-button.oj-disabled.oj-button-full-chrome,
+#changeShipment .oj-button.oj-hover.oj-button-full-chrome
+{
+    color: transparent;
+    border-color: transparent;
+}
+
+/**************************************************************** 
+Profile
+****************************************************************/
+#profile .oj-tabs-title{
+    min-width: 0.5rem;
+}
+
+/**************************************************************** 
+springboard
+****************************************************************/
+#springboard .oj-select-select{
+    color: white;
+}
+#springboard .oj-select-select:active{
+    background-color: #d7d7d7;
+}
+#springboard .oj-select{
+    position: inherit;
+    font-size: 18px;
+    display: inline-block;
+}
+
+/**************************************************************** 
+Input License
+****************************************************************/
+#inputLicense .oj-listview-container-touch{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/**************************************************************** 
+Review Loading
+****************************************************************/
+#scheduleMaintenance .oj-dialog-footer,
+#reviewLoading .oj-dialog-footer {
+    text-align:left;
+}
+#loading .oj-listbox-results-depth-0>.oj-listbox-result-label {
+    background-color: transparent;
+}

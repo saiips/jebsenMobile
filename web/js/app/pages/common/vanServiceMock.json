@@ -1,0 +1,48 @@
+{
+    "OutputGetVans": {
+        "TblJsVans": [
+            {
+                "LicenseNo": "MP8904",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "MP9953",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "PJ2012",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "RE5896",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "RP1849",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "SV6430",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            },
+            {
+                "LicenseNo": "TX588",
+                "Role": "JLA",
+                "Environment": "prd",
+                "Active": "Y"
+            }
+        ]
+    }
+}

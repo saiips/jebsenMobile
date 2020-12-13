@@ -1,0 +1,31 @@
+{
+  "count": 5,
+  "id": "0000|BG12SP1204",
+  "result": [
+    {
+      "id": "cus-101",
+      "name": "Athena 22",
+      "qty": 1
+    },
+    {
+      "id": "cus-104",
+      "name": "Cason Table Restaurant",
+      "qty": 1
+    },
+    {
+      "id": "cus-105",
+      "name": "Condeno Bar",
+      "qty": 1
+    },
+    {
+      "id": "cus-106",
+      "name": "Red Quarters",
+      "qty": 1
+    },
+    {
+      "id": "cus-107",
+      "name": "Dairy Farm",
+      "qty": 1
+    }
+  ]
+}

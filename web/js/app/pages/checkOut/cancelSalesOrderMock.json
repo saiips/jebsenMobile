@@ -1,0 +1,6 @@
+{
+	"OutputCancelSalesOrder": {
+		"ReturnStatus": "E",
+		"ReturnMessage": "ONT OE_PC_CANCEL_VIOLATION N OBJECT Order Header N REASON Order Header has been booked. Cannot Cancel by Non-DAM responsibilities. You are not allowed to cancel Order Header because:\nOrder Header has been booked. Cannot Cancel by Non-DAM responsibilities."
+	}
+}

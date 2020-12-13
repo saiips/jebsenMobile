@@ -1,0 +1,204 @@
+<!-- driver_template for driver -->
+<script type="text/html" id="driver_template">
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_shipmentDetail">
+    <nav-back-button params="label: ' ', click: function() { $parent.goBack() }"></nav-back-button>
+    <div class="syncDate">
+        <span data-bind="text: $parent.headerTitle"></span>
+    </div>        
+    <nav-buttons side="right3">
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+    </nav-buttons>
+</header-bar>
+</script>
+
+<!-- header_template for driver -->
+<script type="text/html" id="van_template">
+<!-- header -->
+<header-bar role="banner" params="headerLabel: lng_deliveryDetail">
+    <nav-back-button params="label: ' ', click: function() { $parent.goBack() }"></nav-back-button>
+    <div class="syncDate">
+        <span data-bind="text: $parent.headerTitle"></span>
+    </div>        
+    <nav-buttons side="right2">
+        <!-- ko if: $parents[1].buttonEnabled -->
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        <!-- /ko -->
+    </nav-buttons>
+    <nav-buttons side="right3">
+        <!-- ko if: $parents[1].buttonEnabled -->
+            <!-- ko if: $parents[1].showEraseButton -->
+           <input type="image" src="img/app/btn_header_remove.png" data-bind="click: function() { $parents[1].clearData() }"/>
+            <!-- /ko -->
+            <!-- ko ifnot: $parents[1].showEraseButton -->
+            <a data-bind="click: function() {$parents[1].save()}">
+                <div class="dataSyncIcon">
+                    <span data-bind="text: $parents[1].getDataSyncCount()"></span>
+                </div>
+            </a>    
+            <!-- /ko -->
+        <!-- /ko -->
+        <!-- ko ifnot: $parents[1].buttonEnabled -->
+        <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>         
+        <!-- /ko -->
+    </nav-buttons>    
+</header-bar>
+</script>
+
+<!-- display header -->
+<span data-bind="template: {name: $data.isDriverRole() ? 'driver_template' : 'van_template'}"></span>
+
+<main id="deliveryDetail" class="">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <div><span data-bind="text: lng_overview"></span></div>
+            </li>
+            <li>
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td colspan="3"><span data-bind="text: documentTypeDesc"></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                            <td colspan="3"><span data-bind="text: outletName"></td>
+                        </tr>                        
+                        <tr>
+                            <td valign="top"><div class="icon"><img src="img/app/icon_address_blue.png" alt="" /></div></td>
+                            <td colspan="3"><span data-bind="text: deliveryAddress"></td>
+                        </tr>
+                        <tr>
+                            <td width="10%"><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                            <td width="90%" colspan="3"><span data-bind="text: (deliveryDate() == '') ? '' : moment(deliveryDate()).format('DD-MMM-YYYY').toUpperCase()"></td>
+                        </tr>
+                        <tr>
+                            <td width="10%"><div class="icon"><img src="img/app/icon_billing_ad_blue.png" alt="" /></div></td>
+                            <td width="40%"><span data-bind="text: orderNumber"></td>
+                            <td width="10%"><div class="icon"><img src="img/app/icon_shipping_ad_blue.png" alt="" /></div></td>
+                            <td width="40%"><span data-bind="text: carPlateNumber"></td>
+                        </tr>
+                        <tr>
+                            <td width="10%"><div class="icon"><img src="img/icons/common/date.svg" alt="" /></div></td>
+                            <td width="40%"><span data-bind="text: loadedDate"></td>
+                            <td width="10%"><div class="icon"><img src="img/app/icon_arrival_date_blue.png" alt="" /></div></td>
+                            <td width="40%"><span data-bind="text: confirmedDate"></td>
+                        </tr>                         
+                    </table>
+                </div>
+            </li>
+            <li class="heading">
+                <div><span data-bind="text: lng_itemDetail"></span></div>
+            </li>
+            <!-- display item detail -->
+            <span data-bind="template: {name: $data.isDriverRole() ? 'driver_item_template' : 'van_item_template'}"></span>
+        </ul>
+        <!-- ko ifnot: isCODPayment -->
+        <div class="btnJDContainer" data-bind="visible: buttonEnabled">
+            <a class="leftButton" data-bind="click: confirmShipment"><span data-bind="text: lng_confirm"></span></a>
+            <a class="rightButton" data-bind="click: partialConfirmShipment"><span data-bind="text: lng_partialConfirm"></span></a>
+        </div>
+        <!-- /ko -->        
+        <!-- ko if: isCODPayment -->
+        <div class="btnContainer" data-bind="visible: buttonEnabled">
+            <a class="leftButton" data-bind="click: confirmCash"><span data-bind="text: lng_confirmByCash"></span></a>
+            <a class="middleButton" data-bind="click: confirmCheque"><span data-bind="text: lng_confirmByCheque"></span></a>            
+            <a class="rightButton" data-bind="click: confirmOthers"><span data-bind="text: lng_confirmByOthers"></span></a> 
+        </div>
+        <!-- /ko -->
+    </div>
+</main>
+
+<!-- driver_item_template for driver -->
+<script type="text/html" id="driver_item_template">
+    <li class="row" data-bind="foreach:allDeliveryItem">
+        <div class="box">
+            <div class="header">
+                <div class="code"><span data-bind="text:$data.PRODUCT_NUMBER" /></div>
+            </div>
+            <div class="itemDetail">
+                <div><span data-bind="text:$data.PRODUCT_DESC" /></div>
+                <div><span data-bind="text:$parent.lng_originalQty + $data.MAXQTY"/></div>
+            </div>
+        </div>
+        <div class="editContainer">
+            <div class="lot">
+                <table>
+                    <tr>
+                        <td valign="middle" style="width: 30%"><span data-bind="text: $parent.lng_lot"></span></td>
+                        <td valign="middle">
+                            <span data-bind="text:$data.LOT_NUMBER"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="qty" >
+                <table>
+                    <tr>
+                        <td valign="middle" style="width: 25%"><span data-bind="text: $parent.lng_qty"/></td>
+                        <td valign="middle">
+                            <div data-bind="visible: $parent.qtyModifyEnabled()">                                
+                                <input  data-bind="ojComponent: {
+                                component: 'ojInputNumber',
+                                        max: $data.MAXQTY,
+                                        min:0,
+                                        step:1,
+                                        value: $data.QTY}, attr: {id : $data.DELIVERY_NUMBER}"/>         
+                            </div>
+                            <div data-bind="visible: !$parent.qtyModifyEnabled()">
+                                <span data-bind="text: $data.QTY"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </li>
+</script>
+
+<!-- item_template for van sales -->
+<script type="text/html" id="van_item_template">
+    <li class="row" data-bind="foreach:allDeliveryItem">
+        <div class="box">
+            <div class="header">
+                <div class="code"><span data-bind="text:$data.PRODUCT_NUMBER" /></div>
+            </div>
+            <div class="itemDetail">
+                <div><span data-bind="text:$data.PRODUCT_DESC" /></div>
+            </div>
+        </div>
+        <div class="editContainer">
+            <div class="lot">
+                <table>
+                    <tr>
+                        <td valign="middle" style="width: 30%"><span data-bind="text: $parent.lng_lot"></span></td>
+                        <td valign="middle">
+                            <span data-bind="text:$data.LOT_NUMBER"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="qty" >
+                <table>
+                    <tr>
+                        <td valign="middle" style="width: 30%"><span data-bind="text: $parent.lng_qty"></span></td>
+                        <td valign="middle">
+                            <div data-bind="visible: $parent.qtyModifyEnabled()">                                
+                                <input  data-bind="ojComponent: {
+                                component: 'ojInputNumber',
+                                        max: $data.MAXQTY,
+                                        min:0,
+                                        step:1,
+                                        value:$data.QTY}, attr: {id : $data.DELIVERY_NUMBER}"/>         
+                            </div>
+                            <div data-bind="visible: !$parent.qtyModifyEnabled()">
+                                <span data-bind="text: $data.QTY"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </li>
+</script>

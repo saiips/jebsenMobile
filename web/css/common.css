@@ -1,0 +1,3842 @@
+@font-face {
+    font-family: "DFHeiStd";
+    font-weight: 300;
+    src: url("fonts/DFHeiStd-W3.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "DFHeiStd";
+    font-weight: 500;
+    src: url("fonts/DFHeiStd-W5.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Verdana";
+    font-weight: 400;
+    src: url("fonts/Verdana-400.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Verdana";
+    font-weight: 700;
+    src: url("fonts/Verdana-700.ttf") format('truetype');
+}
+
+body {
+    /*font-family: "Verdana", "DFHeiStd", Arial, sans-serif;*/
+    font-weight: 400;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html[lang="sc"] body {
+    font-family: "STHeiti", Arial, sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    overflow: hidden;
+}
+
+
+/**************************************************************** 
+Common
+****************************************************************/
+table,tr,td{
+    border-spacing: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+input{
+    padding: 0px;
+    box-shadow: none;
+    /*border: none;*/
+    /*background: transparent;*/
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: white;
+}
+textarea{
+    width: 100%;
+    color: #002d72;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+textarea::-webkit-input-placeholder {
+    color:#bfbfbf;
+    font-size: 14px;
+}
+select{
+    color: #002d72;
+    font-size: inherit;
+    background: url('../img/app/btn_arrow_down_blue.png') 100% 45% no-repeat;
+    background-size: 14px;
+    border: none;
+    width: 60px;
+}
+a,
+a:hover,
+a:visited {
+    text-decoration: none!important;
+    color: inherit;
+}
+
+.button{
+    background: #d8e5f9;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 3px;
+    text-align: center;
+    margin: auto;
+    font-size: 18px;
+    cursor: pointer;
+}
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    list-style: none;
+}
+.page-background{
+    background: url('../img/app/bg.png') 50% 50% no-repeat; 
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.container ul li.heading{
+    line-height: 30px;
+    width: 90%;
+    margin: auto;
+}
+.container ul li .box{
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+}
+.tag{
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    height: 20px;
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 20px;
+    position: absolute;
+    right: 20px;
+}
+.green.tag{
+    background: #14c7a7;
+}
+.yellow.tag{
+    background: #ccac4a;
+}
+.red.tag{
+    background: #d84928;
+}
+
+.headerTitle{
+    font-size: 20px;
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+}
+
+.headerBack{
+    float: left;
+    height: 20px;
+    padding: 20px 20px 0px 20px;
+    cursor: pointer;
+}
+/**************************************************************** 
+Header Bar
+****************************************************************/
+
+header-bar {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 60px; 
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    align-items: flex-end;        
+    background: url('../img/app/header.png') 50% 50% no-repeat;
+    background-size: cover;
+}
+header-bar .container{
+    position: relative;
+    top: 20px;
+}
+header-bar .back{
+    position: fixed;
+    left: 10px;
+    top: 20px;
+}
+header-bar .back img{
+    height: 20px;
+    padding: 20px 20px 0px 20px;
+    cursor: pointer;
+}
+header-bar .title{
+    position: fixed;
+    left: 40px;
+    top: 15px;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+}
+header-bar .syncDate{
+    position: fixed;
+    left: 40px;
+    top: 32px;
+    font-size: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+header-bar .rightIcon1{
+    position: fixed;
+    right: 100px;
+    top: 20px;
+}
+header-bar .rightIcon2{
+    position: fixed;
+    right: 60px;
+    top: 20px;
+}
+header-bar .rightIcon3{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+header-bar .rightIcon1 img,
+header-bar .rightIcon2 img,
+header-bar .rightIcon3 img{
+    width: 20px;
+}
+header-bar .admin_rightIcon1{
+    position: fixed;
+    right: 140px;
+    top: 20px;
+}
+header-bar .admin_rightIcon2{
+    position: fixed;
+    right: 100px;
+    top: 20px;
+}
+header-bar .admin_rightIcon3{
+    position: fixed;
+    right: 60px;
+    top: 20px;
+}
+header-bar .admin_rightIcon4{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+header-bar .admin_rightIcon1 img,
+header-bar .admin_rightIcon2 img,
+header-bar .admin_rightIcon3 img,
+header-bar .admin_rightIcon4 img{
+    width: 20px;
+}
+header-bar + main{
+    padding-top: 50px;
+}
+main{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+header-bar .left {
+    -webkit-flex: 1 0;
+    flex: 1 0;
+    margin-left: 10px; 
+}
+header-bar .center {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 3 1;
+    flex: 3 1;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0 5px;
+    text-align: center; 
+}
+header-bar .right {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1 0;
+    flex: 1 0;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    margin-right: 10px; 
+}
+header-bar nav-back-button, header-bar nav-buttons {
+    color: #FFF;
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    font-weight: 300; 
+}
+header-bar nav-back-button input, header-bar nav-buttons input {
+    background: none;
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    line-height: 20px;
+    height: 20px; 
+}
+header-bar nav-back-button > button {
+    background: url("../img/icons/common/back.svg") no-repeat left center;
+    -moz-background-size: 14px;
+    -o-background-size: 14px;
+    -webkit-background-size: 14px;
+    background-size: 14px;
+    padding-left: 20px; 
+}
+header-bar .admin_rightIcon3 .dataSyncIcon,
+header-bar .admin_rightIcon4 .dataSyncIcon,
+header-bar .rightIcon3 .dataSyncIcon {
+    background: url("../img/app/btn_header_bookmark.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    margin: 0px auto;   
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    line-height: 20px;
+    height: 20px;    
+}
+header-bar .admin_rightIcon3 .dataSyncIcon span,
+header-bar .admin_rightIcon4 .dataSyncIcon span,
+header-bar .rightIcon3 .dataSyncIcon span {
+    float: left;
+    background-color: #0572CE;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 0px 0px;
+    margin: -10px 0px 40px 20px;    
+}
+header-bar .admin_rightIcon3 .shoppingCartIcon,
+header-bar .rightIcon3 .shoppingCartIcon {
+    background: url("../img/app/btn_header_check_out.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    margin: 0px auto;   
+    color: #FFF;
+    border: 0;
+    outline: 0;
+    line-height: 20px;
+    height: 20px;    
+}
+header-bar .admin_rightIcon3 .shoppingCartIcon span,
+header-bar .rightIcon3 .shoppingCartIcon span {
+    float: left;
+    background-color: #0572CE;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 0px 0px;
+    margin: -10px -5px 40px 18px;    
+}
+/**************************************************************** 
+Login
+****************************************************************/
+#loginPage .lg-logo {
+    padding-top: 2%;
+    text-align: center;
+}
+#loginPage .lg-logo img{
+    width: 12%;
+}
+#loginPage .logo{
+    padding-top: 15%;
+    text-align: center;
+}
+#loginPage .logo img{
+    width: 35%;
+}
+#loginPage .version{
+    position: absolute;
+    z-index: auto;
+    top: 5%;
+    right: 5%;
+}
+#loginPage .inputContainer{
+    margin-top: 10%;
+}
+#loginPage .username{
+    width: 90%;
+    margin: 20px auto;
+}
+#loginPage .password{
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+}
+#loginPage input{
+    color: white;
+    width: 100%;
+    background: rgba(0, 35, 89, 0.5);   
+    letter-spacing: 0.06em;
+    height: 50px;
+    font-size: 16px;
+    text-indent: 25px;
+}
+#loginPage .lg-login-btn{
+    width: 90%;
+    color: #002d72;
+}
+#loginPage .login-btn{
+    width: 90%;
+    color: #002d72;
+    margin-top: 15%;
+}
+#loginPage .forgot-password{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    color: #6ba6ff;
+    margin-top: 20px;
+}
+#loginPage .btnContainer div{
+    float: left;
+    padding-left: 25px;
+    margin: auto;
+}
+#loginPage .btnContainer div img{
+    width: 34px;
+}
+#loginPage  .password button {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    margin: 3px 0px;
+    text-indent: -99999px; 
+    width: 25px; 
+    height: 25px; 
+    display: block;
+    background: url('../img/app/icon_show_pwd.png') 0 0 no-repeat;
+    float: right;
+    border: none;
+}
+#loginPage  .password button:active {
+    outline: none;
+    border: none;
+}
+#loginPage  .password button:focus {
+    outline:0;
+}
+
+/**************************************************************** 
+Springboard
+****************************************************************/
+#springboard .container{
+    width: 80%;
+    margin: auto;
+}
+#springboard .lg-logo{
+    padding-top: 2%;
+}
+#springboard .lg-logo img{
+    width: 10%;
+}
+#springboard .logo{
+    padding-top: 10%;
+}
+#springboard .logo img{
+    width: 40%;
+}
+#springboard .version{
+    position: absolute;
+    z-index: auto;
+    top: 5%;
+    right: 5%;
+}
+#springboard .welcomeMsg{
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 20px;
+    letter-spacing: .02em;
+}
+#springboard .title{
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+    letter-spacing: .02em;
+}
+/*
+#springboard .title span{
+    opacity: .5;
+    margin: auto 10px;
+}
+*/
+#springboard ul li{
+    height: 60px;
+    line-height: 60px;
+    letter-spacing: .06em;
+}
+#springboard ul li .icon{
+    float: left;
+    height: 60px;
+}
+#springboard ul li .icon img{
+    padding-top: 20px;
+    width: 20px;
+}
+#springboard ul li .content{
+    padding-left: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+#springboard ul li .d-icon{
+    float: left;
+    height: 60px;
+}
+#springboard ul li .d-icon img{
+    padding-top: 20px;
+    padding-left: 30px;
+    width: 20px;
+}
+#springboard ul li .d-content{
+    padding-left: 40px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+#springboard .btnContainer{
+    margin: 30px auto;
+}
+#springboard .btnContainer div{
+    float: left;
+    padding-right: 10px;
+}
+#springboard .btnContainer div img{
+    width: 34px;
+}
+#springboard .dummyContainer{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+}
+#springboard .dataSyncIcon {
+    background: url("../img/app/btn_synchronize.png");
+    background-size: 34px 34px;
+    background-repeat: no-repeat;
+    margin: 0px auto;    
+}
+#springboard .dataSyncIcon span {
+    float: left;
+    background-color: #0572CE;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 0px 5px;
+    margin: -10px 0px 40px 20px;    
+}
+/**************************************************************** 
+Customer List
+****************************************************************/
+#customerList{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#customerList .container{
+    padding-top: 0px;
+}
+#customerList .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#customerList .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#customerList .container ul li .box .title{
+    color:#666;
+}
+#customerList .container ul li .box .name{
+    font-size: 22px;
+    line-height: 36px;
+}
+#customerList .container ul li .box .address{
+    display: table;
+}
+#customerList .container ul li .box .address .icon{
+    float: left;
+    padding-right: 10px;
+    display: table-cell;
+}
+#customerList .container ul li .box .address .icon img{
+    width: 15px;
+}
+#customerList .container ul li .box .address .details{
+    color: #666;
+    display: table-cell;
+    vertical-align: top;
+}
+
+/**************************************************************** 
+Visitation List
+****************************************************************/
+#visitationList{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#visitationList .container{
+    padding-top: 10px;
+}
+#visitationList .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#visitationList .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#visitationList .container ul li .box .title{
+    color:#666;
+}
+#visitationList .container ul li .box .name{
+    font-size: 22px;
+    line-height: 36px;
+}
+#visitationList .container ul li .box .address{
+    display: table;
+}
+#visitationList .container ul li .box .address .icon{
+    float: left;
+    padding-right: 10px;
+    display: table-cell;
+}
+#visitationList .container ul li .box .address .icon img{
+    width: 15px;
+}
+#visitationList .container ul li .box .address .details{
+    color: #666;
+    display: table-cell;
+    vertical-align: top;
+}
+#visitationList .container ul li .information{
+    color: #666;
+}
+#visitationList .container ul li .information .fieldName{
+    float: left;
+}
+#visitationList .container ul li .information .fieldValue{
+    padding-left: 100px;
+    line-height: 1.55;
+}
+
+/**************************************************************** 
+Visitation Detail
+****************************************************************/
+#visitationDetail{
+    background: #ebebed;
+    color: #002d72;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden
+}
+#visitationDetail .container{
+    padding-top: 10px;
+}
+#visitationDetail .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#visitationDetail .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#visitationDetail .container ul li.heading .rightIcon input{
+    width: 30px;
+}
+#visitationDetail .container ul li{
+    background: white;
+    position: relative;
+}
+#visitationDetail .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+    width: 18rem;
+}
+#visitationDetail .container ul li .box .header{
+    height: 30px;
+}
+#visitationDetail .container ul li .box .header .code{
+    float: left;
+}
+#visitationDetail .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#visitationDetail .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+}
+#visitationDetail .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#visitationDetail .container ul li .box table img{
+    width: 15px;
+}
+#visitationDetail .container ul li .box table tr{
+    height: 25px;
+}
+#visitationDetail .container .selectBox{
+    height: auto;
+    color: #002d72;
+    background: inherit;
+}
+
+/**************************************************************** 
+Order History
+****************************************************************/
+#orderHistory{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 55px;    
+}
+#orderHistory .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#orderHistory .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#orderHistory .container ul li .orderNo{
+    font-size: 22px;
+    line-height: 36px;
+    width: 18rem;
+}
+#orderHistory .container ul li .information{
+    color: #666;
+}
+#orderHistory .container ul li .information .fieldName{
+    float: left;
+}
+#orderHistory .container ul li .information .fieldValue{
+    padding-left: 100px;
+    line-height: 1.55;
+}
+
+/**************************************************************** 
+Order Detail
+****************************************************************/
+#orderDetail{
+    background: #ebebed;
+    color: #002d72;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    /*padding-top: 65px;*/
+}
+#orderDetail .container ul li .addressBox {
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+#orderDetail .container{
+    padding-top: 65px;
+}
+#orderDetail .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#orderDetail .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#orderDetail .container ul li.heading .rightIcon input{
+    width: 30px;
+}
+#orderDetail .container ul li{
+    background: white;
+    position: relative;
+}
+#orderDetail .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+    width: 18rem;
+}
+#orderDetail .container ul li .box .header{
+    height: 30px;
+}
+#orderDetail .container ul li .box .header .code{
+    float: left;
+}
+#orderDetail .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#orderDetail .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+}
+#orderDetail .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#orderDetail .container ul li .box table img{
+    width: 15px;
+}
+#orderDetail .container ul li .box table tr{
+    height: 25px;
+}
+#orderDetail .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#orderDetail .container ul li .box .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    background: inherit;    
+}
+#orderDetail .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#orderDetail .editContainer .lot,
+#orderDetail .editContainer .qty{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 49.8%;
+    text-align: center;
+}
+#orderDetail .editContainer .lot table{
+    width: 100%;
+}
+#orderDetail .editContainer .lot table tr td{
+    width:50%;
+}
+#orderDetail .editContainer .qty{
+    border-right: none;
+}
+#orderDetail .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#orderDetail .editContainer .qty table{
+    width: 100%;
+}
+#orderDetail .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#orderDetail .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#orderDetail .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#orderDetail .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    /*height: 50px;*/
+    line-height: 50px;
+}
+#orderDetail .container .btnContainer .leftButton{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;
+}
+#orderDetail .container .btnContainer .rightButton{
+    float: left;
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+
+/**************************************************************** 
+Quotation Detail
+****************************************************************/
+#quotationDetail{
+    background: #ebebed;
+    color: #002d72;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+#quotationDetail .container{
+    padding-top: 10px;
+}
+#quotationDetail .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#quotationDetail .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#quotationDetail .container ul li.heading .rightIcon input{
+    width: 30px;
+}
+#quotationDetail .container ul li{
+    background: white;
+    position: relative;
+}
+#quotationDetail .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+    width: 18rem;
+}
+#quotationDetail .container ul li .box .header{
+    height: 30px;
+}
+#quotationDetail .container ul li .box .header .code{
+    float: left;
+}
+#quotationDetail .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#quotationDetail .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+}
+#quotationDetail .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#quotationDetail .container ul li .box table img{
+    width: 15px;
+}
+#quotationDetail .container ul li .box table tr{
+    height: 25px;
+}
+#quotationDetail .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#quotationDetail .container ul li .box .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    background: inherit;    
+}
+#quotationDetail .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#quotationDetail .editContainer .lot,
+#quotationDetail .editContainer .qty{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 49.8%;
+    text-align: center;
+}
+#quotationDetail .editContainer .lot table{
+    width: 100%;
+}
+#quotationDetail .editContainer .lot table tr td{
+    width:50%;
+}
+#quotationDetail .editContainer .qty{
+    border-right: none;
+}
+#quotationDetail .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#quotationDetail .editContainer .qty table{
+    width: 100%;
+}
+#quotationDetail .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#quotationDetail .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#quotationDetail .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#quotationDetail .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    /*height: 50px;*/
+    line-height: 50px;
+}
+#quotationDetail .container .btnContainer .leftButton{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;
+}
+#quotationDetail .container .btnContainer .rightButton{
+    float: left;
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+/**************************************************************** 
+payment
+****************************************************************/
+
+#payment{
+    background: #ebebed;
+    color: #002d72;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden
+}
+#payment .container{
+    padding-top: 10px;
+}
+#payment .container ul li .addressBox {
+    width: 90%;
+    padding: 15px 0px;
+    margin: auto;
+    padding-bottom: 60px;
+}
+#payment .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#payment .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#payment .container ul li.heading .rightIcon input{
+    width: 30px;
+}
+#payment .container ul li{
+    background: white;
+    position: relative;
+}
+#payment .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#payment .container ul li .box .header{
+    height: 30px;
+}
+#payment .container ul li .box .header .code{
+    float: left;
+}
+#payment .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#payment .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+}
+#payment .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#payment .container ul li .box table img{
+    width: 15px;
+}
+#payment .container ul li .box table tr{
+    height: 25px;
+}
+#payment .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#payment .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#payment .editContainer .lot,
+#payment .editContainer .qty{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 49.8%;
+    text-align: center;
+}
+#payment .editContainer .lot table{
+    width: 100%;
+}
+#payment .editContainer .lot table tr td{
+    width:50%;
+}
+#payment .editContainer .qty{
+    border-right: none;
+}
+#payment .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#payment .editContainer .qty table{
+    width: 100%;
+}
+#payment .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#payment .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#payment .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#payment .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+#payment .container .btnContainer .leftButton{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;    
+}
+#payment .container .btnContainer .rightButton{
+    float: left;
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+/**************************************************************** 
+New Order
+****************************************************************/
+
+#newOrder{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#newOrder .container{
+    padding-top: 0px;
+}
+#newOrder .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#newOrder .container ul li{
+    background: white;
+    position: relative;
+}
+#newOrder .container ul li.row{
+    background: #F5F6F7; 
+    background-size: 20px;
+}
+#newOrder .container ul li.row:nth-child(even){
+    background: white; 
+    background-size: 20px;
+}
+#newOrder.container ul li .box{
+    width: 100%;
+}
+/*
+#newOrder .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+*/
+#newOrder .container ul li .box .header{
+    height: 20px;
+}
+#newOrder .container ul li .box .header .code{
+    float: left;
+    padding-left: 5%;
+    padding-top:10px;
+}
+#newOrder .container ul li .box .header .amount{
+    float: right;
+    padding-right: 5%;
+    padding-top: 10px;
+}
+/*
+#newOrder .container ul li .box .itemDetail{
+    height: 50px;
+}
+*/
+#newOrder .container ul li .box .itemDetail .code{
+    padding-top:10px;
+    padding-left: 5%;
+}
+#newOrder .container ul li .box .itemDetail .prod_desc{
+    padding-left: 5%;
+    padding-bottom: 10px;
+}
+#newOrder .editContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#newOrder .editContainer .qty{
+    float: left;
+    width: 100%;
+    height: 48px;
+    line-height:48px;
+    background: #002d72;    
+    color: inherit;
+}
+#newOrder .editContainer .deleteCart{
+    float: left;
+    width: 20%;
+    height: 48px;
+    line-height:48px;
+    background: #002d72;    
+    color: inherit;
+}
+#newOrder .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#newOrder .editContainer .qty table{
+    width: 100%;
+    margin-top: 0px;
+}
+#newOrder .editContainer .qty table tr td{
+    color: white;
+    padding-right: 10px;
+}
+#newOrder .container ul li .box table{
+    width: 100%;
+    color: #666;
+}
+#newOrder .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#newOrder .container .btnContainer .addtoCart{
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height:40px;
+    background: #002d72;
+    cursor: pointer;
+    font-size: 18px;
+}
+#newOrder .criteria{
+    margin: auto;
+    width: 90%;
+    padding: 10px 0px 10px 0px
+}
+#newOrder .editContainer .remove input{
+    width: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#newOrder .highlight {
+    background: yellow !important;
+    border:1px solid #000;
+    color: black;
+}
+
+/**************************************************************** 
+New Quotation
+****************************************************************/
+
+#newQuotation{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#newQuotation .container{
+    padding-top: 0px;
+}
+#newQuotation .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#newQuotation .container ul li{
+    background: white;
+    position: relative;
+}
+#newQuotation .container ul li.row{
+    background: #F5F6F7; 
+    background-size: 20px;
+}
+#newQuotation .container ul li.row:nth-child(even){
+    background: white; 
+    background-size: 20px;
+}
+#newQuotation.container ul li .box{
+    width: 100%;
+}
+/*
+#newOrder .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+*/
+#newQuotation .container ul li .box .header{
+    height: 20px;
+}
+#newQuotation .container ul li .box .header .code{
+    float: left;
+    padding-left: 5%;
+    padding-top:10px;
+}
+#newQuotation .container ul li .box .header .amount{
+    float: right;
+    padding-right: 5%;
+    padding-top: 10px;
+}
+/*
+#newQuotation .container ul li .box .itemDetail{
+    height: 50px;
+}
+*/
+#newQuotation .container ul li .box .itemDetail .code{
+    padding-top:10px;
+    padding-left: 5%;
+}
+#newQuotation .container ul li .box .itemDetail .prod_desc{
+    padding-left: 5%;
+    padding-bottom: 10px;
+}
+#newQuotation .editContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#newQuotation .editContainer .qty{
+    float: left;
+    width: 100%;
+    height: 48px;
+    line-height:48px;
+    background: #002d72;    
+    color: inherit;
+}
+#newQuotation .editContainer .deleteCart{
+    float: left;
+    width: 20%;
+    height: 48px;
+    line-height:48px;
+    background: #002d72;    
+    color: inherit;
+}
+#newQuotation .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#newQuotation .editContainer .qty table{
+    width: 100%;
+    margin-top: 0px;
+}
+#newQuotation .editContainer .qty table tr td{
+    color: white;
+    padding-right: 10px;
+}
+#newQuotation .container ul li .box table{
+    width: 100%;
+    color: #666;
+}
+#newQuotation .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#newQuotation .container .btnContainer .addtoCart{
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height:40px;
+    background: #002d72;
+    cursor: pointer;
+    font-size: 18px;    
+}
+#newQuotation .criteria{
+    margin: auto;
+    width: 90%;
+    padding: 10px 0px 10px 0px
+}
+#newQuotation .editContainer .remove input{
+    width: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#newQuotation .highlight {
+    background: yellow !important;
+    border:1px solid #000;
+    color: black;
+}
+/**************************************************************** 
+Check Out
+****************************************************************/
+
+#quickCheckOut{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 45px;
+}
+#quickCheckOut .container{
+    padding-top: 10px;
+}
+#quickCheckOut .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#quickCheckOut .container ul li{
+    background: white;
+    position: relative;
+}
+#quickCheckOut .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#quickCheckOut .container ul li .box .header{
+    height: 30px;
+}
+#quickCheckOut .container ul li .box .header .code{
+    float: left;
+    padding-top: 0.3em;
+}
+#quickCheckOut .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#quickCheckOut .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#quickCheckOut .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#quickCheckOut .container .overrideShipmentDate table{
+    width: 90%;
+    margin: auto; 
+    padding: 15px 0px;
+    border-collapse: separate
+}
+#quickCheckOut .container .overrideShipmentDate table tr{
+    height: 30px;
+}
+#quickCheckOut .container .overrideShipmentDate table tr td{
+    width: 35%
+}
+#quickCheckOut .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#quickCheckOut .editContainer .lot,
+#quickCheckOut .editContainer .qty,
+#quickCheckOut .editContainer .editShipment{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 45%;
+    text-align: center;
+}
+#quickCheckOut .editContainer .lot .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+}
+#quickCheckOut .editContainer .lot table{
+    width: 100%;
+}
+#quickCheckOut .editContainer .lot table tr td{
+    width: 50%;
+}
+#quickCheckOut .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#quickCheckOut .editContainer .qty table{
+    width: 100%;
+}
+#quickCheckOut .editContainer .qty table tr td{
+    width: 50%;
+}
+#quickCheckOut .editContainer .delete img{
+    width: 20px;
+    margin-top: 10px;
+}
+#quickCheckOut .editContainer .editShipment{
+    border-right: none;
+    padding-top: 10px;
+    width: 9%;
+    cursor: pointer;
+}
+#quickCheckOut .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#quickCheckOut .container ul li .box table tr{
+    height: 25px;
+}
+#quickCheckOut .container ul li .box table.summary tr{
+    height: 45px;
+}
+#quickCheckOut .container ul li .box table img{
+    width: 15px;
+}
+#quickCheckOut .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#quickCheckOut .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#quickCheckOut .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#quickCheckOut .container .btnContainer{
+    color: white;
+    text-align: center;
+    background: #002d72;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+#quickCheckOut .container .btnContainer .placeOrder{
+    width: 100%;
+    cursor: pointer;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;    
+}
+#quickCheckOut .container .btnContainer .payByCash{
+    float: left;
+    width: 33.33333333333%;
+    background: #0141a5;
+    cursor: pointer;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 16px;
+}
+#quickCheckOut .container .btnContainer .payByCheque{
+    width: 33.33333333333%;
+    background: #002d72;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 16px;    
+}
+#quickCheckOut .container .btnContainer .payByOthers{
+    float: right;
+    width: 33.33333333333%;
+    background: limegreen;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 16px;    
+}
+/**************************************************************** 
+Check Out (Quotation)
+****************************************************************/
+#quickQuotation .editContainer .lot .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    -webkit-appearance: menulist;
+}
+#quickQuotation{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#quickQuotation .container{
+    padding-top: 10px;
+}
+#quickQuotation .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#quickQuotation .container ul li{
+    background: white;
+    position: relative;
+}
+#quickQuotation .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#quickQuotation .container ul li .box .header{
+    height: 30px;
+}
+#quickQuotation .container ul li .box .header .code{
+    float: left;
+    padding-top: 0.3em;
+}
+#quickQuotation .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#quickQuotation .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#quickQuotation .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#quickQuotation .container .overrideShipmentDate table{
+    width: 90%;
+    margin: auto; 
+    padding: 15px 0px;
+    border-collapse: separate
+}
+#quickQuotation .container .overrideShipmentDate table tr{
+    height: 30px;
+}
+#quickQuotation .container .overrideShipmentDate table tr td{
+    width: 35%
+}
+#quickQuotation .editContainer{
+    background: white;
+    border-top: 0px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 0px;
+}
+#quickQuotation .editContainer .lot,
+#quickQuotation .editContainer .qty,
+#quickQuotation .editContainer .editShipment{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 45%;
+    text-align: center;
+}
+#quickQuotation .editContainer .lot .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    -webkit-appearance: menulist;
+}
+#quickQuotation .editContainer .lot table{
+    width: 100%;
+}
+#quickQuotation .editContainer .lot table tr td{
+    width: 50%;
+}
+#quickQuotation .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#quickQuotation .editContainer .qty table{
+    width: 100%;
+}
+#quickQuotation .editContainer .qty table tr td{
+    width: 50%;
+}
+#quickQuotation .editContainer .delete img{
+    width: 20px;
+    margin-top: 10px;
+}
+#quickQuotation .editContainer .editShipment{
+    border-right: none;
+    padding-top: 10px;
+    width: 9%;
+    cursor: pointer;
+}
+#quickQuotation .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#quickQuotation .container ul li .box table tr{
+    height: 25px;
+}
+#quickQuotation .container ul li .box table.summary tr{
+    height: 45px;
+}
+#quickQuotation .container ul li .box table img{
+    width: 15px;
+}
+#quickQuotation .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#quickQuotation .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#quickQuotation .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#quickQuotation .container .btnContainer{
+    color: white;
+    text-align: center;
+    background: #002d72;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+#quickQuotation .container .btnContainer .placeOrder{
+    width: 100%;
+    cursor: pointer;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;
+}
+#quickQuotation .container .btnContainer .payByCash{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    bottom: 0px;
+    left: 0px;   
+}
+#quickQuotation .container .btnContainer .payByCheque{
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;  
+}
+#quickQuotation .container ul li.row{
+    background: white 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#quickQuotation .container ul li.row:nth-child(even){
+    background: white 98% 50% no-repeat; 
+    background-size: 20px;
+}
+/**************************************************************** 
+Delivery List
+****************************************************************/
+
+#deliveryList{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#deliveryList .container{
+    padding-top: 10px;
+}
+#deliveryList .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#deliveryList .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#deliveryList .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#deliveryList .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#deliveryList .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#deliveryList .container ul li .box table img{
+    width: 15px;
+}
+#deliveryList .container ul li .box table tr{
+    height: 25px;
+}
+
+/**************************************************************** 
+Delivery Detail
+****************************************************************/
+
+#deliveryDetail{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#deliveryDetail .container{
+    padding-top: 10px;
+}
+#deliveryDetail .container ul li{
+    background: white;
+    position: relative;
+}
+#deliveryDetail .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#deliveryDetail .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#deliveryDetail .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#deliveryDetail .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#deliveryDetail .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#deliveryDetail .container ul li .box table img{
+    width: 15px;
+}
+#deliveryDetail .container ul li .box table tr{
+    height: 25px;
+}
+#deliveryDetail .container .btnJDContainer,
+#deliveryDetail .container .btnContainer{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+#deliveryDetail .container .btnJDContainer .leftButton{
+    float: left;
+    width: 50%;
+    background: mediumseagreen;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    left: 0px;   
+    font-size: 20px;
+    line-height: 3em;
+}
+#deliveryDetail .container .btnJDContainer .rightButton{
+    float: left;
+    width: 50%;
+    background: red;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    right: 0px;  
+    font-size: 20px;  
+    line-height: 3em;
+}
+#deliveryDetail .container .btnContainer .leftButton{
+    float: left;
+    width: 33.3%;
+    background: mediumseagreen;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    left: 0px;   
+    font-size: 20px;
+    line-height: 3em;
+}
+#deliveryDetail .container .btnContainer .middleButton{
+    float: left;
+    width: 33.3%;
+    background: red;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    right: 0px;  
+    font-size: 20px;  
+    line-height: 3em;
+}
+#deliveryDetail .container .btnContainer .rightButton{
+    float: left;
+    width: 33.3%;
+    background: green;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    right: 0px;  
+    font-size: 20px;  
+    line-height: 3em;
+}
+#deliveryDetail .container .btnContainer .confirm{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    /*position: fixed;*/
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+#deliveryDetail .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#deliveryDetail .editContainer .lot,
+#deliveryDetail .editContainer .qty{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 49.5%;
+    text-align: center;
+}
+#deliveryDetail .editContainer .lot table{
+    width: 100%;
+}
+#deliveryDetail .editContainer .qty{
+    border-right: none;
+}
+#deliveryDetail .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#deliveryDetail .editContainer .qty table{
+    width: 100%;
+    margin-top: -3px;
+}
+#deliveryDetail .editContainer .qty table tr td{
+    width:50%
+}
+
+/**************************************************************** 
+Loading
+****************************************************************/
+
+#loading{
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#loading .inputBarcode{
+    padding-top: 10px; 
+}
+#loading .inputBarcode ul li{
+    background: white;
+    position: relative;
+}
+#loading .inputBarcode ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+    margin-left: 20px;
+}
+#loading .inputBarcode ul li .box table tr{
+    height: 25px;
+}
+#loading .container{
+    padding-top: 2px;
+}
+#loading .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#loading .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#loading .container ul li{
+    background: white;
+    position: relative;
+}
+#loading .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#loading .container ul li .box table tr{
+    height: 25px;
+}
+#loading .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#loading .container .btnContainer{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+#loading .container .btnContainer .continue{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+/**************************************************************** 
+Review Loading
+****************************************************************/
+
+#reviewLoading{
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#reviewLoading .inputBarcode{
+    padding-top: 10px; 
+    overflow-x: hidden;
+}
+#reviewLoading .inputBarcode ul li{
+    background: white;
+    position: relative;
+}
+#reviewLoading .inputBarcode ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+    margin-left: 20px;
+}
+#reviewLoading .inputBarcode ul li .box table tr{
+    height: 25px;
+}
+#reviewLoading .container{
+    padding-top: 2px;
+}
+#reviewLoading .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#reviewLoading .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#reviewLoading .container ul li{
+    background: white;
+    position: relative;
+}
+#reviewLoading .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#reviewLoading .container ul li .box table tr{
+    height: 25px;
+}
+#reviewLoading .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#reviewLoading .container .btnContainer{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+#reviewLoading .container .btnContainer .continue{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+#reviewLoading a, a:hover, a:visited {
+    text-decoration: underline;
+    /*color: blue;*/
+    cursor: pointer;
+}
+/**************************************************************** 
+Change Shipment
+****************************************************************/
+
+#changeShipment{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#changeShipment .container{
+    padding-top: 10px;
+}
+#changeShipment .container .scroller{
+    overflow: auto;
+    height: 290px;
+    background: white;
+}
+#changeShipment .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#changeShipment .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#changeShipment .container ul li.heading .rightIcon img{
+    width: 30px;
+}
+#changeShipment .container ul li{
+    background: white;
+    position: relative;
+}
+#changeShipment .container ul li.row{
+    background: #F5F6F7; 
+    background-size: 20px;
+}
+#changeShipment .container ul li.row:nth-child(even){
+    background: white; 
+    background-size: 20px;
+}
+#changeShipment .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#changeShipment .container ul li .box .header{
+    height: 30px;
+}
+#changeShipment .container ul li .box .header .date{
+     color: #666;
+}
+#changeShipment .container ul li .box .header .quantity{
+    color: #666;
+}
+#changeShipment .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#changeShipment .container ul li .box .itemDetail{
+    color: #666;
+}
+#changeShipment .container .overrideShipmentDate table{
+    width: 90%;
+    margin: auto; 
+    padding: 15px 0px;
+    border-collapse: separate
+}
+#changeShipment .container .overrideShipmentDate table tr{
+    height: 30px;
+}
+#changeShipment .container .overrideShipmentDate table tr td{
+    width: 25%
+}
+#changeShipment .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#changeShipment .editContainer .date,
+#changeShipment .editContainer .quantity,
+#changeShipment .editContainer .lot,
+#changeShipment .editContainer .qty,
+#changeShipment .editContainer .uom,
+#changeShipment .editContainer .editShipment{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 33%;
+    text-align: center;
+    padding-left: 5%;
+}
+#changeShipment .editContainer .remove{
+    border-right: none;
+}
+#changeShipment .editContainer .remove img{
+    width: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#changeShipment .editContainer .editShipment{
+    border-right: none;
+    padding-top: 10px;
+    width: 9%;
+    cursor: pointer;
+}
+#changeShipment .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#changeShipment .container ul li .box table tr{
+    height: 25px;
+}
+#changeShipment .container ul li .box table.summary tr{
+    height: 45px;
+}
+#changeShipment .container ul li .box table img{
+    width: 15px;
+}
+#changeShipment .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#changeShipment .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#changeShipment .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#changeShipment .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;  
+}
+#changeShipment .container .btnContainer .done{
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;   
+}
+/**************************************************************** 
+Quotation History
+****************************************************************/
+
+#quotation{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#quotation .container ul li .box table{
+    color: #666;
+    width:100%;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+#quotation .container ul li .box table tr{
+    height: 15px;
+}
+#quotation .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#quotation .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#quotation .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+    width: 18rem;
+}
+
+/**************************************************************** 
+Stock Inquiry
+****************************************************************/
+#stockInquiry {
+    background: #ebebed;
+    color: #002d72;
+    height: 100vh;    
+}
+#stockInquiry .title{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 25px;
+}
+#stockInquiry .oj-listbox-results-depth-0>.oj-listbox-result-label {
+    background-color: #ebebed;
+
+}
+#stockInquiry .container{
+    position: relative;
+    padding-top: 10px;
+}
+#stockInquiry .big{
+    font-size: 150%;
+}
+#stockInquiry .blue {
+    color: #2a0078;
+}
+#stockInquiry .red {
+    color: #fc4800;
+}
+#stockInquiry .green {
+    color: #16d8b2;
+}
+#stockInquiry .section {
+    background-color: #ebebed;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#stockInquiry .box{
+    /*text-indent: 25px;*/
+
+
+}
+#stockInquiry .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#stockInquiry .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#stockInquiry .container ul li.row_content{
+    background: white; 
+    background-size: 20px;
+    padding-left: 25px;
+    padding-right: 25px;    
+}
+#stockInquiry .container ul li.row_noarrow{
+    vertical-align: middle;
+    padding-left: 25px;
+    padding-right: 25px;    
+}
+#stockInquiry .container ul li.row_noarrow:nth-child(even){
+    background: white; 
+    background-size: 20px;
+   
+}
+#stockInquiry .criteria{
+    width: 100%;
+    background:#ebebed;
+}
+/*#stockInquiry */.oj-listbox-results{
+    /*******
+    the listbox is located outside of stockInquiry as a hidden element in DOM.  
+    Thus, I have to reset the color using a broader selector
+    ********/
+    color: black;
+    background: white; 
+    /*text-indent: 25px;*/
+    -webkit-overflow-scrolling: touch;  
+}
+#stockInquiry .oj-inputsearch .oj-inputsearch-choice{
+    color: black;
+    width: 100%;
+    background: white;   
+    letter-spacing: 0.06em;
+    height: 50px;
+    font-size: 14px;
+    text-indent: 25px;
+}
+
+#stockInquiry .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#stockInquiry .container .btnContainer .search{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;     
+}
+/* stockInquiry searchbox */
+#stockInquiry .criteria .icon-search-clear {
+    -moz-background-size: 20px;
+    -o-background-size: 20px;
+    -webkit-background-size: 20px;
+    background-size: 20px;
+    position: absolute;
+    top: 60%;
+    right: 3%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none; 
+}
+#stockInquiry .criteria .icon-search-search {
+    display:none;
+}
+#stockInquiry .criteria .icon-search-clear {
+    background: url("../img/icons/common/cross-sm.svg") right center no-repeat; 
+}
+/**************************************************************** 
+Navigation : ORDER, PROFILE, VISIT, QUOTATION
+****************************************************************/
+/**************************************************************** 
+PROFILE
+****************************************************************/
+#profile{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+    padding-top: 45px;
+}
+#profile .container ul li{
+    background: white;
+    position: relative;
+    padding:0 0.5rem 0.5rem 0.5rem;
+}
+#profile .container ul li.heading{
+    background: transparent;
+    height: 30px;
+    line-height: 25px;
+    padding-bottom:0rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+#profile .container ul li.heading2{
+    background: transparent;
+    height: 50px;
+    line-height: 25px;
+    padding-bottom:0rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 90%;
+    margin: auto;
+}
+#profile .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#profile .container ul li .box .salesPerformance{
+    color: #666;
+    line-height: 25px;
+}
+#profile .container ul li .box .gauge{
+    margin-left:auto; 
+    margin-right:auto; 
+    width:200px; 
+    height:200px;
+}
+#profile .container table tr.rowData{
+    background: white;
+}
+#profile .container table tr.rowData:nth-child(even){
+    background: #F5F6F7;
+}
+#profile .container ul li .box table tr {
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    border-collapse: separate
+}
+#profile .container ul li .box table tbody{
+    vertical-align: top;
+}
+#profile .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#profile .container ul li .box table img{
+    width: 15px;
+}
+#profile .container ul li .box table tr td{
+    height: 25px;
+}
+#profile .container ul li .box table tr td:nth-child(2) {
+    padding-right:.5rem;
+}
+#profile .container ul li .box table tr td:nth-child(3) {
+    padding-bottom:.5rem;
+}
+#profile .container ul li .box table tr td.rowData{
+    background: #F5F6F7; 
+    background-size: 20px;
+}
+#profile .container ul li .box table tr td.rowData:nth-child(even){
+    background: white; 
+    background-size: 20px;
+}
+#profile .container ul li .box #tabs .oj-tabs-title{
+    font-weight:normal;
+}
+#profile .container table.itemList tr{
+    height:1rem;
+}
+#profile .container table.itemList tr th{
+    padding:0 0 5px 0;
+}
+#profile .container table.itemList tr span{
+    color:#7A7A7A;
+}
+#profile .container table.itemList thead{
+    border-width:0;
+}
+#profile .container table.itemList tbody{
+    border-width:0;
+}
+#profile .container table.itemList tr.rowData{
+    border-bottom:0px;
+}
+#profile .container table.itemList tr.rowData table.dataTable td span.desc{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space:pre-line;
+}
+#profile .container table.itemList tr.rowData table.dataTable td{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+#profile .container table.itemList table.dataTable tr td{
+    text-align: right;
+    width:45vh;
+}
+#profile .container table.itemList table.dataTable tr td:nth-child(1){
+    text-align: left;
+    width:45vh;
+}
+#profile .container table.itemList table.dataTable tr td span.content{
+    color: #002d72;
+    font-weight:bold;
+}
+#profile .blue{
+    color: #2a0078!important;
+}
+#profile .green{
+    color: #16d8b2!important;
+}
+#profile .red{
+    color: #fc4800!important;
+}
+/**************************************************************** 
+Performance
+****************************************************************/
+#performance{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#performance .container{
+    padding-top: 10px;
+}
+#performance .container ul li{
+    background: white;
+    position: relative;
+}
+#performance .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+#performance .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#performance .container ul li .box .salesPerformance{
+    color: #666;
+    line-height: 25px;
+}
+#performance .container ul li .box .gauge{
+    margin-left:auto; 
+    margin-right:auto; 
+    width:200px; 
+    height:200px;
+}
+#performance .container table tr.rowData{
+    background: white;
+}
+#performance .container table tr.rowData:nth-child(even){
+    background: #F5F6F7;
+}
+#performance .container ul li .box table tr {
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    border-collapse: separate
+}
+#performance .container ul li .box table tbody{
+    vertical-align: top;
+}
+#performance .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#performance .container ul li .box table img{
+    width: 15px;
+}
+#performance .container ul li .box table tr td{
+    height: 25px;
+}
+#performance .container ul li .box table tr td.rowData{
+    background: #F5F6F7; 
+    background-size: 20px;
+}
+#performance .container ul li .box table tr td.rowData:nth-child(even){
+    background: white; 
+    background-size: 20px;
+}
+#performance .container table.itemList tr span{
+    color:#7A7A7A;
+}
+#performance .container table.itemList tr.rowData table.dataTable td span.desc{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space:pre-line;
+}
+#performance .container table.itemList tr.rowData table.dataTable td{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width:15%;
+}
+#performance .container table.itemList table.dataTable tr td{
+    text-align: right;
+    width:45vh;
+}
+#performance .container table.itemList table.dataTable tr td:nth-child(1){
+    text-align: left;
+    width:45vh;
+}
+#performance .container table.itemList table.dataTable tr td span.content{
+    color: #002d72;
+    font-weight:bold;
+}
+#performance .blue{
+    color: #2a0078!important;
+}
+#performance .green{
+    color: #16d8b2!important;
+}
+#performance .red{
+    color: #fc4800!important;
+}
+#performance .container ul li .box .gaugeCenter{
+   color: rgb(45,119,191);
+}
+
+/**************************************************************** 
+Daily Receipt Summary
+****************************************************************/
+#dailyReceipt{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#dailyReceipt .container{
+    padding-top: 10px;
+}
+#dailyReceipt .container table tr{
+    font-size: 9px;
+}
+#dailyReceipt .container table th.currency{
+    text-align: right;
+    padding-right: 1em;
+}
+#dailyReceipt .container table td.currency{
+    text-align: right;
+    padding-right: 1em;
+}
+#dailyReceipt .container table tr.rowData{
+    background: white;
+}
+#dailyReceipt .container table tr.rowData:nth-child(even){
+    background: #F5F6F7;
+}
+
+/**************************************************************** 
+Search Canvas
+****************************************************************/
+
+#canvasSearch #listViewContainer {
+    background-color: #fff;
+    padding-bottom: 48px; 
+}
+#canvasSearch .icon-search {
+    -moz-background-size: 25px;
+    -o-background-size: 25px;
+    -webkit-background-size: 25px;
+    background-size: 25px;
+    float: right;
+    padding-left: 30px;
+    height: 30px; 
+}
+#canvasSearch .searchForm {
+    background:url('../img/app/header.png') 50% 50% no-repeat;
+    text-align: center; 
+    background-size: 100%;
+}
+#canvasSearch .searchForm .oj-form-control {
+    margin: 1rem;
+    width: 90%;
+    background-color: white;
+    border-radius: .3rem;
+    padding-left: .5rem;
+}
+#canvasSearch .searchForm .icon-search-search,
+#canvasSearch .searchForm .icon-search-clear {
+    -moz-background-size: 20px;
+    -o-background-size: 20px;
+    -webkit-background-size: 20px;
+    background-size: 20px;
+    position: absolute;
+    bottom: 33%;
+    right: 8%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none; 
+}
+#canvasSearch .searchForm .icon-search-search {
+    background: url("../img/icons/common/search-sm.svg") right center no-repeat; 
+}
+#canvasSearch .searchForm .icon-search-clear {
+    background: url("../img/icons/common/cross-sm.svg") right center no-repeat; 
+}
+#canvasSearch .searchForm #searchProduct {
+    height:2.6rem;
+    border-bottom-width: 0px;
+}
+#canvasSearch .foot {
+    background-color: #f58235;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-align-items: center;
+    align-items: center;
+    opacity: .8;
+    position: fixed;
+    bottom: 0;
+    height: 48px;
+    width: 100%; 
+}
+#canvasSearch .foot .footer-item {
+    width: 2em;
+    height: 2em; 
+}
+#canvasSearch .foot .sort-image {
+    background: url("../img/icons/approvals/sort.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+    -moz-background-size: 1.6em;
+    -o-background-size: 1.6em;
+    -webkit-background-size: 1.6em;
+    background-size: 1.6em;
+}
+#canvasSearch .foot .filter-image {
+    background: url("../img/icons/approvals/filter.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+    -moz-background-size: 1.1em;
+    -o-background-size: 1.1em;
+    -webkit-background-size: 1.1em;
+    background-size: 1.1em; 
+}
+#canvasSearch #sortCanvas {
+    background-color: #fff; 
+}
+#canvasSearch #sortCanvas .offcanvas-header {
+    background-color: #f58235; 
+}
+#canvasSearch #sortCanvas .oj-listview.oj-focus-ancestor .oj-listview-item.oj-focus {
+    background-color: rgba(245, 130, 53, 0.3); 
+}
+#canvasSearch #sortCanvas .sortPicker {
+    overflow-y: auto;
+    background-color: #ffffff;
+    text-align: center;
+    max-height: 200px; 
+}
+#canvasSearch #filterCanvas {
+    background-color: #fff; 
+}
+#canvasSearch #filterCanvas .filterMenu {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center; 
+}
+#canvasSearch #filterCanvas .filterMenu #expenses {
+    background: url("../img/icons/approvals/expense-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #expenses.selected {
+    background: url("../img/icons/approvals/expense-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #itemchanges {
+    background: url("../img/icons/approvals/itemchanges-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #itemchanges.selected {
+    background: url("../img/icons/approvals/itemchanges-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+}
+#canvasSearch #filterCanvas .filterMenu #purchaseorders {
+    background: url("../img/icons/approvals/purchase-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+}
+#canvasSearch #filterCanvas .filterMenu #purchaseorders.selected {
+    background: url("../img/icons/approvals/purchase-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #recruitment {
+    background: url("../img/icons/approvals/recruitment-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+}
+#canvasSearch #filterCanvas .filterMenu #recruitment.selected {
+    background: url("../img/icons/approvals/recruitment-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px;
+}
+#canvasSearch #filterCanvas .filterMenu #requisitions {
+    background: url("../img/icons/approvals/requisitions-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #requisitions.selected {
+    background: url("../img/icons/approvals/requisitions-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #timecards {
+    background: url("../img/icons/approvals/timecards-b.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu #timecards.selected {
+    background: url("../img/icons/approvals/timecards-o.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu .closeFilter {
+    background: url("../img/icons/approvals/close.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px; 
+}
+#canvasSearch #filterCanvas .filterMenu .closeSelFilter {
+    background: url("../img/icons/approvals/close-right.svg") no-repeat center center;
+    -moz-background-size: 50px;
+    -o-background-size: 50px;
+    -webkit-background-size: 50px;
+    background-size: 50px
+}
+#canvasSearch #filterCanvas .filterMenu > a {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 2px;
+    width: 100px;
+    height: 100px; 
+}
+#canvasSearch #filterCanvas .filterMenu > a:hover {
+    cursor: pointer; 
+}
+#canvasSearch #filterCanvas .filterMenu > a span {
+    padding-top: 88px;
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    font-weight: 300;
+    line-height: 1em; 
+}
+/**************************************************************** 
+Busy Cursor 
+****************************************************************/
+
+body > #busy {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(0, 0, 0, 0.8)));
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; }
+@-webkit-keyframes uil-default-anim {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes uil-default-anim {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+  body > #busy .uil-default-css > div:nth-of-type(1) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(2) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.4166666666666667s;
+    animation-delay: -0.4166666666666667s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(3) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.33333333333333337s;
+    animation-delay: -0.33333333333333337s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(4) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.25s;
+    animation-delay: -0.25s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(5) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.16666666666666669s;
+    animation-delay: -0.16666666666666669s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(6) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: -0.08333333333333331s;
+    animation-delay: -0.08333333333333331s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(7) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(8) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.08333333333333337s;
+    animation-delay: 0.08333333333333337s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(9) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.16666666666666663s;
+    animation-delay: 0.16666666666666663s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(10) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.25s;
+    animation-delay: 0.25s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(11) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.33333333333333337s;
+    animation-delay: 0.33333333333333337s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+  body > #busy .uil-default-css > div:nth-of-type(12) {
+    -webkit-animation: uil-default-anim 1s linear infinite;
+    animation: uil-default-anim 1s linear infinite;
+    -webkit-animation-delay: 0.41666666666666663s;
+    animation-delay: 0.41666666666666663s; }
+  body > #busy .uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px; }
+.uil-default-css {
+  top: -moz-calc(50vh - 130px);
+  top: -webkit-calc(50vh - 130px);
+  top: calc(50vh - 130px);
+  left: -moz-calc(50vw - 100px);
+  left: -webkit-calc(50vw - 100px);
+  left: calc(50vw - 100px);
+  content: 'viewport-units-buggyfill; top: calc(50vh - 130px); left: calc(50vw - 100px);';
+ }
+ /* Toast */
+ .toast-bg-cross {
+     background: url("../img/icons/toastBg/offline-cross.svg") no-repeat center center; 
+ }
+ .toast-bg-check {
+     background: url("../img/icons/toastBg/submitted.svg") no-repeat center center; 
+ }
+ .toast-bg-cloud {
+     background: url("../img/icons/toastBg/save-status.svg") no-repeat center center; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog {
+     /* Override the ojdialog style */
+     padding: 0.8rem 1rem 0 1rem;
+     border-radius: 10px 10px 10px 10px;
+     border: none;
+     outline: none;
+     box-shadow: none;
+     opacity: 0.9;
+     font-size: 0.875em;
+     line-height: 1.71429em; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-header {
+     /* Override the ojdialog header */
+     background-color: transparent;
+     border: none;
+     padding: 0; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-header .oj-dialog-header-close-wrapper {
+     display: none;
+     /* Hide the ojdialog close x button */ 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-header .placeholder {
+     padding: 1.5rem; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-body {
+     background-color: transparent;
+     text-align: center;
+     font-size: 1rem;
+     padding-bottom: 0.8rem; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-body .message {
+     white-space: pre-line;
+     font-weight: 300; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-body .title {
+     padding-bottom: 0.4rem;
+     font-weight: 500; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-footer {
+     background-color: transparent;
+     text-align: center;
+     padding: 0; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-footer .oj-button {
+     height: 2.5rem;
+     width: 100%;
+     background-color: transparent;
+     outline: none; 
+ }
+ #ojDialogWrapper-toastDialog_layer .oj-dialog .oj-dialog-footer .oj-button.oj-active.oj-button-half-chrome {
+     opacity: 0.8; 
+ }
+ #ojDialogWrapper-toastDialog_layer .darkTheme {
+     /* Override the ojdialog style */
+     background-color: #37392E;
+     color: white; 
+ }
+ #ojDialogWrapper-toastDialog_layer .darkTheme .oj-dialog-header {
+     /* Override the ojdialog header */
+     color: white; 
+ }
+ #ojDialogWrapper-toastDialog_layer .darkTheme .oj-dialog-body {
+     color: white; 
+ }
+ #ojDialogWrapper-toastDialog_layer .darkTheme .oj-dialog-footer {
+     color: white; 
+ }
+ #ojDialogWrapper-toastDialog_layer .darkTheme .oj-dialog-footer .oj-button {
+     color: white;
+     border-color: white; 
+ }
+/**************************************************************** 
+Init Load
+****************************************************************/
+#initLoad .progressBar {
+  position: relative;
+  width: 95%;
+  height: 50px;
+  margin: 20px auto;
+  border: 3px solid #fab617;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#initLoad .progressBar div {
+  position: relative;
+  height: 100%;
+  background-color: #fab617;
+}
+#initLoad .progressBar .progressText {
+  position: absolute;
+  margin: 0 auto;
+  top: 12px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+/**************************************************************** 
+Data Synchronization
+****************************************************************/
+#dataSync{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#dataSync .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#dataSync .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#dataSync .container ul li .orderNo{
+    font-size: 22px;
+    line-height: 36px;
+}
+#dataSync .container ul li .information{
+    color: #666;
+}
+#dataSync .container ul li .information .fieldName{
+    float: left;
+}
+#dataSync .container ul li .information .fieldValue{
+    padding-left: 150px
+}
+/**************************************************************** 
+ReInitate Order Detail
+****************************************************************/
+#reInitateOrderDetail{
+    background: #ebebed;
+    color: #002d72;
+    width: 100%;
+    height: 85vh;
+    overflow-x: hidden;
+    padding-top: 45px;
+}
+#reInitateOrderDetail .container{
+    padding-top: 10px;
+}
+#reInitateOrderDetail .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#reInitateOrderDetail .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#reInitateOrderDetail .container ul li.heading .rightIcon input{
+    width: 30px;
+}
+#reInitateOrderDetail .container ul li{
+    background: white;
+    position: relative;
+}
+#reInitateOrderDetail .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#reInitateOrderDetail .container ul li .box .header{
+    height: 30px;
+}
+#reInitateOrderDetail .container ul li .box .header .code{
+    float: left;
+}
+#reInitateOrderDetail .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#reInitateOrderDetail .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+}
+#reInitateOrderDetail .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#reInitateOrderDetail .container ul li .box table img{
+    width: 15px;
+}
+#reInitateOrderDetail .container ul li .box table tr{
+    height: 25px;
+}
+#reInitateOrderDetail .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#reInitateOrderDetail .editContainer{
+    background: white;
+    border-top: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 40px;
+}
+#reInitateOrderDetail .editContainer .lot,
+#reInitateOrderDetail .editContainer .qty{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 49.8%;
+    text-align: center;
+}
+#reInitateOrderDetail .editContainer .lot table{
+    width: 100%;
+}
+#reInitateOrderDetail .editContainer .lot table tr td{
+    width:50%;
+}
+#reInitateOrderDetail .editContainer .qty{
+    border-right: none;
+}
+#reInitateOrderDetail .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#reInitateOrderDetail .editContainer .qty table{
+    width: 100%;
+}
+#reInitateOrderDetail .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#reInitateOrderDetail .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#reInitateOrderDetail .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#reInitateOrderDetail .container .btnContainer{
+    color: white;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+}
+#reInitateOrderDetail .container .btnContainer .leftButton{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;   
+    font-size: 18px;
+}
+#reInitateOrderDetail .container .btnContainer .rightButton{
+    float: left;
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+/**************************************************************** 
+Printer Setup
+****************************************************************/
+#printerSetup .selectBox{
+    background: none;
+}
+#printerSetup{
+    color: #002d72;
+    height: 100vh;
+    padding-top: 50px;
+}
+#printerSetup .inputMacAddress{
+    padding-top: 10px; 
+    overflow-x: hidden;
+}
+#printerSetup .inputMacAddress ul li{
+    background: white;
+    position: relative;
+}
+#printerSetup .inputMacAddress ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+    margin-left: 20px;
+}
+#printerSetup .inputMacAddress ul li .box table tr{
+    height: 25px;
+}
+#printerSetup .btnContainer{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+#printerSetup .btnContainer .findPrinter{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+/**************************************************************** 
+Modifier (Quotation)
+****************************************************************/
+#modifier .oj-select-select{
+    background: none;
+}
+#modifier .editContainer .lot .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    -webkit-appearance: menulist;
+}
+#modifier .oj-inputnumber-input {
+    text-align: left;
+    color: #333333;
+    background-color: #fcfdfe;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    border-style: solid;
+    border-color: #dfe4e7;
+    border-width: 1px;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 5em;
+    outline: 0;
+    box-sizing: border-box;
+    padding: 0 5px;
+    font-family: inherit;
+    font-size: 100%;
+}
+#modifier .oj-inputnumber {
+    display: inline-block;
+    max-width: 10.5em;
+    min-width: 8em; 
+    width: 100%; 
+    font-size: 1rem;
+}
+#modifier .oj-inputnumber-wrapper{
+    width: 50%;
+    white-space: nowrap;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    box-sizing: border-box;
+    height: 2.286rem;
+    border-radius: 2px;
+}
+#modifier .oj-inputdatetime-input {
+    text-align: left;
+    color: #000;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #9b9b9b;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 1em;
+    font-family: inherit;
+    font-weight: normal;
+    padding: 0 0;
+    height: 2rem;
+    outline: 0;
+    max-width: 100px;
+}
+#modifier .oj-inputsearch-input {
+    font-size: 10px;
+}
+#modifier{
+    background: #ebebed;
+    color: #002d72;
+    height: 100%;
+}
+#modifier .container{
+    padding-top: 60px;
+}
+#modifier .container .scroller{
+    overflow: auto;
+    height: 250px;
+    width: 90%;
+    background: white;
+    padding-top: 0px;
+    padding-left: 5px;
+    margin-left: 15px;
+    font-size: 12px;
+}
+#modifier .container .enquiry{
+    overflow: auto;
+    height: 77vh;
+    width: 90%;
+    background: white;
+    padding-top: 0px;
+    padding-left: 5px;
+    margin-left: 15px;
+    font-size: 12px;
+}
+#modifier .container .promotionItemScroller{
+    overflow: auto;
+    height: 400px;
+    width: 90%;
+    background: white;
+    padding-top: 0px;
+    padding-left: 5px;
+    margin-left: 15px;
+    font-size: 12px;
+}
+#modifier .container .enquiry .editContainer .oj-inputtext-input{
+    width: 85%;
+}
+#modifier .container .promotionItemScroller .editContainer .oj-inputtext-input{
+    width: 85%;
+}
+#modifier .container ul li.heading{
+    background: transparent;
+    height: 40px;
+    line-height: 40px;
+}
+#modifier .container ul li.heading .rightIcon{
+    float: right;
+    /*margin-top: -35px;*/
+    cursor: pointer;
+}
+#modifier .container ul li.heading .rightIcon img{
+    width: 25px;
+    height: 25px;
+    padding-top: 7px;
+}
+#modifier .container ul li{
+    background: white;
+    position: relative;
+}
+#modifier .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#modifier .container ul li .box .header{
+    height: 30px;
+}
+#modifier .container ul li .box .header .code{
+    float: left;
+    padding-top: 0.3em;
+}
+#modifier .container ul li .box .header .amount{
+    float: right;
+    color: #666;
+}
+#modifier .container ul li .box table .icon{
+    padding-right: 10px;
+}
+#modifier .container ul li .box .itemDetail{
+    color: #666;
+    line-height: 25px;
+}
+#modifier .editContainer{
+    background: white;
+    border-top: 0px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    height: 0px;
+}
+#modifier .editContainer .lot,
+#modifier .editContainer .qty,
+#modifier .editContainer .editShipment{
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    border-right: 1px solid #bfbfbf;
+    width: 45%;
+    text-align: center;
+}
+#modifier .editContainer .lot .selectBox{
+    height: auto;
+    color: #002d72;
+    border-style:none;
+    -webkit-appearance: menulist;
+}
+#modifier .editContainer .lot table{
+    width: 100%;
+}
+#modifier .editContainer .lot table tr td{
+    width: 50%;
+}
+#modifier .editContainer .qty img{
+    margin-top: 15px;
+    width: 15px;
+}
+#modifier .editContainer .qty table{
+    width: 100%;
+}
+#modifier .editContainer .qty table tr td{
+    width: 50%;
+}
+#modifier .editContainer .delete img{
+    width: 20px;
+    margin-top: 10px;
+}
+#modifier .editContainer .editShipment{
+    border-right: none;
+    padding-top: 10px;
+    width: 9%;
+    cursor: pointer;
+}
+#modifier .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+    /*padding-top: 10px;*/
+    border-collapse: separate
+}
+#modifier .container ul li .box table tr{
+    height: 25px;
+}
+#modifier .container ul li .box table.summary tr{
+    height: 45px;
+}
+#modifier .container ul li .box table img{
+    width: 15px;
+}
+#modifier .container .itemsDetailSummary{
+    width: 100%;
+    color: white;
+    background: #002d72;
+}
+#modifier .container .itemsDetailSummary table{
+    width: 90%;
+    margin: auto; 
+    padding: 10px 0px;
+    border-collapse: separate
+}
+#modifier .container .itemsDetailSummary table tr{
+    height: 30px;
+}
+#modifier .container .btnContainer{
+    color: white;
+    text-align: center;
+    background: #002d72;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    bottom: 0px;
+    /*padding-bottom: 8px;*/
+    font-size: 18px;
+}
+#modifier .container .btnContainer .confirm{
+    float: left;
+    width: 50%;
+    background: #0141a5;
+    cursor: pointer;
+    bottom: 0px;
+    left: 0px;   
+    position: fixed;
+}
+#modifier .container .btnContainer .cancel{
+    width: 50%;
+    background: #002d72;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+}
+#modifier .container .btnContainer .close{
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+}
+#modifier .container ul li.row{
+    background: white 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#modifier .container ul li.row:nth-child(even){
+    background: white 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#modifier .criteria{
+    width: 95%;
+    background:white;
+}
+#modifier .criteria .icon-search-clear {
+    -moz-background-size: 20px;
+    -o-background-size: 20px;
+    -webkit-background-size: 20px;
+    background-size: 20px;
+    /*position: absolute;*/
+    bottom: 20%;
+    right: 3%;
+    width: 15px;
+    height: 15px;
+    border: none;
+    outline: none; 
+}
+#modifier .criteria .icon-search-search {
+    display:none;
+}
+#modifier .criteria .icon-search-clear {
+    background: url("../img/icons/common/cross-sm.svg") right center no-repeat; 
+}
+/**************************************************************** 
+Schedule Maintenance
+****************************************************************/
+#scheduleMaintenance{
+    color: #002d72;
+    height: 100%;
+    padding-top: 50px;
+}
+#scheduleMaintenance ul li .box {
+    padding-left: 15px;
+}
+#scheduleMaintenance .inputBarcode{
+    padding-top: 10px; 
+    overflow-x: hidden;
+}
+#scheduleMaintenance .inputBarcode ul li{
+    background: white;
+    position: relative;
+}
+#scheduleMaintenance .inputBarcode ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate;
+    margin-left: 20px;
+}
+#scheduleMaintenance .inputBarcode ul li .box table tr{
+    height: 25px;
+}
+#scheduleMaintenance .container ul li.heading .rightIcon{
+    float: right;
+    margin-top: -35px;
+    cursor: pointer;
+}
+#scheduleMaintenance .container ul li.heading .rightIcon img{
+    width: 30px;
+}
+#scheduleMaintenance .container{
+    padding-top: 2px;
+}
+#scheduleMaintenance .container ul li.row{
+    background: white url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#scheduleMaintenance .container ul li.row:nth-child(even){
+    background: #F5F6F7 url('../img/app/arrow_next_page.png') 98% 50% no-repeat; 
+    background-size: 20px;
+}
+#scheduleMaintenance .container ul li{
+    background: white;
+    position: relative;
+}
+#scheduleMaintenance .container ul li .box table{
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+    padding-top: 10px;
+    border-collapse: separate
+}
+#scheduleMaintenance .container ul li .box table tr{
+    height: 25px;
+}
+#scheduleMaintenance .container ul li .box .title{
+    font-size: 18px;
+    line-height: 20px;
+}
+#scheduleMaintenance .container .btnContainer{
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
+#scheduleMaintenance .container .btnContainer .continue{
+    float: left;
+    width: 100%;
+    background: #002d72;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;  
+    font-size: 18px;    
+}
+#scheduleMaintenance a, a:hover, a:visited {
+    text-decoration: underline;
+    /*color: blue;*/
+    cursor: pointer;
+}
+#scheduleMaintenance .selectBox{
+    background: none;
+}
+/**************************************************************** 
+Footer
+****************************************************************/
+
+footer {
+    width: 100%;
+    height: 220px;
+}

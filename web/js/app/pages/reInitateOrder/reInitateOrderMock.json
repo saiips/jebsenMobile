@@ -1,0 +1,160 @@
+{
+	"OutputGetFailedOrder": {
+		"TblJsOrderTxn": [{
+				"JsOrderTxnId": "11454",
+				"CreatedDate": "2017-03-16T04:04:42.000+08:00",
+				"UserId": "desmond",
+				"TxnStatus": "FAILED",
+				"OrderType": "B",
+				"OrderTypeId": 4479,
+				"ErrorMsg": "Validate Fail - Price ID is not valid",
+				"Payload": {
+					"InputCreateBeerOrder": {
+						"HeaderInfo": {
+							"UserID": null,
+							"UserRole": "MS",
+							"CallerID": null
+						},
+						"I_HEADER_REC": {
+							"ORDER_TYPE_ID": 4479,
+							"SOLD_TO_ORG_ID": 13726433,
+							"SHIP_TO_ORG_ID": 520434,
+							"INVOICE_TO_ORG_ID": 520410,
+							"ORDER_SOURCE_ID": 0,
+							"PRICE_LIST_ID": 999999999,
+							"PRICING_DATE": "2017-03-16T11:48:37+08:00",
+							"FLOW_STATUS_CODE": "ENTERED",
+							"CUST_PO_NUMBER": null,
+							"SOLD_FROM_ORG_ID": 2898,
+							"SHIP_FROM_ORG_ID": 2920,
+							"SALESREP_ID": 100334371,
+							"TRANSACTIONAL_CURR_CODE": "HKD",
+							"PAYMENT_TERM_ID": 1006,
+							"REMARKS": null,
+							"FREIGHT_CHARGE": 0,
+							"PAYMENT_TYPE": null,
+							"REAL_CUSTOMER": null
+						},
+						"I_LINE_TBL": {
+							"I_LINE_TBL_ITEM": {
+								"LINE_NUMBER": 1,
+								"INVENTORY_ITEM_ID": 250845,
+								"SUBINVENTORY": null,
+								"LOT_NUMBER": null,
+								"ORDERED_QUANTITY": 1,
+								"UNIT_SELLING_PRICE": 253,
+								"SHIPPING_METHOD": null,
+								"SCHEDULE_SHIP_DATE": "2017-03-17T00:00:00+08:00",
+								"ORIGINAL_LINE": "Y",
+								"START_DATE": null,
+								"END_DATE": null
+							}
+						}
+					}
+				}
+			}, {
+				"JsOrderTxnId": "11452",
+				"CreatedDate": "2017-03-16T03:56:34.000+08:00",
+				"UserId": "desmond",
+				"TxnStatus": "FAILED",
+				"OrderType": "B",
+				"OrderTypeId": 4479,
+				"ErrorMsg": "Validate Fail - Price ID is not valid",
+				"Payload": {
+					"InputCreateBeerOrder": {
+						"HeaderInfo": {
+							"UserID": null,
+							"UserRole": "MS",
+							"CallerID": null
+						},
+						"I_HEADER_REC": {
+							"ORDER_TYPE_ID": 4479,
+							"SOLD_TO_ORG_ID": 13726433,
+							"SHIP_TO_ORG_ID": 520434,
+							"INVOICE_TO_ORG_ID": 520410,
+							"ORDER_SOURCE_ID": 0,
+							"PRICE_LIST_ID": 999999999,
+							"PRICING_DATE": "2017-03-16T11:48:37+08:00",
+							"FLOW_STATUS_CODE": "ENTERED",
+							"CUST_PO_NUMBER": null,
+							"SOLD_FROM_ORG_ID": 2898,
+							"SHIP_FROM_ORG_ID": 2920,
+							"SALESREP_ID": 100334371,
+							"TRANSACTIONAL_CURR_CODE": "HKD",
+							"PAYMENT_TERM_ID": 1006,
+							"REMARKS": null,
+							"FREIGHT_CHARGE": 0,
+							"PAYMENT_TYPE": null,
+							"REAL_CUSTOMER": null
+						},
+						"I_LINE_TBL": {
+							"I_LINE_TBL_ITEM": {
+								"LINE_NUMBER": 1,
+								"INVENTORY_ITEM_ID": 250845,
+								"SUBINVENTORY": null,
+								"LOT_NUMBER": null,
+								"ORDERED_QUANTITY": 1,
+								"UNIT_SELLING_PRICE": 253,
+								"SHIPPING_METHOD": null,
+								"SCHEDULE_SHIP_DATE": "2017-03-17T00:00:00+08:00",
+								"ORIGINAL_LINE": "Y",
+								"START_DATE": null,
+								"END_DATE": null
+							}
+						}
+					}
+				}
+			}, {
+				"JsOrderTxnId": "11443",
+				"CreatedDate": "2017-03-10T08:03:10.000+08:00",
+				"UserId": "desmond",
+				"TxnStatus": "FAILED",
+				"OrderType": "B",
+				"OrderTypeId": 4479,
+				"ErrorMsg": "Validate Fail - Price ID is not valid",
+				"Payload": {
+					"InputCreateBeerOrder": {
+						"HeaderInfo": {
+							"UserID": null,
+							"UserRole": "MS",
+							"CallerID": null
+						},
+						"I_HEADER_REC": {
+							"ORDER_TYPE_ID": 4479,
+							"SOLD_TO_ORG_ID": 13726433,
+							"SHIP_TO_ORG_ID": 520434,
+							"INVOICE_TO_ORG_ID": 520410,
+							"ORDER_SOURCE_ID": 0,
+							"PRICE_LIST_ID": 99999999,
+							"PRICING_DATE": "2017-03-10T15:57:52+08:00",
+							"FLOW_STATUS_CODE": "ENTERED",
+							"CUST_PO_NUMBER": null,
+							"SOLD_FROM_ORG_ID": 2898,
+							"SHIP_FROM_ORG_ID": 2920,
+							"SALESREP_ID": 100334371,
+							"TRANSACTIONAL_CURR_CODE": "HKD",
+							"PAYMENT_TERM_ID": 1006,
+							"REMARKS": null,
+							"FREIGHT_CHARGE": 0,
+							"PAYMENT_TYPE": null,
+							"REAL_CUSTOMER": null
+						},
+						"I_LINE_TBL": {
+							"I_LINE_TBL_ITEM": {
+								"LINE_NUMBER": 1,
+								"INVENTORY_ITEM_ID": 76758,
+								"SUBINVENTORY": "JL-WAREHSE",
+								"LOT_NUMBER": "26-AUG-2017",
+								"ORDERED_QUANTITY": 1,
+								"UNIT_SELLING_PRICE": 221,
+								"SHIPPING_METHOD": -1,
+								"SCHEDULE_SHIP_DATE": "2017-03-11T00:00:00+08:00",
+								"ORIGINAL_LINE": "Y"
+							}
+						}
+					}
+				}
+			}
+		]
+	}
+}

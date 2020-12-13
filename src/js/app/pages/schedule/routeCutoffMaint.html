@@ -1,0 +1,103 @@
+<!-- header_template -->
+<script type="text/html" id="header_template">
+    <!-- header -->
+    <header-bar role="banner" params="headerLabel: lng_title">
+        <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+        <nav-buttons side="right2">
+            <input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/>
+        </nav-buttons>
+        <nav-buttons side="right3">
+            <input type="image" src="img/icons/toastBg/edit.svg" data-bind="click: function() { $parents[1].save()}"/>
+        </nav-buttons>        
+    </header-bar>
+</script>  
+
+<div id="canvasSearch" class="page-container oj-offcanvas-outer-wrapper">
+    <div class="oj-offcanvas-inner-wrapper">
+        <!-- display header -->
+        <span data-bind="template: {name: 'header_template'}"></span>
+
+        <main id="scheduleMaintenance">
+            <!-- ko if:ready -->
+            <div role="main" class="list-content">
+                <!-- input license and barcode --> 
+                <div class="inputBarcode">
+                    <ul>
+                        <li>
+                            <div class="box" style="padding-left: 2px;">
+                                <table>
+                                    <tr>
+                                        <td width="15%"><span data-bind="text: lng_serviceProvider"></td>
+                                        <td width="35%">
+                                            <select class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {style:'max-width:35vh'}, value: serviceProvider, options:$data.availableServiceProvider}" ></select>
+                                        </td>  
+                                    </tr>
+                                </table>                             
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <div class="box oj-dialog-footer">
+                                <button id="button-search" data-bind="ojComponent: {component: 'ojButton', label: lng_search}, click: search"> </button>
+                                <button id="button-reset" data-bind="ojComponent: {component: 'ojButton', label: lng_reset}, click: reset"> </button>
+                            </div>                             
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div id="tableContainer" class="container oj-flex-item">
+                <ul>
+                    <li class="heading">
+                        <div class="rightIcon"><a data-bind="click: add"><img src="img/app/btn_add_new.png" style="width:15px; height:15px;"></a></div>
+                    </li>
+                </ul>                        
+                <table id="documentTable" summary="Route Cutoff Time List" aria-label="Route Cutoff Time Maintenance Table"
+                       data-bind="ojComponent: {component: 'ojTable',
+                    data: datasource,
+                    editMode: 'rowEdit',
+                    columnsDefault: {sortable: 'none'}, 
+                    columns: [{headerText: lng_serviceProvider,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'SERVICE_PROVIDER'},     
+                              {headerText: lng_route,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'ROUTE'},
+                              {headerText: lng_cutoffTime,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only',
+                               sortProperty: 'CUTOFF_TIME'},
+                              {headerText: lng_remove,
+                               headerClassName: 'oj-helper-text-align-left',
+                               className: 'oj-helper-text-align-left oj-read-only'}
+                       ],
+                    rootAttributes: {'style':'width:100%; height:80vh; overflow-hidden; font-size:10px'},
+                    rowTemplate: getRowTemplate}">
+                </table>
+            </div>
+            <!-- /ko -->
+        </main>            
+    </div>
+</div>
+
+<script type="text/html" id="editRowTemplate">
+    <tr>
+        <td>
+            <select class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {'style':'font-size:10px;max-width:85%;padding-left:0.5vh;'}, value:$data.SERVICE_PROVIDER, options:$parent.availableServiceProvider}" ></select>
+        </td>    
+        <td>
+            <select class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {'style':'font-size:10px;max-width:85%;padding-left:0.5vh;'}, value:$data.ROUTE, options:$parent.availableRouteList}" ></select>
+        </td> 
+        <td>
+            <select class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {'style':'font-size:10px;max-width:85%;padding-left:0.5vh;'}, value:$data.CUTOFF_TIME, options:$parent.availableCutoffTime}" ></select>
+        </td>         
+        <td>
+            <a data-bind='click: function(data, event) { $parent.removeLine($data, data, event) }'><img src="img/app/btn_delete_blue.png" style="width:15px; height:15px;"></a>
+        </td>
+    </tr>
+</script>

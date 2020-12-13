@@ -1,0 +1,80 @@
+<!-- header -->
+<header-bar role="banner" params="headerLabel: $data.headerTitle">
+    <nav-back-button params="label: ' ', click: function() { $parent.goBack() }"></nav-back-button>
+    <nav-buttons side="right2"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>    
+    <nav-buttons side="right3"><input type="image" src="img/icons/toastBg/submitted.svg" data-bind="click: function() { $parents[1].update()}"/></nav-buttons>    
+</header-bar>
+
+<main id="visitationDetail">
+    <div class="container">
+        <ul>
+            <li class="heading">
+                <div><span data-bind="text: lng_overview"></span></div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="tag green"><span data-bind="text:$data.statusDesc()"></span></div>
+                    <div class="title"><span data-bind="text:$data.outletName"></span></div>
+                    <table>
+                        <tr>
+                            <td><div class="icon"></div></td>
+                            <td style="width:15vh"><span>&nbsp;</span></td>
+                            <td><span>&nbsp;</span></td>
+                        </tr>                          
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_number_grey.png" alt="" /></div></td>
+                            <td style="width:15vh"><span data-bind="text: lng_subject"></span></td>
+                            <td><span data-bind="text:$data.subject"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_customer_blue.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_visitPerson"></span></td>
+                            <td><span data-bind="text:$data.person"></span></td>
+                        </tr>    
+                        <tr>
+                            <td><div class="icon"><img src="img/icons/common/navigate.svg" alt="" /></div></td>
+                            <td><span data-bind="text: lng_purpose"></span></td>
+                            <td><span data-bind="text:$data.purpose"></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/icons/common/date.svg" alt="" /></div></td>
+                            <td><span data-bind="text: lng_start"></span></td>
+                            <td>                                
+                                <input data-bind="ojComponent: {component: 'ojInputDateTime', disabled: true, rootAttributes: {style:'max-width:30vh'},
+                                    min: minStartDate,
+                                    value: $data.start, 
+                                    converter: dateConverter}">
+                            </td>                            
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_order_date_grey.png" alt="" /></div></td>
+                            <td><span data-bind="text: lng_end"></span></td>
+                            <td>                                
+                                <input data-bind="ojComponent: {component: 'ojInputDateTime', disabled: true, rootAttributes: {style:'max-width:30vh'},
+                                    min: minEndDate,                                            
+                                    value: $data.end, 
+                                    converter: dateConverter}">
+                            </td>  
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/icons/toastBg/save.svg" alt="" /></div></td>
+                            <td><span data-bind="text: lng_status"></span></td>
+                            <td><select id="select" class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {style:'max-width:30vh'}, value:$data.status, options:$data.availableStatus}" ></select></td>
+                        </tr>                          
+                        <tr>
+                            <td><div class="icon"><img src="img/app/icon_billing_ad_grey.png" alt="" /></div></td>
+                            <td colspan="2"><textarea id="remarks" rows="5" type="text" data-bind="ojComponent: {component: 'ojTextArea', value: $data.description}, attr: {placeholder: lng_description}"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><div class="icon"><img src="img/icons/common/location.svg" alt="" /></div></td>
+                            <td colspan="2"><span data-bind="text:$data.location"></span></td>
+                        </tr>                        
+                    </table>
+                </div>
+            </li>     
+            
+        </ul>
+        
+    </div>
+</main>
+

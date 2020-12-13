@@ -1,0 +1,101 @@
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+ <!-- header -->
+<header-bar role="banner" params="headerLabel: lng_stockInquiryResult">
+    <nav-back-button params="click: function() { $parent.goBack() }"></nav-back-button>
+    <nav-buttons side="right3"><input type="image" src="img/app/btn_header_homepage.png" data-bind="click: function() { $root.router.go('springboard') }"/></nav-buttons>
+</header-bar>
+ 
+<main id="stockInquiry">
+    <div class="container">
+        <ul id="orderlistview" aria-label="stock list"
+           data-bind="ojComponent: {component: 'ojListView', 
+                       data: stockList, 
+                       item: {template: selectTemplate, focusable: itemOnly, selectable: itemOnly},
+                       selectionMode: 'single',
+                       drillMode: 'none', 
+                       optionChange: optionChange, 
+                       scrollPolicy: 'loadMoreOnScroll', 
+                       scrollPolicyOptions: {fetchSize: 10}}">
+        </ul>
+        
+        <script type="text/html" id="group_template">
+            <li data-bind="attr: {id: id}">
+                <div style="padding-left: 5%"><strong data-bind="text: warehouse"></strong><div>
+            </li>
+        </script>
+        
+        <script type="text/html" id="item_template">
+                <li class="row" data-bind="attr: {id: id}">
+                  <div class="box oj-flex">
+                    <div class="oj-flex-item oj-flex-direction-column" style="flex-wrap: nowrap">
+                      
+                      <div class="oj-flex row"> 
+                        <strong data-bind="text: data.ITEM_CODE"/>
+                      </div>
+
+                        <div class="oj-flex row"> 
+                            <div class="oj-sm-4">
+                                <span data-bind="text: $parent.lng_description"></span>
+                            </div>
+                            <div class="oj-sm-8">
+                              <span data-bind="text: data.DESCRIPTION"></span>
+                            </div>
+                      </div>
+                        
+                      <div class="oj-flex row"> 
+                        <div class="oj-sm-4">
+                          <span data-bind="text: $parent.lng_subInventory"></span>
+                        </div>
+                        <div class="oj-sm-8">
+                          <span data-bind="text: data.SUBINVENTORY"></span>
+                        </div>
+                      </div>
+
+                      <div class="oj-flex row"> 
+                        <div class="oj-sm-4">
+                          <span data-bind="text: $parent.lng_lot"></span>
+                        </div>
+                        <div class="oj-sm-8">
+                          <span data-bind="text: data.LOT"></span>
+                        </div>
+                      </div>
+
+                      <div class="oj-flex row oj-hybrid-padding-top"> 
+                        <div class="oj-sm-4 blue">
+                          <div> 
+                            <span class="big" data-bind="text: data.ONHAND_QTY"></span>
+                          </div>
+                          <div>
+                            <span data-bind="text: $parent.lng_onhand"></span>
+                          </div> 
+                        </div>
+                          
+                        <div class="oj-sm-4 red">
+                          <div> 
+                            <span class="big" data-bind="text: data.RESRV_QTY"></span>
+                          </div>
+                          <div>
+                            <span data-bind="text: $parent.lng_reservation"></span>
+                          </div> 
+                        </div>
+                          
+                        <div class="oj-sm-4 green">
+                          <div> 
+                            <span class="big" data-bind="text: data.AVLB_QTY"></span>
+                          </div>
+                          <div>
+                            <span data-bind="text: $parent.lng_available"></span>
+                          </div> 
+                        </div>
+                      </div>          
+                        
+                    </div>
+                  </div>
+                </li>
+        </script>
+    </div>
+  
+</main>

@@ -1,0 +1,313 @@
+{
+  "count": 6,
+  "result": [
+    {
+      "id": "cus-101",
+      "parent": "ABC Parent Company Name",
+      "name": "Susan 22",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-101-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-101-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-101-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-101-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-101-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-101-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-102",
+      "parent": "Aension Company",
+      "name": "Deno Bar",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-102-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-102-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-102-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-102-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-102-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-102-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-103",
+      "parent": "Aoson Limited",
+      "name": "Tinson West",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-103-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-103-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-103-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-103-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-103-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-103-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-104",
+      "parent": "Bonson Company Limited",
+      "name": "Cason Table Restaurant",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-104-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-104-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-104-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-104-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-104-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-104-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-105",
+      "parent": "Bonson Company Limited",
+      "name": "Condeno Bar",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-105-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-105-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-105-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-105-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-105-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-105-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-106",
+      "parent": "Red Quarters Limited",
+      "name": "Red Quarters",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-106-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-106-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-106-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-106-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-106-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-106-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    },
+    {
+      "id": "cus-107",
+      "parent": "THE DAIRY FARM COMPANY LTD (WELLCOME)",
+      "name": "Dairy Farm",
+      "outletCount": 6,
+      "outlets": [
+        {
+          "id": "cus-107-01",
+          "name": "Tsuen Wan Outlet",
+          "shipAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan",
+          "billAddress": "Shop 312, 10/F, World Asia Centre, 10 Lison Tan Road, Tsuen Wan"
+        },
+        {
+          "id": "cus-107-02",
+          "name": "Tsim Sha Tsui Outlet",
+          "shipAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui",
+          "billAddress": "Shop 305, 3/F, World Trade Centre, Minden Avenue, Tsim Sha Tsui"
+        },
+        {
+          "id": "cus-107-03",
+          "name": "Tuen Mun Outlet",
+          "shipAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun",
+          "billAddress": "Shop 20, G/F, Tuen Mun Plaza, 23 Tsing Chung Koon Road, Tuen Mun"
+        },
+        {
+          "id": "cus-107-04",
+          "name": "Tuen Mun Tong Outlet",
+          "shipAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong",
+          "billAddress": "Shop G15-6, G/F, 8 Tsing Chung Koon Road, Tuen Mun, Hong Kong"
+        },
+        {
+          "id": "cus-107-05",
+          "name": "Wong Tai Sun Outlet",
+          "shipAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin",
+          "billAddress": "Shop 312, 10/F, Wong Tai Sin Centre, 10 Neon Road, Wong Tai Sin"
+        },
+        {
+          "id": "cus-107-06",
+          "name": "World Outlet",
+          "shipAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong",
+          "billAddress": "Shop 50, No. 35 Aberdeen Street, Central, Hong Kong"
+        }
+      ]
+    }
+  ]
+}

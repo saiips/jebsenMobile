@@ -1,0 +1,78 @@
+{
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "phonegap-plugin-barcodescanner": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-barcodescanner@6.0.4"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-network-information": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-network-information"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "phonegap-plugin-push": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-push@~1.8.4"
+        },
+        "is_top_level": true,
+        "variables": {
+            "SENDER_ID": "471152500063"
+        }
+    },
+    "cordova-plugin-bluetoothle": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-bluetoothle"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.github.michael79bxl.zbtprinter": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-zbtprinter"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.silverchip.cordovaprinter": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LiamBateman/cordova-print.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "git",
+            "url": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

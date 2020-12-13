@@ -1,0 +1,236 @@
+{
+  "P_SALESREP_TBL_ITEM": [
+    {
+      "SALESREP_ID": "100011337",
+      "SALESREP_NAME": "13-G000.HKG - LAU, HELIA"
+    },
+    {
+      "SALESREP_ID": "100009206",
+      "SALESREP_NAME": "13-G000.HKG - SALES TEAM"
+    },
+    {
+      "SALESREP_ID": "100234337",
+      "SALESREP_NAME": "13.G000.HKG - BMAP.TWN"
+    },
+    {
+      "SALESREP_ID": "100009214",
+      "SALESREP_NAME": "13.G000.HKG - BOND, ASHLEY"
+    },
+    {
+      "SALESREP_ID": "100061337",
+      "SALESREP_NAME": "13.G000.HKG - CANTACUZENE, MARICA"
+    },
+    {
+      "SALESREP_ID": "100388337",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, ANGUS"
+    },
+    {
+      "SALESREP_ID": "100412337",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, GODWIN"
+    },
+    {
+      "SALESREP_ID": "100280337",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, KEN"
+    },
+    {
+      "SALESREP_ID": "100009220",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, KEVIN"
+    },
+    {
+      "SALESREP_ID": "100208337",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, MICHAEL"
+    },
+    {
+      "SALESREP_ID": "100009223",
+      "SALESREP_NAME": "13.G000.HKG - CHAN, TOM"
+    },
+    {
+      "SALESREP_ID": "100009215",
+      "SALESREP_NAME": "13.G000.HKG - CHANG, PINO"
+    },
+    {
+      "SALESREP_ID": "100052340",
+      "SALESREP_NAME": "13.G000.HKG - CHECK, YON"
+    },
+    {
+      "SALESREP_ID": "100436337",
+      "SALESREP_NAME": "13.G000.HKG - CHENG, ICE"
+    },
+    {
+      "SALESREP_ID": "100009207",
+      "SALESREP_NAME": "13.G000.HKG - CHEUNG, JOEY"
+    },
+    {
+      "SALESREP_ID": "100009217",
+      "SALESREP_NAME": "13.G000.HKG - CHEUNG, THOMAS"
+    },
+    {
+      "SALESREP_ID": "100009225",
+      "SALESREP_NAME": "13.G000.HKG - CHOI, MON"
+    },
+    {
+      "SALESREP_ID": "100009218",
+      "SALESREP_NAME": "13.G000.HKG - CHUI, VANESSA"
+    },
+    {
+      "SALESREP_ID": "100195338",
+      "SALESREP_NAME": "13.G000.HKG - CONSIDINE, AIDAN MICHAEL"
+    },
+    {
+      "SALESREP_ID": "100318337",
+      "SALESREP_NAME": "13.G000.HKG - FALCONE, GABRIELE"
+    },
+    {
+      "SALESREP_ID": "100401337",
+      "SALESREP_NAME": "13.G000.HKG - GIRAUD, GUILLAUME"
+    },
+    {
+      "SALESREP_ID": "100009230",
+      "SALESREP_NAME": "13.G000.HKG - HO, DONNY"
+    },
+    {
+      "SALESREP_ID": "100009229",
+      "SALESREP_NAME": "13.G000.HKG - HO, VEGA"
+    },
+    {
+      "SALESREP_ID": "100161337",
+      "SALESREP_NAME": "13.G000.HKG - HUNG, SHARON"
+    },
+    {
+      "SALESREP_ID": "100009228",
+      "SALESREP_NAME": "13.G000.HKG - HUNG, VINCE"
+    },
+    {
+      "SALESREP_ID": "100276337",
+      "SALESREP_NAME": "13.G000.HKG - IP, CELIA"
+    },
+    {
+      "SALESREP_ID": "100275337",
+      "SALESREP_NAME": "13.G000.HKG - JFW ONLINE SALES TEAM"
+    },
+    {
+      "SALESREP_ID": "100009208",
+      "SALESREP_NAME": "13.G000.HKG - JONES, GAVIN"
+    },
+    {
+      "SALESREP_ID": "100311337",
+      "SALESREP_NAME": "13.G000.HKG - LAI, LEVIN"
+    },
+    {
+      "SALESREP_ID": "100009227",
+      "SALESREP_NAME": "13.G000.HKG - LEE, JASON"
+    },
+    {
+      "SALESREP_ID": "100025337",
+      "SALESREP_NAME": "13.G000.HKG - LEUNG, KENNETH"
+    },
+    {
+      "SALESREP_ID": "100009224",
+      "SALESREP_NAME": "13.G000.HKG - LEUNG, RACHEL"
+    },
+    {
+      "SALESREP_ID": "100366337",
+      "SALESREP_NAME": "13.G000.HKG - LIEN, JOY"
+    },
+    {
+      "SALESREP_ID": "100009231",
+      "SALESREP_NAME": "13.G000.HKG - LIM, DOMINIQUE"
+    },
+    {
+      "SALESREP_ID": "100009221",
+      "SALESREP_NAME": "13.G000.HKG - LUNG, MAYGI"
+    },
+    {
+      "SALESREP_ID": "100359337",
+      "SALESREP_NAME": "13.G000.HKG - MA, MELODY"
+    },
+    {
+      "SALESREP_ID": "100326337",
+      "SALESREP_NAME": "13.G000.HKG - MILLAR, CHRISTOPHER"
+    },
+    {
+      "SALESREP_ID": "100065338",
+      "SALESREP_NAME": "13.G000.HKG - NICOLE, YEUNG"
+    },
+    {
+      "SALESREP_ID": "100009237",
+      "SALESREP_NAME": "13.G000.HKG - RABOT, VICTOR"
+    },
+    {
+      "SALESREP_ID": "100009038",
+      "SALESREP_NAME": "13.G000.HKG - SALES TEAM"
+    },
+    {
+      "SALESREP_ID": "100009216",
+      "SALESREP_NAME": "13.G000.HKG - SHEA, MARCOS"
+    },
+    {
+      "SALESREP_ID": "100396338",
+      "SALESREP_NAME": "13.G000.HKG - SOO, ANTHONY"
+    },
+    {
+      "SALESREP_ID": "100009219",
+      "SALESREP_NAME": "13.G000.HKG - TONG, WILLIAM"
+    },
+    {
+      "SALESREP_ID": "100009226",
+      "SALESREP_NAME": "13.G000.HKG - TSANG, CHRISTOPHER"
+    },
+    {
+      "SALESREP_ID": "100396337",
+      "SALESREP_NAME": "13.G000.HKG - TSANG, IVY"
+    },
+    {
+      "SALESREP_ID": "100009209",
+      "SALESREP_NAME": "13.G000.HKG - TSO, BONNIE"
+    },
+    {
+      "SALESREP_ID": "100009222",
+      "SALESREP_NAME": "13.G000.HKG - VAZQUEZ, MARCO"
+    },
+    {
+      "SALESREP_ID": "100350337",
+      "SALESREP_NAME": "13.G000.HKG - WAN, RUBY"
+    },
+    {
+      "SALESREP_ID": "100305337",
+      "SALESREP_NAME": "13.G000.HKG - WONG, JENNIFER"
+    },
+    {
+      "SALESREP_ID": "100009210",
+      "SALESREP_NAME": "13.G000.HKG - WONG, JOE"
+    },
+    {
+      "SALESREP_ID": "100009212",
+      "SALESREP_NAME": "13.G000.HKG - WU, KAP FEI"
+    },
+    {
+      "SALESREP_ID": "100252337",
+      "SALESREP_NAME": "13.G000.HKG - YAU, BETTY"
+    },
+    {
+      "SALESREP_ID": "100253337",
+      "SALESREP_NAME": "13.G000.HKG - YEUNG, PAUL"
+    },
+    {
+      "SALESREP_ID": "100272337",
+      "SALESREP_NAME": "13.G000.HKG - YIM, TRAMY"
+    },
+    {
+      "SALESREP_ID": "100410337",
+      "SALESREP_NAME": "13.G000.HKG - YUEN, LISA"
+    },
+    {
+      "SALESREP_ID": "100009213",
+      "SALESREP_NAME": "13.G000.HKG - YUN, KITH"
+    },
+    {
+      "SALESREP_ID": "100009211",
+      "SALESREP_NAME": "13.G000.NCH - CHEN, HEIDI"
+    },
+    {
+      "SALESREP_ID": "100260337",
+      "SALESREP_NAME": "13.G000.TPE - BMAP.TWN"
+    }
+  ]
+}

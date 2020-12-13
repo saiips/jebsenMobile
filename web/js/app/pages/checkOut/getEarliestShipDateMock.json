@@ -1,0 +1,11 @@
+{
+	"OutputGetEarliestShipDate": {
+		"O_SHIP_DATE": "2017-01-09T00:00:00.000+08:00",
+		"O_SHIPPING_METHOD": "ASD",
+                "O_LOT_TBL_OUT": {
+			"O_LOT_TBL_OUT_ITEM": [{
+				"LOT_NUMBER": "12-MAY-2017"
+			}, {"LOT_NUMBER": "13-MAY-2017"}]
+                }
+	}
+}

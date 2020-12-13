@@ -1,0 +1,59 @@
+<main id="loginPage" class="page-background">
+
+<!-- large template -->
+<script type="text/html" id="lg_xl_template">
+    <div class="lg-logo">
+        <img src="img/app/login_logo.png" alt="logo"/>
+    </div> 
+</script>
+
+<!-- small template -->
+<script type="text/html" id="sm_md_template">
+    <div class="logo">
+        <img src="img/app/login_logo.png" alt="logo"/>
+    </div>
+</script>
+
+<!-- large template -->
+<script type="text/html" id="lg_login_btn_template">
+    <a data-bind="click: signIn"><div class="button lg-login-btn"><span data-bind="text: lng_signIn"/></div></a>
+</script>
+
+<!-- small template -->
+<script type="text/html" id="sm_login_btn_template">
+    <a data-bind="click: signIn"><div class="button login-btn"><span data-bind="text: lng_signIn"/></div></a>
+</script>
+
+<!-- display logo -->
+<div data-bind="template: {name: $data.large() ? 'lg_xl_template' : 'sm_md_template'}"></div>
+
+<div class="version" data-bind="text: $data['buildVersion']"></div>
+
+<div id="logon" class="inputContainer">
+    <div class="username">
+    <input id="text-username"  type="text"
+           data-bind="ojComponent: {component: 'ojInputText', value: username}, attr: {placeholder: lng_username}" autocomplete="false"/>
+    </div>
+
+    <div class="password">
+    <input id="text-password" type="password" 
+           data-bind="ojComponent: {component: 'ojInputPassword', value: password}, attr: {placeholder: lng_password}, executeOnEnter: signIn" autocomplete="false"/>
+    <button id="icon-show-password" data-bind="click: showPassword">Show Password</button>
+    </div>
+     
+    <div data-bind="template: {name: $data.large() ? 'lg_login_btn_template' : 'sm_login_btn_template'}"></div>    
+
+    <div class="forgot-password">
+        <a target="_blank" data-bind="attr: { href: forgotPasswordURL, text: lng_accountAccess }"><span data-bind="text: lng_accountAccess"></span></a>
+    </div>
+</div>
+
+<!-- ko if: $root.showTranslation -->
+<div class="btnContainer">
+    <a data-bind="click: function() { $root.translate() }">
+        <div class="translate"><img src="img/app/btn_translation.png" alt="" /></div>
+    </a>      
+</div>
+<!-- /ko -->
+
+</main>

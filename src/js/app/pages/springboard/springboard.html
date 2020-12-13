@@ -1,0 +1,129 @@
+<main id="springboard" class="page-background">
+    
+<!-- large template -->
+<script type="text/html" id="lg_xl_template">
+    <div class="lg-logo">
+        <img src="img/app/login_logo.png" alt="logo"/>
+    </div> 
+</script>
+
+<!-- small template -->
+<script type="text/html" id="sm_md_template">
+    <div class="logo">
+        <img src="img/app/login_logo.png" alt="logo"/>
+    </div>
+</script>
+
+<div class="container">
+    <!-- display logo -->
+    <div data-bind="template: {name: $data.large() ? 'lg_xl_template' : 'sm_md_template'}"></div>
+
+    <div class="version" data-bind="text: $data['buildVersion']"></div>
+    
+    <div class="welcomeMsg"><span data-bind="text: lng_hi"></span><span data-bind="text: displayName"></span></div>
+    <div class="title">
+        <span data-bind="text: userRole"></span>
+        <span data-bind="text: (licenseNo != '') ? licenseNo : ''"></span>
+        <!-- ko if: isOrderDeskAdmin -->
+        > 
+        <span>
+            <select id="select" class="selectBox" data-bind="ojComponent: {component: 'ojSelect', rootAttributes: {style:'max-width:25vh'}, value:orgUnit, options:availableOrgUnits}" ></select>
+        </span>
+        <!-- /ko -->
+    </div>
+
+    <div>
+        <ul>
+            <li data-bind="visible: customerListEnabled">
+                <div class="icon"><img src="img/app/icon_home_customer.png" alt=""></div>
+                <a data-bind="click: customer" href="#"><div class="content"><span data-bind="text: lng_customer"></span></div></a>
+            </li>
+            <li data-bind="visible: visitationEnabled">
+                <div class="icon"><img src="img/app/icon_home_visitation.png" alt=""></div>
+                <a data-bind="click: visitation" href="#"><div class="content"><span data-bind="text: lng_visitation"></span></div></a>
+            </li>
+            <li data-bind="visible: stockInquiryEnabled">
+                <div class="icon"><img src="img/app/icon_home_stock_inquiry.png" alt=""></div>
+                <a data-bind="click: stockInquiry" href="#"><div class="content"><span data-bind="text: lng_stockInquiry"></span></div></a>
+            </li>
+            <li data-bind="visible: performanceEnabled">
+                <div class="icon"><img src="img/app/icon_home_performance.png" alt=""></div>
+                <a data-bind="click: performance" href="#"><div class="content"><span data-bind="text: lng_performance"></span></div></a>
+            </li>
+            <li data-bind="visible: pickupEnabled">
+                <div class="icon"><img src="img/app/icon_truck.png" alt=""></div>
+                <a data-bind="click: pickup" href="#"><div class="content"><span data-bind="text: lng_pickupList"></span></div></a>
+            </li>
+            <li data-bind="visible: loadingEnabled">
+                <div class="icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: loading" href="#"><div class="content"><span data-bind="text: lng_loadingList"></span></div></a>
+            </li>
+            <li data-bind="visible: reviewLoadingEnabled">
+                <div class="icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: reviewLoading" href="#"><div class="content"><span data-bind="text: lng_reviewLoadingList"></span></div></a>
+            </li>   
+            <li data-bind="visible: scheduleEnabled">
+                <div class="icon"><img src="img/icons/toastBg/calendar.svg" alt=""></div>
+                <a data-bind="click: schedule" href="#"><div class="content"><span data-bind="text: lng_schedule"></span></div></a>
+            </li> 
+            
+            <li data-bind="fadeVisible: displayScheduleOptions">
+                <div class="d-icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: logisticsSchMaint" href="#"><div class="d-content"><span data-bind="text: lng_logisticsSchMaint"></span></div></a>
+            </li>  
+            <li data-bind="fadeVisible: displayScheduleOptions">
+                <div class="d-icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: nonWorkingDateMaint" href="#"><div class="d-content"><span data-bind="text: lng_nonWorkingDateMaint"></span></div></a>
+            </li>  
+            <li data-bind="fadeVisible: displayScheduleOptions">
+                <div class="d-icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: cutoffMaint" href="#"><div class="d-content"><span data-bind="text: lng_cutoffMaint"></span></div></a>
+            </li>    
+            <li data-bind="fadeVisible: displayScheduleOptions">
+                <div class="d-icon"><img src="img/icons/toastBg/edit.svg" alt=""></div>
+                <a data-bind="click: earlierCutoffMaint" href="#"><div class="d-content"><span data-bind="text: lng_earlierCutoffMaint"></span></div></a>
+            </li>  
+
+            <li data-bind="visible: dailyReceptEnabled">
+                <div class="icon"><img src="img/app/icon_home_performance.png" alt=""></div>
+                <a data-bind="click: dailyReceipt" href="#"><div class="content"><span data-bind="text: lng_dailyReceipt"></span></div></a>
+            </li>
+            <li data-bind="visible: dailyOrderSummaryEnabled">
+                <div class="icon"><img src="img/app/icon_home_performance.png" alt=""></div>
+                <a data-bind="click: dailyOrders" href="#"><div class="content"><span data-bind="text: lng_dailyOrders"></span></div></a>
+            </li>
+            <li data-bind="visible: reInitiateOrderEnabled">
+                <div class="icon"><img src="img/app/icon_order_number_grey.png" alt=""></div>
+                <a data-bind="click: reInitiateOrderList" href="#"><div class="content"><span data-bind="text: lng_reInitiateOrderList"></span></div></a>                   
+            </li>
+            <li data-bind="visible: isPrinterSetupEnabled">
+                <div class="icon"><img src="img/app/icon_printer.png" alt=""></div>
+                <a data-bind="click: printerSetup" href="#"><div class="content"><span data-bind="text: lng_printerSetup"></span></div></a>                   
+            </li>
+         </ul>
+    </div>
+    <div class="btnContainer">
+        <!-- ko if: $root.showTranslation -->
+        <a data-bind="click: function() { $root.translate() }">
+            <div class="translate"><img src="img/app/btn_translation.png" alt="" /></div>
+        </a>
+        <div>&nbsp;</div>
+        <!-- /ko -->
+        <!-- ko if: isDataSyncEnabled -->
+        <a data-bind="click: function() {$root.dataSync()}">
+            <div class="dataSyncIcon">
+                <span data-bind="text: getDataSyncCount()"></span>
+            </div>
+        </a>
+        <div>&nbsp;</div>
+        <!-- /ko -->
+        <a data-bind="click: function() {$root.clearStore()}">
+            <div class="return"><img src="img/app/btn_download.png" alt="" /></div>
+        </a>
+        <div>&nbsp;</div>       
+        <a data-bind="click: function() { $root.logout() }">
+            <div class="logout"><img src="img/app/btn_logout.png" alt="" /></div>
+        </a>
+    </div>
+</div>
+</main>

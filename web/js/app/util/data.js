@@ -1,0 +1,1 @@
+define(["ojs/ojcore","knockout","jquery"],function(e,n,t){function o(e){return t.getJSON(e)}return{fetchData:o}});

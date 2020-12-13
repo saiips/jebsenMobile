@@ -1,0 +1,570 @@
+[
+    {
+        "name": "verifyLogin",
+        "url": "/platform/users/login",
+        "method": "GET",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "login",
+        "url": "/platform/users/{id}",
+        "method": "GET",
+        "amplify": {
+            "dataType": "json"
+        }
+    },    
+    {
+        "name": "registerDevice",
+        "url": "/platform/devices/register",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getCustomers",
+        "url": "/custom/BeverageAPIs_DEV/getCustomers",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getCustomersTest",
+        "url": "/custom/BeverageAPIs_DEV/getCustomersTest",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },    
+    {
+        "name": "getOrders",
+        "url": "/custom/BeverageAPIs_DEV/getOrders",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getOrderLines",
+        "url": "/custom/BeverageAPIs_DEV/getOrderLines",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getPriceList",
+        "url": "/custom/BeverageAPIs_DEV/getPriceList",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "validateSalesOrder",
+        "url": "/custom/BeverageAPIs_DEV/validateOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getSalesCustomer",
+        "url": "/custom/BeverageAPIs_DEV/getSalesCustomer",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "createWineOrderService",
+        "url": "/custom/BeverageAPIs_DEV/createWineOrderService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "createBeerOrderService",
+        "url": "/custom/BeverageAPIs_DEV/createBeerOrderService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    }, 
+    {
+        "name": "createBeerOrderSyncService",
+        "url": "/custom/BeverageAPIs_DEV/createBeerOrderSyncService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },     
+    {
+        "name": "getItemOnHandByItem",
+        "url": "/custom/BeverageAPIs_DEV/getItemOnHandByItem",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },    
+    {
+        "name": "getItemOnHandByItemLot",
+        "url": "/custom/BeverageAPIs_DEV/getItemOnHandByItemLot",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getItemLot",
+        "url": "/custom/BeverageAPIs_DEV/getItemLot",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getSubInventory",
+        "url": "/custom/BeverageAPIs_DEV/getSubInventory",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getItemReservationDetails",
+        "url": "/custom/BeverageAPIs_DEV/getItemReservationDetails",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getQuotation",
+        "url": "/custom/BeverageAPIs_DEV/getQuotation",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getQuotationLine",
+        "url": "/custom/BeverageAPIs_DEV/getQuotationLine",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getShipmentMethod",
+        "url": "/custom/BeverageAPIs_DEV/getShipmentMethod",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getCustomerAging",
+        "url": "/custom/BeverageAPIs_DEV/getCustomerAging",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },      
+    {
+        "name": "createVanOrder",
+        "url": "/custom/BeverageAPIs_DEV/createVanOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },      
+    {
+        "name": "bookSalesOrder",
+        "url": "/custom/BeverageAPIs_DEV/bookSalesOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "cancelSalesOrder",
+        "url": "/custom/BeverageAPIs_DEV/cancelSalesOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getDelivery",
+        "url": "/custom/BeverageAPIs_DEV/getDelivery",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getDeliveryByCarPlate",
+        "url": "/custom/BeverageAPIs_DEV/getDeliveryByCarPlate",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getDeliveryDetail",
+        "url": "/custom/BeverageAPIs_DEV/getDeliveryDetail",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getSalesByCustomer",
+        "url": "/custom/BeverageAPIs_DEV/getSalesByCustomer",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },  
+    {
+        "name": "getSalesBySalesRep",
+        "url": "/custom/BeverageAPIs_DEV/getSalesBySalesRep",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "confirmDelivery",
+        "url": "/custom/BeverageAPIs_DEV/confirmDelivery",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getReceiptSummary",
+        "url": "/custom/BeverageAPIs_DEV/getReceiptSummary",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },      
+    {
+        "name": "getEarliestShipDate",
+        "url": "/custom/BeverageAPIs_DEV/getEarliestShipDate",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getEarliestShipDateByCP",
+        "url": "/custom/BeverageAPIs_DEV/getEarliestShipDateByCP",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "createQuotation",
+        "url": "/custom/BeverageAPIs_DEV/createQuotation",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getAppVersion",
+        "url": "/custom/BeverageAPIs_DEV/getAppVersion",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getInitDownload",
+        "url": "/custom/BeverageAPIs_DEV/getInitDownload",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getTopItemList",
+        "url": "/custom/BeverageAPIs_DEV/getTopItemList",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getDailyOrderSummary",
+        "url": "/custom/BeverageAPIs_DEV/getDailyOrderSummary",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getSalesTarget",
+        "url": "/custom/BeverageAPIs_DEV/getSalesTarget",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getSalesTargetByCustomer",
+        "url": "/custom/BeverageAPIs_DEV/getSalesTargetByCustomer",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },    
+    {
+        "name": "getBillToList",
+        "url": "/custom/BeverageAPIs_DEV/getBillToList",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getSalesRepList",
+        "url": "/custom/BeverageAPIs_DEV/getSalesRepList",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "checkPasscode",
+        "url": "/custom/BeverageAPIs_DEV/checkPasscode",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },      
+    {
+        "name": "goodsLoading",
+        "url": "/custom/BeverageAPIs_DEV/goodsLoading",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },    
+    {
+        "name": "goodsUnLoading",
+        "url": "/custom/BeverageAPIs_DEV/goodsUnLoading",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "confirmGoodsLoading",
+        "url": "/custom/BeverageAPIs_DEV/confirmGoodsLoading",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "logEvents",
+        "url": "/custom/BeverageAPIs_DEV/logEvents",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getFailedOrder",
+        "url": "/custom/BeverageAPIs_DEV/getFailedOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "cancelFailedOrder",
+        "url": "/custom/BeverageAPIs_DEV/cancelFailedOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "reInitiateOrder",
+        "url": "/custom/BeverageAPIs_DEV/reInitiateOrder",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateReadDNRMA",
+        "url": "/custom/BeverageAPIs_DEV/updateReadDNRMA",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "createVisitation",
+        "url": "/custom/BeverageAPIs_DEV/createVisitation",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateVisitation",
+        "url": "/custom/BeverageAPIs_DEV/updateVisitation",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    }, 
+    {
+        "name": "getVisitationList",
+        "url": "/custom/BeverageAPIs_DEV/getVisitationList",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "addVans",
+        "url": "/custom/BeverageAPIs_DEV/addVans",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getAllVans",
+        "url": "/custom/BeverageAPIs_DEV/getAllVans",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getModifierDetails",
+        "url": "/custom/BeverageAPIs_DEV/getModifierDetails",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getLOVService",
+        "url": "/custom/BeverageAPIs_DEV/getLOVService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getRouteLOVService",
+        "url": "/custom/BeverageAPIs_DEV/getRouteLOVService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getShipmentLOVService",
+        "url": "/custom/BeverageAPIs_DEV/getShipmentLOVService",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "searchLogisticsSchedule",
+        "url": "/custom/BeverageAPIs_DEV/searchLogisticsSchedule",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "searchNonWorkingDate",
+        "url": "/custom/BeverageAPIs_DEV/searchNonWorkingDate",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "searchRouteCutoff",
+        "url": "/custom/BeverageAPIs_DEV/searchRouteCutoff",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "searchRouteEarlierCutoff",
+        "url": "/custom/BeverageAPIs_DEV/searchRouteEarlierCutoff",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateLogisticsSchedule",
+        "url": "/custom/BeverageAPIs_DEV/updateLogisticsSchedule",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateNonWorkingDate",
+        "url": "/custom/BeverageAPIs_DEV/updateNonWorkingDate",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateRouteCutoff",
+        "url": "/custom/BeverageAPIs_DEV/updateRouteCutoff",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "updateRouteEarlierCutoff",
+        "url": "/custom/BeverageAPIs_DEV/updateRouteEarlierCutoff",
+        "method": "POST",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getAllPrinters",
+        "url": "/custom/BeverageAPIs_DEV/getAllPrinters",
+        "method": "GET",
+        "amplify": {
+            "dataType": "json"
+        }
+    },
+    {
+        "name": "getMaintenance",
+        "url": "/custom/BeverageAPIs_DEV/getMaintenance",
+        "method": "GET",
+        "amplify": {
+            "dataType": "json"
+        }
+    }    
+]

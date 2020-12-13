@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;EAIE;AACF;;;EAGE;AAGF,yCAAyC",
+"sources": ["../scss/myCustomSettings.scss"],
+"names": [],
+"file": "myCustomSettings.css"
+}

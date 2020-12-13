@@ -1,0 +1,44 @@
+{
+	"data": [{
+                                                      "delivery": "N",
+			"order": {
+				"CUSTOMER_NAME": "ABERDEEN MARINA HOLDINGS LTD",
+				"ORDER_NUMBER": "NO. 1",
+				"CUST_PO_NUMBER": "",
+				"ORDERED_DATE": "2017/01/01",
+				"REAL_CUSTOMER": "",
+				"ORDER_REMARKS": "",
+				"SHIP_TO_ADDRESS": "THE MARINA DELI,8 SHUM WAN ROAD,ABERDEEN,TEL: 2814 5302,HK-ABERDEEN",
+				"BILL_TO_ADDRESS": "8 SHUM WAN ROAD,ABERDEEN,,,HK-ABERDEEN",
+				"HEADER_FLOW_STATUS_CODE": "SAVED",
+				"SOLD_TO_ORG_ID": "8000077",
+				"SHIP_TO_ORG_ID": "302203",
+				"INVOICE_TO_ORG_ID": "302206",
+				"PRICE_LIST_ID": "790148",
+				"PRICING_DATE": "2017-01-01T01:13:34+08:00",
+				"SOLD_FROM_ORG_ID": "2899",
+				"SHIP_FROM_ORG_ID": "2922",
+				"SALES_REP_ID": "100318337",
+				"TRANSACTIONAL_CURR_CODE": "HKD",
+				"PAYMENT_TERM_ID": "1014",
+				"FREIGHT_CHARGE": 0,
+				"ORDER_TYPE": "",
+				"ORDER_TOT_AMT": 0
+			},
+			"orderdetail": [{
+					"INVENTORY_ITEM_ID": 197966,
+					"PRODUCT_DESCRIPTION": "B.P.R. CHILE ESCUDO ROJO ROUGE (75CL)",
+					"PRODUCT": "B035|BPR033",
+					"LOT_NUMBER": "",
+					"UNIT_SELLING_PRICE": 0,
+					"ORDERED_QUANTITY": 1,
+					"SCHEDULE_SHIP_DATE": "2017/01/09",
+					"ORIGINAL_LINE": "Y",
+					"DRAFT_BEER_FLAG": "N",
+					"SUBINVENTORY": "JL-WAREHSE",
+					"SHIPPING_METHOD": -1
+				}
+			]
+		}
+	]
+}

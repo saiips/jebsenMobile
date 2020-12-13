@@ -1,0 +1,94 @@
+{
+	"data": [{
+                                                      "delivery": "Y",
+			"order": {
+				"DELIVERY_NUMBER": "4725904",
+				"OUTLET_NAME": "2014 D0 SERVICE CUSTOMER",
+				"ORDER_NUMBER": "16020258",
+				"DELIVERY_ADDRESS": ".,",
+				"DELIVERY_DATE": "2014/05/05",
+				"CAR_PLATE_NUMBER": ""
+			},
+			"orderdetail": [{
+					"PRODUCT_NUMBER": "R042.2770-ST-60021",
+					"PRODUCT_DESC": "FREELANCER AUTOMATIQUE GENTS GREY INDEX",
+					"LOT_NUMBER": "",
+					"QTY": 4,
+					"MAXQTY": "5"
+				}, {
+					"PRODUCT_NUMBER": "R042.2770-ST-65021",
+					"PRODUCT_DESC": "FREELANCER AUTOMATIC GENTS, SILVER INDEX",
+					"LOT_NUMBER": "",
+					"QTY": 8,
+					"MAXQTY": "8"
+				}, {
+					"PRODUCT_NUMBER": "R042.2770-ST-60021",
+					"PRODUCT_DESC": "FREELANCER AUTOMATIQUE GENTS GREY INDEX",
+					"LOT_NUMBER": "",
+					"QTY": 1,
+					"MAXQTY": "1"
+				}, {
+					"PRODUCT_NUMBER": "R042.2770-ST-65021",
+					"PRODUCT_DESC": "FREELANCER AUTOMATIC GENTS, SILVER INDEX",
+					"LOT_NUMBER": "",
+					"QTY": 1,
+					"MAXQTY": "1"
+				}, {
+					"PRODUCT_NUMBER": "R042.2627-SLS-00965",
+					"PRODUCT_DESC": "MAESTRO LADIES STEEL & DIAM, MOP RN RELIEF 5 DIAMONDS",
+					"LOT_NUMBER": "",
+					"QTY": 10,
+					"MAXQTY": "10"
+				}, {
+					"PRODUCT_NUMBER": "R042.2627-ST-00994",
+					"PRODUCT_DESC": "MAESTRO LADIES STEEL, MOP RN RELIEF 7 DIAMONDS",
+					"LOT_NUMBER": "",
+					"QTY": 15,
+					"MAXQTY": "15"
+				}, {
+					"PRODUCT_NUMBER": "R042.2627-STC-00965",
+					"PRODUCT_DESC": "MAESTRO LADIES STEEL, MOP RN RELIEF 5 DIAMONDS COULEUR CUIR ROSE",
+					"LOT_NUMBER": "",
+					"QTY": 15,
+					"MAXQTY": "15"
+				}, {
+					"PRODUCT_NUMBER": "R042.2627-STC-00994",
+					"PRODUCT_DESC": "MAESTRO LADIES STEEL, MOP RN RELIEF 7 DIAMONDS COULEUR CUIR NOIR",
+					"LOT_NUMBER": "",
+					"QTY": 10,
+					"MAXQTY": "10"
+				}, {
+					"PRODUCT_NUMBER": "R042.2637-SLS-00966",
+					"PRODUCT_DESC": "MAESTRO LADIES STEEL, MOP RN RELIEF 6 DIAMONDS",
+					"LOT_NUMBER": "",
+					"QTY": 10,
+					"MAXQTY": "10"
+				}, {
+					"PRODUCT_NUMBER": "R042.2839-STC-00209",
+					"PRODUCT_DESC": "MAESTRO TRADITION AUTOMATIC GENTS, MOON PHASE FUNCTION, BLACK RN IN ZONE",
+					"LOT_NUMBER": "",
+					"QTY": 20,
+					"MAXQTY": "20"
+				}, {
+					"PRODUCT_NUMBER": "R042.2846-ST-00659",
+					"PRODUCT_DESC": "MAESTRO MEN STEEL SILVER RN IN ZONE",
+					"LOT_NUMBER": "",
+					"QTY": 1,
+					"MAXQTY": "1"
+				}, {
+					"PRODUCT_NUMBER": "R042.4830-ST-05659",
+					"PRODUCT_DESC": "MAESTRO MEN STEEL SILVER AN IN ZONE",
+					"LOT_NUMBER": "",
+					"QTY": 5,
+					"MAXQTY": "5"
+				}, {
+					"PRODUCT_NUMBER": "R042.4830-STC-05659",
+					"PRODUCT_DESC": "MAESTRO MEN STEEL SILVER AN IN ZONE",
+					"LOT_NUMBER": "",
+					"QTY": 1,
+					"MAXQTY": "1"
+				}
+			]
+		}
+	]
+}

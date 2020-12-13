@@ -1,0 +1,49 @@
+{
+    "P_SERVICE_PROVIDER": {
+        "P_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "JLOG"
+            }
+        ]
+    },
+    "P_ROUTE": {
+        "P_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "R01"
+            },
+            {
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "R02"
+            },
+            {
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "R03"
+            }            
+        ]
+    },    
+    "P_SHIPPING_METHOD": {
+        "P_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "VAN-RM7607"
+            },
+            {
+                "LOOKUP_TYPE": "SHIPPING_METHOD",
+                "LOOKUP_VALUE": "VAN-TV2014"
+            }            
+        ]
+    },
+    "P_DISTRICT": {
+        "P_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "JCL_HK_DISTRICT",
+                "LOOKUP_VALUE": "KLN-TSIM SHA TSUI EAST"
+            }
+        ]
+    },
+    "P_SUBINV_CODE": {
+        "P_SERVICE_PROVIDER_ITEM": [{
+                "LOOKUP_TYPE": "SUBINVENTORY_CODE",
+                "LOOKUP_VALUE": "DD-KX8365"
+            }
+        ]
+    }
+}

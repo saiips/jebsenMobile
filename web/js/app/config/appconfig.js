@@ -1,0 +1,1 @@
+define(["knockout","jquery","module","text!./config.json","config/serviceconfig","util/devmode"],function(n,i,t,o,e,c){"use strict";function f(){function n(){e.init(t)}var t=this,c=i.parseJSON(o),f=c.default;t.config=c[f],t.getConfigurations=function(){return t.config},t.get=function(n){return t.config[n]},t.set=function(n,i){t.config[n]=i},n()}return new f});

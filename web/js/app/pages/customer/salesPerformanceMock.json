@@ -1,0 +1,18 @@
+{"P_SALES_TBL_ITEM": [
+      {
+      "PRODUCT_DESCRIPTION": "A-Desc",
+      "PRODUCT": "A",
+      "THIS_YTD_QTY": "52",
+      "LAST_YTD_VOLUME": "100",
+      "LAST_YTD_QTY": "50",
+      "THIS_YTD_VOLUME": "123"
+   },
+      {
+      "PRODUCT_DESCRIPTION": "B-Desc",
+      "PRODUCT": "B",
+      "THIS_YTD_QTY": "520",
+      "LAST_YTD_VOLUME": "1000",
+      "LAST_YTD_QTY": "50",
+      "THIS_YTD_VOLUME": "1230"
+   }
+]}
